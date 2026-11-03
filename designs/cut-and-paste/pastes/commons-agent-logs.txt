@@ -1,0 +1,33 @@
+# commons-agent-logs. Hand placement.
+# after "<words in the post>" ![image number](fastener side size)
+# indented lines draw on the picture, in units of 1000 wide.
+
+after "( trust me ) ." ![3](staple center full a-2.4 nocap)
+arrow "trust me" -70 42 -26 | 40 40 22
+
+after "Picking the new idea took 50 minutes." ![4](tape right wide true gaffer)
+  ring 129 141 40 16
+  ring 697 141 54 17
+
+after "so the room had four different URLs in one afternoon." ![1](staple left half a1.6)
+  ring 352 776 112 22
+
+after "and 96% of them were cache re-reads." ![5](tape right wide a-.8 washi)
+  ring 228 376 130 26
+
+after "that redrew the venue photo." ![2](staple center full a2 nocap)
+
+xs "All ten" 10
+tally "Four" 4
+==2 hours 47 minutes==
+==17:11==
+==300 million==
+==96%==
+==$182==
+==$2.79==
+==$8==
+==44 seconds==
+p10 ==about 3 minutes==
+((nothing extra))
+stroke p10 180/180
+stroke p11 44/180

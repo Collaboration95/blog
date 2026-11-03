@@ -1,0 +1,25 @@
+# No images. The numbers are the drawing. One measure of text = 26 minutes = 1560 s.
+# Everything is dimensioned from the left edge of the text, the datum.
+
+group "The first full import took 26 minutes." "That took the import from" wit 100%
+dims after "The first full import took 26 minutes." max 1560 "26 minutes" 1560
+
+group "Wrapped the database writes" "Cleaned up some regex usage." bracket
+dims after "That got the import down to 21 minutes." max 1560 "21 minutes" 1260
+
+mark strike "DuckDB"
+mark strike "disk I/O"
+mark ring "Python doing Python things"
+draw after "1.35 million times in a row." repeat
+
+mark cloud "It was an architectural rewrite."
+
+# draw before the balloons: they wrap words inside this sentence
+draw after "then loaded them into DuckDB." rewrite
+mark balloon "mmap'd the export" 1
+mark balloon "split the file across workers" 2
+mark balloon "regex byte-scans" 3
+mark balloon "wrote Parquet shards" 4
+mark balloon "loaded them into DuckDB" 5
+
+draw after "on the same 6-month test export." sliver

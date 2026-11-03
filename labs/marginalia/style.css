@@ -1,0 +1,259 @@
+/* marginalia. One text column, one ruled line. Everything left of the line is margin. */
+
+@font-face { font-family: "Sorts Mill Goudy"; src: url(fonts/goudy-latin-400-normal.woff2) format("woff2"); font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "Sorts Mill Goudy"; src: url(fonts/goudy-latin-400-italic.woff2) format("woff2"); font-style: italic; font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "Sorts Mill Goudy"; src: url(fonts/goudy-latin-ext-400-normal.woff2) format("woff2"); font-display: swap;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: "Sorts Mill Goudy"; src: url(fonts/goudy-latin-ext-400-italic.woff2) format("woff2"); font-style: italic; font-display: swap;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+
+:root {
+  --paper: #f3f4f1;
+  --ink: #17181c;
+  --soft: #62656e;
+  --blue: #1d3fd0;
+  --line: 27px;                     /* the baseline grid */
+  --gap: 10px;                      /* line to text */
+  --strip: 36px;                    /* phone: where sideways captions live */
+  --x0: min(max(18px, calc(46vw - 214px)), 640px);   /* the datum: measures start here */
+  --rail: calc(var(--x0) + 34px);   /* the line at rest */
+  --edge: min(calc(var(--x0) + 44px + 600px), calc(100vw - 18px));  /* right edge of the text, never moves */
+}
+@media (min-width: 1000px) { :root { --line: 30px; --strip: 0px; } html { font-size: 21px; } }
+
+*, *::before, *::after { box-sizing: border-box; }
+html { font-size: 18px; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--paper); color: var(--ink);
+  font: 400 1rem/var(--line) "Sorts Mill Goudy", "Iowan Old Style", Palatino, Georgia, serif;
+  font-synthesis: none; font-kerning: normal; font-variant-ligatures: common-ligatures;
+  font-variant-numeric: oldstyle-nums;
+  -webkit-font-smoothing: antialiased;
+}
+::selection { background: var(--blue); color: var(--paper); }
+:focus-visible { outline: 1px solid var(--blue); outline-offset: 2px; }
+a { color: inherit; text-decoration: underline double var(--blue) 1px; text-underline-offset: .2em; text-decoration-skip-ink: none; overflow-wrap: anywhere; }
+a:hover { color: var(--blue); }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+
+/* ---- the line ---------------------------------------------------------- */
+.head, .run, .foot, .end {
+  --mx: calc(var(--m) * 1px);        /* where this stretch of the line stands */
+  --px: calc(var(--p, var(--m)) * 1px);
+  --clear: 0px;
+  position: relative;
+  margin-left: calc(var(--x0) + var(--mx));
+  width: calc(var(--edge) - var(--x0) - var(--mx));
+  border-left: 1px solid var(--blue);
+  padding-left: var(--gap);
+}
+/* Phone: half the travel (marks.txt prints the matching key), and the measure never under 230px. */
+@media (max-width: 699px) {
+  .run, .end { --mx: min(calc(var(--mp) * 1px), calc(100vw - 277px)); --px: min(calc(var(--pp) * 1px), calc(100vw - 277px)); }
+  .kd { display: none; }
+}
+@media (min-width: 700px) { .kp { display: none; } }
+.step { --dx: calc(var(--px) - var(--mx)); position: absolute; top: -1px; height: 1px; background: var(--blue); left: calc(-1px + min(0px, var(--dx))); width: calc(max(var(--dx), -1 * var(--dx)) + 1px); }
+
+/* running head */
+.head { padding-top: 16px; padding-bottom: var(--line); line-height: 20px; font-size: .78rem; letter-spacing: .02em; }
+.head .name { font: inherit; margin: 0; display: inline; text-transform: uppercase; letter-spacing: .13em; font-size: .7rem; text-decoration: none; }
+.head .proj { font-style: italic; text-decoration: none; display: block; padding-top: 2px; }
+.head .proj + .of { color: var(--soft); }
+.head a { padding-block: 6px; }
+.head .proj { display: inline-block; margin-top: 2px; }
+.head .proj::before { content: "\A"; white-space: pre; }
+.post .head .name { display: block; }
+
+/* sideways matter: runs up the margin, read with the head tilted left */
+.spine { position: absolute; z-index: 1; left: calc(var(--rail) - 42px - 20px); top: 18px; writing-mode: vertical-rl; transform: rotate(180deg); display: flex; flex-direction: column-reverse; gap: 2px;
+  font-size: .72rem; line-height: 15px; max-height: calc(100vh - 40px); color: var(--soft); }
+@media (max-width: 999px) { main > .spine { left: 3px; } }
+/* Desktop: the title is itself a float, so a figure that clears left can only start below it. */
+@media (min-width: 1000px) { .post main > .spine { position: relative; float: left; left: auto; top: auto; margin: 18px 0 12px calc(var(--rail) - 62px); } }
+.spine h1 { font: inherit; margin: 0; color: var(--ink); font-style: italic; }
+.spine time { font-variant-numeric: oldstyle-nums tabular-nums; }
+
+/* ---- text -------------------------------------------------------------- */
+main { position: relative; }
+.run p, .run h2, .run pre { margin: 0; position: relative; }
+.run p {
+  white-space: pre-wrap; text-indent: 1.1em; text-wrap: pretty;
+  hyphens: auto; hyphenate-limit-chars: 7 3 3;
+}
+.run p.lead, .run p.lead + p:not(.lead), .run p.lead + p.lead { text-indent: 0; }
+@media (min-width: 1000px) { .run > p:not(.lead) { text-align: justify; } }
+.lead { font-size: 1.5rem; line-height: 1.24; margin-bottom: calc(var(--line) * .6) !important; hyphens: manual !important; letter-spacing: -.003em; }
+.lead.mid { font-size: 1.32rem; }
+.lead.low { font-size: 1.14rem; line-height: 1.32; }
+@media (min-width: 1000px) { .lead { font-size: 1.62rem; } .lead.mid { font-size: 1.42rem; } .lead.low { font-size: 1.2rem; } }
+
+mark { background: none; color: inherit; text-decoration: underline solid var(--blue) 1.5px; text-underline-offset: .17em; text-decoration-skip-ink: none; }
+
+/* paragraph numbers: stable anchors, hung left of the line like verse numbers */
+.n { position: absolute; right: calc(100% + var(--gap) + 3px); top: 0; text-indent: 0; font-size: 11.5px; line-height: var(--line); letter-spacing: 0; font-style: normal;
+  color: var(--soft); text-decoration: none; font-variant-numeric: oldstyle-nums tabular-nums; padding-inline: 4px; margin-right: -4px; opacity: .72; white-space: nowrap; overflow-wrap: normal; }
+.n:hover, :target > .n { color: var(--blue); opacity: 1; }
+p:target::before { content: ""; position: absolute; top: 0; bottom: 0; left: calc(-1 * var(--gap) - 2px); width: 3px; background: var(--blue); }
+
+.run h2 { font: italic 1rem/var(--line) inherit; margin-top: var(--line); font-family: inherit; }
+.run pre { font: 12.5px/18px ui-monospace, "SF Mono", Menlo, monospace; font-variant-ligatures: none; margin-block: calc(var(--line) / 2); padding-block: 4px; white-space: pre; overflow-x: auto; }
+.pre-note { display: none; }
+@media (max-width: 999px) { .run pre { margin-left: calc(var(--strip) - var(--rail) - var(--gap)); width: calc(100vw - var(--strip)); padding-left: 6px; font-size: 10.6px; line-height: 16px; background: var(--paper); } .run pre .n { display: none; } }
+
+/* measured runs: the big sideways figure sits in the white it describes */
+/* .mb is the height of the stretch and a size container, so the word can be capped to it exactly. */
+.mb { --size: var(--fs); --off: 26px; position: absolute; top: 4px; bottom: 4px; width: 110px; right: calc(100% + var(--off) + var(--clear)); container-type: size; pointer-events: none; }
+.mb > * { --w: max(13px, min(var(--size), calc(100cqh / var(--em)))); position: absolute; top: 0; right: 0; writing-mode: vertical-rl; transform: rotate(180deg); white-space: nowrap; }
+.ml { font-style: italic; font-size: var(--w); line-height: 1; color: var(--blue); letter-spacing: -.005em; }
+.key { font-size: 11px; line-height: 14px; font-style: italic; letter-spacing: 0; color: var(--soft); }
+.mb.low > * { top: auto; bottom: 0; }
+@media (min-width: 700px) {
+  .mb.keyed .ml { right: 17px; }
+  .mb.hang { bottom: auto; height: 420px; }
+  .mb.hang > * { --w: var(--size); }
+}
+/* Phone: the word takes the whole margin, the key steps out to its left. */
+@media (max-width: 699px) {
+  .mb { --size: clamp(13px, calc(var(--mx) - 22px), 58px); --off: 20px; right: calc(100% + var(--off)); }
+  .mb .key { right: calc(var(--w) + 3px); }
+}
+
+/* ---- figures ----------------------------------------------------------- */
+.fig { position: relative; z-index: 2; text-indent: 0; }
+.fig .open { display: block; text-decoration: none; }
+.fig img { display: block; width: 100%; height: auto; }
+.fig .shut { display: none; }
+.cap { position: absolute; bottom: 0; right: calc(100% + 5px); block-size: auto; inline-size: 100%; writing-mode: vertical-rl; transform: rotate(180deg);
+  font-size: 12px; line-height: 14px; font-style: italic; color: var(--soft); text-indent: 0; hyphens: none; text-wrap: balance; white-space: normal; text-align: left; letter-spacing: .002em; }
+.cap::before { content: "Fig. " attr(data-no) " "; font-style: normal; color: var(--blue); }
+.cap::after { content: attr(data-t); }
+
+/* Phone and tablet: the image crosses the line and meets the fore-edge.
+   Its height is rounded up to whole lines, so the text below lands back on the grid. */
+@media (max-width: 999px) {
+  .fig.cross, .fig.out, .fig.notch.wide {
+    float: none;
+    --tx: calc(var(--x0) + var(--mx) + 1px + var(--gap));
+    --w: calc(100vw - var(--strip)); --h: calc(var(--w) / var(--r));
+    display: block; width: var(--w); aspect-ratio: var(--r);
+    margin-left: calc(var(--strip) - var(--tx)); margin-top: calc(var(--line) * .3);
+    margin-bottom: calc(var(--line) * .7 + round(up, var(--h), var(--line)) - var(--h));
+  }
+  .lead .fig { font-size: 1rem; }
+  /* The strip is 36px, so a short picture's caption may run up past it to keep to two lines. */
+  .cap { inline-size: max(100%, 25em); }
+  .fig.notch:not(.wide) { float: left; clear: left; --w: 40vw; width: var(--w); aspect-ratio: var(--r);
+    margin: 6px 12px 6px calc(var(--strip) - (var(--x0) + var(--mx) + 1px + var(--gap))); }
+}
+/* Desktop: height in whole lines. Every figure is a float that clears its side, so a figure
+   cannot overlap the title or another figure, whatever the words measure. It hangs from the
+   line it interrupts, and a crowded sentence takes the right margin instead of waiting. */
+@media (min-width: 1000px) {
+  .fig { --h: calc(var(--n) * var(--line)); --ww: min(calc(var(--h) * var(--r)), calc((var(--x0) - 15px) / .66)); }
+  /* cross: a third in the text, two thirds in the margin */
+  .fig.cross { float: left; clear: left; width: var(--ww); aspect-ratio: var(--r); margin: 6px 20px 14px calc(var(--ww) * -.66 - var(--gap)); }
+  /* notch: half in the text, half in the right margin, leaving room there for its caption */
+  .fig.notch { float: right; clear: right; width: var(--ww); aspect-ratio: var(--r); margin: 6px max(calc(var(--ww) * -.5), calc(var(--edge) + 62px - 100vw)) 14px 22px; }
+  .fig.notch .cap { right: auto; left: calc(100% + 6px); }
+  /* out: all margin, no width in the text, on the far side of the title */
+  .fig.out .cap { inline-size: max(100%, 16em); }
+  .fig.out { --ow: min(var(--ww), calc(var(--x0) - 86px)); float: left; clear: left; width: var(--ow); aspect-ratio: var(--r);
+    margin: 6px calc(-1 * var(--ow)) 14px calc(-1 * (var(--mx) + var(--gap) + 37px + var(--ow))); }
+}
+
+/* Open at full size, no script. The figure keeps its box, so nothing below moves. */
+.fig:target::before { content: ""; position: fixed; inset: 0; z-index: 30; background: var(--paper); }
+.fig:target img { position: fixed; z-index: 31; inset: 0; margin: auto; width: auto; height: auto; max-width: 100vw; max-height: 100dvh; }
+.fig:target .shut { display: block; position: fixed; inset: 0; z-index: 32; color: transparent; text-decoration: none; }
+.fig:target { z-index: 40; }
+/* A landscape plate on a portrait phone is turned, as in a book. Turn the phone. */
+@media (orientation: portrait) and (max-width: 700px) {
+  .fig.wide:target img { max-width: none; max-height: none; width: min(100dvh, calc(100vw * var(--r))); height: auto; inset: 50% auto auto 50%; margin: 0; translate: -50% -50%; rotate: 90deg; }
+}
+.at { display: inline; }
+.gap { display: inline-block; height: 1px; width: 0; }
+
+/* ---- foot -------------------------------------------------------------- */
+.foot { clear: both; padding-top: calc(var(--line) * 1.5); padding-bottom: 36px; font-size: .84rem; line-height: 22px; }
+.foot::before { content: ""; position: absolute; left: -7px; top: calc(var(--line) * .9); width: 13px; border-top: 3px double var(--blue); }
+.foot { border-left-color: transparent; }
+.sibs { margin-bottom: var(--line); }
+.sibs .pt { font-style: italic; text-decoration: none; display: inline-block; padding-block: 6px; }
+.sibs ol { list-style: none; counter-reset: s; margin: 0; padding: 0; }
+.sibs li { counter-increment: s; }
+.sibs li a, .sibs li[aria-current] { display: flex; justify-content: space-between; gap: 12px; padding-block: 7px; text-decoration: none; }
+.sibs .l { min-width: 0; }
+.sibs .d { flex: none; color: var(--soft); font-variant-numeric: oldstyle-nums tabular-nums; }
+.sibs li[aria-current] .l { color: var(--blue); }
+.turn { display: flex; justify-content: space-between; gap: 18px; align-items: flex-end; }
+.turn a { text-decoration: none; display: block; padding-block: 8px; max-width: 54%; }
+.turn .older { text-align: right; margin-left: auto; }
+.turn .c { display: block; font-size: 1.5rem; line-height: 30px; font-style: italic; }
+.turn .w { display: block; font-size: 1.5rem; line-height: 30px; font-style: italic; color: var(--soft); }
+.turn .t { display: block; font-size: .72rem; line-height: 15px; color: var(--soft); }
+.src { margin: var(--line) 0 0; display: flex; justify-content: space-between; font-size: .72rem; color: var(--soft); }
+.src a { padding-block: 10px; margin-block: -10px; text-decoration: none; font-style: italic; }
+.src a:hover { color: var(--blue); }
+
+/* ---- index and project ------------------------------------------------- */
+.rail { position: relative; }
+.rail::before { content: ""; position: absolute; top: 0; bottom: 0; left: var(--rail); border-left: 1px solid var(--blue); }
+.entry {
+  position: relative; margin-left: calc(var(--rail) + 1px + var(--gap)); width: calc(var(--edge) - var(--rail) - 1px - var(--gap));
+  margin-top: calc(var(--line) * 2 + var(--days) * 3px);
+}
+.entry:first-child { margin-top: 0; }
+.entry .spine { position: absolute; left: calc(-1 * (34px + var(--gap)) + 10px); top: 3px; }
+.entry h2, .item h2 { font: inherit; font-size: 1.14rem; margin: 0; }
+.entry h2 a, .item h2 a { text-decoration: none; display: inline-block; }
+.entry h2 a { padding-block: 2px; }
+.count { color: var(--soft); font-size: .72rem; font-style: italic; margin-left: .7em; white-space: nowrap; }
+.days { position: absolute; bottom: 100%; left: calc(-1 * var(--gap) - 15px); margin-bottom: 6px; writing-mode: vertical-rl; transform: rotate(180deg); font-size: 11px; line-height: 12px; font-style: italic; color: var(--blue); }
+.pv { display: block; text-decoration: none; position: relative; z-index: 2; }
+.pv img { display: block; width: 100%; height: auto; }
+
+.run > p.trail { text-align: left; text-indent: 0; hyphens: manual; }
+.trail { --t: 6; margin: 0; max-height: calc(var(--t) * var(--line)); overflow: hidden; hyphens: manual; color: var(--ink); font-size: 1rem; text-wrap: pretty; white-space: pre-wrap; }
+.trail.whole { max-height: none; }
+.trail .sp { float: right; width: 0; height: calc((var(--t) - 3.2) * var(--line)); }
+.trail .ta { float: right; clear: right; width: 86%; height: calc(3.2 * var(--line)); shape-outside: polygon(100% 0, 0% 100%, 100% 100%); }
+.pil { font-style: normal; color: var(--blue); }
+
+@media (max-width: 999px) {
+  .pv { width: calc(var(--line) * 7 * var(--r)); max-width: calc(100vw - var(--strip) - 10px); margin: 6px 0 10px calc(var(--strip) + 10px - var(--rail) - 1px - var(--gap)); }
+  .pv.tall { width: calc(var(--line) * 9 * var(--r)); }
+}
+@media (min-width: 1000px) {
+  .pv { position: absolute; top: 4px; --w: calc(var(--line) * 7 * var(--r)); width: min(var(--w), calc(var(--x0) - 24px)); right: calc(100% + var(--gap) + 44px); }
+}
+
+/* project page */
+.item::after { content: ""; display: block; clear: both; }
+.project .title { padding-bottom: var(--line); }
+.project .title h1 { font: inherit; font-size: 1.9rem; line-height: 1.15; margin: 0; }
+.project .title .line { margin: 0; font-style: italic; font-size: 1.14rem; text-indent: 0; }
+.project .title .key { display: block; margin-top: 4px; padding: 0; }
+.item { padding-bottom: calc(var(--line) * 2); }
+.item .spine { position: absolute; left: auto; right: calc(100% + 6px); top: 4px; max-height: none; }
+.item .ml.small { position: absolute; top: 4px; right: calc(100% + 26px); writing-mode: vertical-rl; transform: rotate(180deg); white-space: nowrap; font-size: 14px; }
+.item h2 .ord { color: var(--blue); }
+.strip { --row: 94px; display: flex; flex-wrap: wrap; gap: 5px; position: relative; z-index: 2; margin-block: 8px 12px; margin-left: calc(var(--strip) - (var(--x0) + var(--mx) + 1px + var(--gap))); width: calc(100vw - var(--strip)); }
+.strip a { flex: var(--r) 1 calc(var(--row) * var(--r)); display: block; text-decoration: none; aspect-ratio: var(--r); }
+.strip img { display: block; width: 100%; height: auto; }
+/* Phone and tablet: pictures run from the strip, so date and label stay in the strip. */
+@media (max-width: 999px) {
+  .item .spine { right: calc(100% + var(--x0) + var(--mx) - 34px); }
+  .item .ml.small { right: calc(100% + var(--x0) + var(--mx) - 17px); font-size: 13px; line-height: 15px; }
+}
+/* Desktop: the post's pictures hang in the margin beside its title, the text keeps the column. */
+@media (min-width: 1000px) {
+  .strip { --row: 112px; --sw: calc(var(--x0) + var(--mx) - 70px); float: left; justify-content: flex-end; width: var(--sw);
+    margin: calc(6px - var(--line) - 2px) 0 var(--line) calc(-1 * (var(--sw) + var(--gap) + 1px + 50px)); }
+  .strip.n1 { --row: 150px; }
+  .strip a { flex: 0 1 calc(var(--row) * var(--r)); }
+}
+
+@media print { .foot nav, .n { display: none; } body { background: #fff; } }

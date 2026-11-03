@@ -1,0 +1,3 @@
+# project-id  post-id  image-number: which image stands for a project on the index
+the-commons commons-best-use-of-tech 1
+screenshot-declutterer screenshot-declutterer-2 1

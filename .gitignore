@@ -1,0 +1,15 @@
+node_modules/
+dist/
+gallery/
+.DS_Store
+
+# written by each design's build.mjs
+designs/*/index.html
+designs/*/posts/
+designs/*/projects/
+designs/cut-and-paste/style.css
+labs/*/index.html
+labs/*/posts/
+labs/*/projects/
+labs/character-grid/style.css
+labs/character-grid/cards/

@@ -1,0 +1,77 @@
+# Marks: everything a post needs beyond its text. The text stays in content/posts.json.
+#
+#   ## post-id
+#   open 3                              set the first 3 paragraphs large (default 1)
+#   ![04 out 6] after "300 million tokens"   put image 04 straight after those words
+#                                       modes: cross (default), out, notch
+#                                       6 = height in lines (else the area budget sets it)
+#   | 7-12 | 1560/9.77 | 26 minutes     move the line for paragraphs 7 to 12: that many px
+#                                       from the datum, labelled with the post's own words
+#   scale 1 px = 9.77 seconds | 1 px = 19.54 seconds
+#                                       the key, printed once beside the first label;
+#                                       after | the phone's, where the line moves half as far
+#
+#   ## project project-id
+#   | post-id | 120 | about a minute    the same line, one entry at a time
+#
+# A post with no marks is placed by the rules in build.mjs.
+
+## commons-agent-logs
+![03 notch 7] after "from Sunday's hackathon."
+![01 cross 5] after "The build itself took"
+![02 notch 5] after "so the room"
+![05 out 9] after "about 300 million tokens"
+![04 out 6] after "my own agent logs,"
+| 8-8 | 182 | $182
+| 9-9 | 2.79 | $2.79
+| 10-10 | 8 | $8
+| 11-11 | 180 | 3 minutes
+| 12-12 | 44 | 44 seconds
+scale 1 px = $1, then 1 px = 1 second | 1 px = $2, then 1 px = 2 seconds
+
+## apple-health-import
+open 3
+| 7-12 | 1560/9.77 | 26 minutes
+| 13-22 | 1260/9.77 | 21 minutes
+| 23-26 | 1 | 9.77 seconds
+scale 1 px = 9.77 seconds | 1 px = 19.54 seconds
+
+## lorong-speech-embeddings
+![02 notch 6] after "sentences like that,"
+![03 cross 6] after "the disparity in training data"
+![04 notch 6] after "Vincent Nguyen, PhD shared"
+![05 cross 7] after "on all five of their internal tasks."
+![06 notch 6] after "sequence packing"
+![01 cross 5] after "Thanks En Lih Lye"
+
+## commons-claude-switch
+![01 notch 7] after "and they show up three times faster."
+![02 out 6] after "The Codex setup I was running took 17 to 19."
+![04 notch 7] after "Four pets at once went live in 13 to 16 seconds."
+![03 out 7] after "The other slowdown was my own code."
+| 7-7 | 19*5 | 17 to 19
+| 8-8 | 15*5 | 13 to 16 seconds
+| 10-10 | 25*5 | 25 seconds
+scale 1 second = 5 px | 1 second = 2.5 px
+
+## commons-best-use-of-tech
+![01 cross] after "a room that builds itself."
+![02 notch] after "A spec by late morning, two builds in parallel,"
+![03 cross] after "for the pleasant company."
+
+## commons-peoples-choice
+![01 cross] after "a room that builds itself."
+
+## screenshot-declutterer-3
+![01 notch] after "That is a long time to wait for "customer-support-chat.png"."
+![02 notch] after "That led me to LiteRT-LM."
+| 3-3 | 21*5 | 21 seconds
+| 13-13 | 6.5*5 | 6.5 seconds
+scale 1 second = 5 px | 1 second = 2.5 px
+
+## project the-commons
+| commons-best-use-of-tech | 120 | About a minute
+| commons-peoples-choice | 120 | about a minute
+| commons-agent-logs | 88 | 44 seconds
+| commons-claude-switch | 32 | 13 to 16 seconds
+scale how long a wished pet takes: 1 second = 2 px | how long a wished pet takes: 1 second = 1 px

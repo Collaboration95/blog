@@ -1,0 +1,25 @@
+# The day in data. Image numbers are the order in posts.json; Fig. numbers follow reading order.
+
+# The countdown on the big screen is the timestamp he is talking about. The pin sits just past its last digit.
+fig 1 after "token and timestamp from Sunday's hackathon." side from "timestamp" pin 68.8,45.6
+
+# The chart's x axis is the 18 hours. Dimensions sit on the chart's own bands. The pin ends the BUILD label.
+fig 4 after "The build itself took 2 hours 47 minutes." wide from "2 hours 47 minutes" pin 73.6,25.9
+chain 4 "2 hours 47 minutes" 66.25 79.1 1 left
+chain 4 "50 minutes" 57.4 61.0 2 left
+chain 4 "18 hours" 10.25 93.06 3 in
+
+# Comic timing. Plenty broke, and everyone is delighted.
+fig 3 after "Plenty broke." mid from "Plenty broke." pin 36,37
+
+draw after "Only about 2 million were actually generated." tokens
+
+# This is the venue photo the sentence means. The key redrew it.
+fig 2 after "that redrew the venue photo." mid from "the venue photo" pin 70,52
+
+# The picture interrupts the sentence at its comma, so the figure stands beside the words it answers.
+# The pin sits above "$2.79" in the clear band under COST: from either side the leader runs on no line of type.
+fig 5 after "It came to $2.79 for the day," side from "$2.79 for the day" pin 41.5,34.3 enter side
+
+dims after "costs about $8 on AWS." max 182 "$182" 182 "$8" 8 "$2.79" 2.79
+dims after "about 4x faster." max 180 "3 minutes" 180 "44 seconds" 44

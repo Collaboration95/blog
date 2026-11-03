@@ -1,0 +1,36 @@
+<span class="ga" role="img" aria-label="Item balloons 1 to 5 trace the sentence above: the export block, its split, the scans, the shards, and the database."><svg viewBox="0 0 340 214" aria-hidden="true">
+<g class="o">
+<path d="M18 62 h86 v104 h-86 z M18 62 l14 -14 h86 l-14 14 M104 166 l14 -14 v-104"/>
+</g>
+<g class="t">
+<path d="M18 88 h86 l14 -14 M18 114 h86 l14 -14 M18 140 h86 l14 -14" stroke-dasharray="6 3"/>
+<path d="M18 36 v8 M104 36 v22 M7 62 h7 M7 166 h7"/>
+<path d="M121 75 h42 M121 101 h42 M121 127 h42 M121 153 h42"/>
+<path d="M223 81 h26 M223 107 h26 M223 133 h26 M223 159 h26"/>
+<path d="M248 81 l26 20 M248 107 l26 8 M248 133 l26 -8 M248 159 l26 -20" />
+</g>
+<g class="m" id="scan">
+<path d="M170 75 v-8 M175 75 v-8 M180 75 v-8 M185 75 v-8 M190 75 v-8 M195 75 v-8 M170 101 v-8 M175 101 v-8 M180 101 v-8 M185 101 v-8 M190 101 v-8 M195 101 v-8 M170 127 v-8 M175 127 v-8 M180 127 v-8 M185 127 v-8 M190 127 v-8 M195 127 v-8 M170 153 v-8 M175 153 v-8 M180 153 v-8 M185 153 v-8 M190 153 v-8 M195 153 v-8"/>
+</g>
+<g class="o">
+<path d="M201 70 h20 v14 h-20 z M201 96 h20 v14 h-20 z M201 122 h20 v14 h-20 z M201 148 h20 v14 h-20 z"/>
+<path d="M278 88 v44 a24 8 0 0 0 48 0 v-44 M278 88 a24 8 0 0 1 48 0 a24 8 0 0 1 -48 0"/>
+</g>
+<g class="h">
+<path d="M204 84 l6 -14 M210 84 l6 -14 M216 84 l5 -12 M204 110 l6 -14 M210 110 l6 -14 M216 110 l5 -12 M204 136 l6 -14 M210 136 l6 -14 M216 136 l5 -12 M204 162 l6 -14 M210 162 l6 -14 M216 162 l5 -12"/>
+</g>
+<g class="ar">
+<path d="M163 75 l-7 -1.8 v3.6 z M163 101 l-7 -1.8 v3.6 z M163 127 l-7 -1.8 v3.6 z M163 153 l-7 -1.8 v3.6 z M278 104 l-6.2 -3.2 l-2 3 z M278 113 l-6.8 -.6 l-.6 3.4 z M278 124 l-6.8 .6 l.6 3.4 z M278 137 l-6.4 2.6 l2 2.8 z"/>
+<path d="M18 40 l7 -1.8 v3.6 z M104 40 l-7 -1.8 v3.6 z M11 62 l-1.8 7 h3.6 z M11 166 l-1.8 -7 h3.6 z"/>
+</g>
+<g class="t"><path d="M18 40 h86 M11 62 v104"/></g>
+<text class="dl" x="61" y="33" text-anchor="middle">6 months</text>
+<text class="dl" x="-114" y="6" transform="rotate(-90)" text-anchor="middle">600MB</text>
+<g class="b">
+<circle cx="136" cy="30" r="9"/><text x="136" y="33.5">1</text><path d="M128 34 L112 56"/>
+<circle cx="142" cy="186" r="9"/><text x="142" y="189.5">2</text><path d="M135 180 L116 142"/>
+<circle cx="183" cy="30" r="9"/><text x="183" y="33.5">3</text><path d="M183 39 V66"/>
+<circle cx="212" cy="186" r="9"/><text x="212" y="189.5">4</text><path d="M212 177 V163"/>
+<circle cx="302" cy="30" r="9"/><text x="302" y="33.5">5</text><path d="M302 39 V79"/>
+</g>
+</svg></span>

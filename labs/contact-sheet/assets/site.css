@@ -1,0 +1,209 @@
+/* Contact sheet. Strict system:
+   1. Everything is film. Text lives on a strip that hangs vertically. Pictures live on strips.
+   2. Film gauge is constant, so a frame's other side comes from the image's own ratio. Nothing is letterboxed.
+   3. A wide screen hangs a second strip beside the text and each frame hangs at its sentence. A phone can't, so they hang in line.
+   4. Only the pencil may break the frame. Red points at a frame or carries from it. Yellow counts. */
+@font-face{font-family:Archivo;src:url(../fonts/archivo-latin.woff2) format("woff2");font-weight:100 900;font-stretch:62% 125%;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2190-2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:Archivo;src:url(../fonts/archivo-vietnamese.woff2) format("woff2");font-weight:100 900;font-stretch:62% 125%;font-display:swap;unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}
+
+:root{
+  color-scheme:dark;
+  --paper:#060605; --base:#141312; --rebate:#1b1916; --frame:#0a0a09; --line:#37332d;
+  --text:#dcd7cb; --dim:#a79f90; --edge:#d3c9b0;
+  --red:#ff4a30; --yellow:#ffd338; --stamp:#ff8c2e; --white:#f8f3e8;
+  --lh:29px; --rail:26px; --pitch:20px; --pad:15px; --film-x:0px;
+  --sans:Archivo,"Helvetica Neue",Arial,"Noto Sans SC","PingFang SC",sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;background:var(--paper);scroll-padding-top:20px}
+body{margin:0;position:relative;overflow-x:clip;background:var(--paper);color:var(--text);font:430 18px/var(--lh) var(--sans);font-stretch:100%;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-synthesis:none;hanging-punctuation:first}
+.defs{position:absolute}
+::selection{background:#c92a14;color:#fff6ea}
+a{color:inherit}
+:focus-visible{outline:2.5px solid var(--red);outline-offset:3px;border-radius:46% 52% 48% 54%/58% 46% 54% 42%}
+
+/* edge print: the only structural voice */
+.slate,.name,.home,.back,.src,.n,.fr::before,.tf::before,.nn,.nl{font-stretch:72%;font-weight:560;letter-spacing:.09em;text-transform:uppercase;font-size:12px;line-height:16px;font-variant-numeric:tabular-nums;color:var(--edge)}
+
+/* the hanging strip */
+.film{position:relative;margin-left:var(--film-x);width:calc(var(--col,100vw - 2*var(--rail) - 2*var(--pad)) + 2*var(--rail) + 2*var(--pad));padding:0 calc(var(--rail) + var(--pad));background:var(--base);min-height:100vh}
+.film::before,.film::after{content:"";position:absolute;top:0;bottom:0;width:var(--rail);background:var(--rebate) repeat-y 0 0/var(--rail) var(--pitch)}
+.film::before{left:0;background-image:url(rail-l.svg)}
+.film::after{right:0;background-image:url(rail-r.svg)}
+
+.leader{padding:22px 0 calc(var(--lh)*1.5)}
+.home{display:inline-block;text-decoration:none;color:var(--white);padding:12px 0;margin:-12px 0}
+.leader .home{font-size:13px}
+.slate{display:flex;flex-wrap:wrap;gap:0 14px;margin:14px 0 0}
+.slate a{text-decoration:none;background:url(u.svg) repeat-x 0 100%/48px 6px;padding-bottom:3px}
+.name{margin:0;color:var(--dim)}
+
+/* running text */
+.copy{padding-bottom:var(--lh)}
+.copy p,.copy h2,.copy pre{position:relative;margin:0 0 calc(var(--lh)*.5);white-space:pre-wrap;overflow-wrap:break-word;text-wrap:pretty;hyphens:manual}
+.copy p a:not(.n):not(.ph),.tf a{color:var(--white);text-decoration:none;overflow-wrap:anywhere;background:url(u.svg) repeat-x 0 100%/48px 6px;padding-bottom:3px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.copy p a:not(.n):not(.ph):hover{color:var(--yellow)}
+.cont{display:block}
+.caret{display:inline-block;width:0;height:0}
+.lede{color:var(--white);font-weight:640;font-stretch:84%;letter-spacing:-.008em}
+.lede.l1{font-size:42px;line-height:calc(var(--lh)*1.625)}
+.lede.l2{font-size:33px;line-height:calc(var(--lh)*1.375)}
+.lede.l3{font-size:24px;line-height:calc(var(--lh)*1.125);font-weight:600}
+.copy .lede{margin-bottom:var(--lh)}
+.copy h2{margin-top:var(--lh);font-weight:700;font-stretch:72%;letter-spacing:.04em;font-size:19px;white-space:pre-wrap;color:var(--white)}
+.copy pre{font:400 13px/20px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:var(--edge);padding:12px 0 16px}
+.ln{display:block;padding-left:4ch;text-indent:-4ch} /* a wrapped line hangs, so a tree stays a tree */
+
+/* edge number: every paragraph's anchor lives on the film edge */
+.n{position:absolute;top:0;left:calc(-1*(var(--pad) + var(--rail)));width:calc(var(--rail) + var(--pad)*.7);min-height:44px;margin-top:-6px;padding:8px 0 8px calc(var(--rail)*.58);text-decoration:none;writing-mode:vertical-rl;transform:rotate(180deg);transform-origin:50% 50%;font-size:10px;line-height:10px;letter-spacing:.06em;color:#8f8775;text-align:right}
+.n:hover,:target>.n{color:var(--yellow)}
+:target{scroll-margin-top:20px}
+.copy p:target::after,.copy pre:target::after,.copy h2:target::after{content:"";position:absolute;left:-9px;top:3px;bottom:3px;width:3px;background:var(--yellow);border-radius:2px/40px;transform:rotate(.4deg)}
+
+/* picture frames. Phone: the strip hangs, frames are film-wide */
+.strip{display:block;margin:calc(var(--lh)*.5) calc(-1*var(--pad));text-indent:0;white-space:normal}
+.brk{margin:0}
+.fr{position:relative;display:block;margin:0 0 calc(var(--lh)*.5)}
+.fr::before{content:attr(data-n);position:absolute;left:calc(-1*var(--rail));top:6px;width:var(--rail);padding-left:calc(var(--rail)*.58);writing-mode:vertical-rl;transform:rotate(180deg);font-size:10px;line-height:10px;color:var(--yellow)}
+.fr::after{content:attr(data-alt);display:block;padding:7px var(--pad) 0;font-size:13.5px;line-height:18px;font-stretch:88%;color:var(--dim);text-wrap:pretty}
+.ph{display:block;line-height:0;cursor:zoom-in}
+.ph img{display:block;width:100%;height:auto;background:#000}
+.pm{position:absolute;left:0;top:0;width:100%;height:auto;overflow:visible;pointer-events:none;fill:var(--red);filter:url(#wax);z-index:3}
+.fr .pm{aspect-ratio:var(--r)}
+
+/* word marks */
+.w{position:relative;white-space:nowrap}
+.wm{position:absolute;left:-.32em;top:-.2em;width:calc(100% + .64em);height:calc(100% + .4em);overflow:visible;pointer-events:none;filter:url(#wax);z-index:2}
+.yel .wm{fill:var(--yellow)}
+.red .wm{fill:var(--red)}
+.leads{position:absolute;left:0;top:0;width:100%;overflow:visible;pointer-events:none;z-index:6;fill:var(--red);filter:url(#wax)}
+
+/* text exposed into a frame */
+.strip.tx{display:block;margin-block:var(--lh)}
+.tf-x{--bg:var(--frame);--fg:var(--text);position:relative;display:flex;align-items:flex-end;margin:0 0 6px!important;aspect-ratio:3/2;padding:16px 18px;background:var(--bg);color:var(--fg);box-shadow:inset 0 0 0 1px var(--line)}
+.tf-x.lit{box-shadow:0 0 34px 2px rgba(255,86,40,.34),0 0 8px rgba(255,214,170,.5)}
+.tf-t{display:block;font-weight:640;font-stretch:84%;font-size:29px;line-height:34px;white-space:pre-wrap;text-wrap:balance}
+.tf-x .n{left:calc(-1*var(--rail));top:8px}
+.tf-x.lit .wm{}
+.tf-m{height:100%;fill:var(--red)}
+.tx.small .tf-x{aspect-ratio:auto;min-height:78px;padding:12px 14px;align-items:center}
+.tx.small .tf-t{font-size:21px;line-height:26px;font-weight:600}
+.tx.small .tf-x:last-child .tf-t{font-size:24px;line-height:28px}
+
+/* tail of the strip */
+.tail{padding:var(--lh) 0 calc(var(--lh)*2);display:block}
+.src{display:inline-block;padding:12px 0;text-decoration:none;color:var(--dim)}
+.roll{display:flex;gap:2px;margin:10px 0 16px}
+.roll i{flex:1 1 0;aspect-ratio:2/3;box-shadow:inset 0 0 0 1px var(--line)}
+.roll i.im{background:var(--line)}
+.roll i.mate{box-shadow:inset 0 0 0 1px var(--yellow)}
+.roll i.now{background:var(--red);box-shadow:none}
+.nav{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.nx{display:block;min-height:76px;padding:10px 12px;text-decoration:none;background:var(--frame);box-shadow:inset 0 0 0 1px var(--line)}
+.nx.end{background:none;box-shadow:none}
+.nx.next{text-align:right}
+.nn{display:block;color:var(--yellow)}
+.nl{display:block;margin-top:4px;text-transform:none;letter-spacing:.02em;font-size:15px;line-height:19px;font-stretch:84%;font-weight:520;color:var(--text)}
+.back{display:inline-block;padding:14px 0;text-decoration:none}
+
+/* the sheet: index and project. Phone: one hanging strip */
+.sheet-head{padding:22px calc(var(--rail) + var(--pad)) 20px}
+.sheet-head h1{margin:0}
+.sheet-head .slate{margin-top:8px}
+.sheet{position:relative;margin:0;padding:0 var(--rail);background:var(--base);background-image:url(rail-l.svg),url(rail-r.svg);background-repeat:repeat-y,repeat-y;background-position:0 0,100% 0;background-size:var(--rail) var(--pitch),var(--rail) var(--pitch)}
+.sheet::before,.sheet::after{content:none}
+.tf{position:relative;display:block;padding:14px 16px 16px;text-decoration:none;background:var(--frame);margin-bottom:6px;color:var(--text)}
+.tf::before{content:attr(data-n);position:absolute;left:calc(-1*var(--rail));top:6px;width:var(--rail);padding-left:calc(var(--rail)*.58);writing-mode:vertical-rl;transform:rotate(180deg);font-size:10px;line-height:10px;color:var(--yellow)}
+.tf-h{display:block;font-weight:640;font-stretch:84%;font-size:24px;line-height:28px;color:var(--white)}
+.tf-d{display:block;margin-top:4px;font-stretch:72%;font-weight:560;letter-spacing:.09em;text-transform:uppercase;font-size:12px;line-height:16px;color:var(--dim)}
+.tf-o{display:block;margin-top:10px;font-size:16px;line-height:23px;max-height:92px;overflow:hidden;-webkit-mask-image:linear-gradient(#000 45%,transparent);mask-image:linear-gradient(#000 45%,transparent)}
+.tf-q{display:block;font-weight:600;font-stretch:84%;font-size:22px;line-height:28px;color:var(--white)}
+.stamp{position:absolute;right:12px;bottom:10px;line-height:0}
+.stamp svg{height:11px;width:auto;fill:var(--stamp);filter:drop-shadow(0 0 2.5px rgba(255,120,30,.7))}
+.sheet .fr{margin:0 0 6px}
+.sheet .fr::after{content:none}
+.sheet .ph{cursor:pointer}
+.more{--row:calc((100vw - 2*var(--rail))/3.7);display:flex;flex-wrap:wrap;gap:4px;margin:0 0 6px}
+.more .fr{flex:var(--r) 1 calc(var(--r)*var(--row));max-width:calc(var(--r)*240px);margin:0}
+.more .fr::before{content:none}
+.entry{padding-top:6px}
+.run{padding-top:6px;margin-bottom:0}
+.sheet.big .tf{margin-bottom:6px}
+.sheet-foot{padding:20px calc(var(--rail) + var(--pad))}
+.proj h1{margin:18px 0 0;font-weight:680;font-stretch:80%;font-size:54px;line-height:56px;letter-spacing:-.01em;color:var(--white)}
+.proj .line{margin:6px 0 0;font-size:21px;line-height:28px;color:var(--text)}
+.tf:hover .tf-h{color:var(--yellow)}
+
+.view{border:0;padding:0;background:var(--paper);max-width:100vw;max-height:100vh;width:100vw;height:100vh;cursor:zoom-out}
+.view::backdrop{background:var(--paper)}
+.view::after{content:attr(data-n);position:fixed;left:14px;bottom:12px;color:var(--yellow);font-stretch:72%;font-weight:560;letter-spacing:.09em;font-size:12px}
+.view img{display:block;width:100%;height:100%;object-fit:contain}
+
+/* ---- wide screen: a second strip hangs beside the text, and the gutter between them is where the pencil works ---- */
+@media (min-width:861px){
+  :root{--lh:32px;--rail:31px;--pitch:24px;--pad:38px;--col:640px;--film-x:calc((100vw - var(--col) - 2*var(--rail) - 2*var(--pad))/2)}
+  body{font-size:20px}
+  .film{display:flow-root}
+  .leader{padding:30px 0 calc(var(--lh)*2)}
+  .lede.l1{font-size:56px;line-height:calc(var(--lh)*1.875)}
+  .lede.l2{font-size:44px;line-height:calc(var(--lh)*1.5)}
+  .lede.l3{font-size:29px;line-height:calc(var(--lh)*1.25)}
+  .n{font-size:11px;line-height:11px}
+  .fr::before,.tf::before{font-size:12px;line-height:12px}
+  .copy pre{font-size:15px;line-height:24px}
+  .tf-t{font-size:36px;line-height:42px}
+  .tx.small .tf-t,.tx.small .tf-x:last-child .tf-t{font-size:26px;line-height:32px}
+
+  /* sheet: strips on black with film rails painted once, on the sheet */
+  .sheet{--gauge:200px;--rail-s:30px;display:flex;flex-wrap:wrap;gap:0;padding:0;background:url(sheet-s.svg) repeat 0 0/23px 276px}
+  .sheet.big{--gauge:300px;background:url(sheet-b.svg) repeat 0 0/23px 376px}
+  .sheet-head{padding:30px clamp(24px,4vw,56px) 24px}
+  .sheet-foot{padding:30px clamp(24px,4vw,56px)}
+  .entry,.run{display:contents}
+  .pair{display:flex;gap:6px;flex:1 1 auto;height:calc(var(--gauge) + 76px);padding:30px 3px 46px}
+  .run>.tf,.run>.fr,.entry>.tf{margin:30px 3px 46px;height:var(--gauge)}
+  .more{display:contents}
+  .sheet .fr,.more .fr{flex:0 0 auto;height:var(--gauge);width:calc(var(--gauge)*var(--r));max-width:none;margin:30px 3px 46px}
+  .sheet .ph img{height:100%}
+  .pair .fr{margin:0}
+  .more .fr::before{content:attr(data-n)}
+  .sheet .tf{flex:1 1 300px;min-width:280px;max-width:520px;padding:12px 14px;margin-bottom:0}
+  .entry>.tf,.run>.tf{margin:30px 3px 46px}
+  .sheet .fr::before,.sheet .tf::before{left:0;top:-21px;width:auto;padding:0;writing-mode:horizontal-tb;transform:none;white-space:nowrap}
+  .tf-h{font-size:21px;line-height:24px}
+  .tf-o{font-size:15px;line-height:21px;max-height:105px}
+  .sheet.big .tf-o{max-height:190px}
+  .proj h1{font-size:96px;line-height:96px}
+  .proj .line{font-size:26px;line-height:34px}
+  .tail{padding-top:calc(var(--lh)*2)}
+}
+@media (min-width:1024px){
+  .two{--gut:clamp(36px,4vw,60px);--col:clamp(380px,41.5vw,600px);--t:calc(var(--col) + 2*var(--rail) + 2*var(--pad));--s:min(640px,100vw - 64px - var(--t) - var(--gut));--f:calc(var(--s) - 2*var(--rail));--gauge:min(460px,var(--f));--film-x:calc((100vw - var(--t) - var(--gut) - var(--s))/2)}
+  .two::before{content:"";position:absolute;top:0;bottom:0;left:calc(var(--film-x) + var(--t) + var(--gut));width:var(--s);background:url(rail-l.svg) 0 0/var(--rail) var(--pitch) repeat-y,url(rail-r.svg) 100% 0/var(--rail) var(--pitch) repeat-y,linear-gradient(90deg,var(--rebate) var(--rail),transparent 0 calc(100% - var(--rail)),var(--rebate) 0),repeating-linear-gradient(#000 0 calc(var(--f)*.6667),#191714 0 calc(var(--f)*.6667 + 6px))}
+  /* A frame hangs from its sentence, which now runs on unbroken. Frames never overlap: each clears the last. */
+  .two .strip{float:right;clear:right;width:var(--f);background:#000;margin:0 calc(-1*(var(--pad) + 2*var(--rail) + var(--gut) + var(--f))) calc(var(--lh)*.75) 0}
+  .two .cont{display:inline}
+  .two .fr{width:min(100%,var(--gauge)*var(--r))}
+  .two .strip:has(.fr+.fr){display:flex;gap:4px}
+  .two .strip:has(.fr+.fr) .fr{flex:var(--r) 1 0;width:auto}
+  .two .fr+.fr::before{left:100%;padding-left:calc(var(--rail)*.42)}
+  /* one frame may stay in the text strip and split its sentence */
+  .two .strip.in{float:none;clear:none;width:auto;margin:calc(var(--lh)*.5) calc(-1*var(--pad))}
+  .two .strip.in .fr{width:auto}
+  .two .strip.in~.cont{display:block}
+  /* words exposed into frames are part of the story, so the next paragraph waits for the frame.
+     site.js raises each frame beside the paragraph before it, which puts its words at reading height. */
+  .two .strip.tx{margin-top:0;margin-bottom:var(--lh)}
+  .two .strip.tx.in{margin:var(--lh) calc(-1*var(--pad))}
+  .two .strip.tx+p{clear:right}
+  .two .tf-x{aspect-ratio:2/1}
+  .two .copy .up{float:right;width:var(--f);margin:0 calc(-1*(var(--pad) + 2*var(--rail) + var(--gut) + var(--f))) calc(var(--lh)*.75) 0;padding:84px 18px 16px;background:var(--frame);box-shadow:inset 0 0 0 1px var(--line);font-size:36px;line-height:42px;font-weight:640}
+  .two .copy .up .n{left:calc(-1*var(--rail));top:8px}
+  .two .tx.small{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+  .two .tx.small .tf-x{margin:0!important;min-height:112px;padding-top:30px;align-items:flex-end}
+  .two .tx.small .tf-x:last-child:nth-child(odd){grid-column:1/-1}
+  .two .tx.small .tf-x .n{left:12px;top:8px;width:auto;min-height:0;margin:0;padding:0;writing-mode:horizontal-tb;transform:none;color:var(--yellow)}
+  .two .fr.tall::after{position:absolute;left:100%;bottom:0;width:calc(var(--f) - var(--gauge)*var(--r));padding:0 14px}
+}
+@media (prefers-reduced-motion:no-preference){.ph img{transition:filter .18s}}
+.ph:hover img{filter:brightness(1.1)}

@@ -1,0 +1,14 @@
+{
+  "name": "blog",
+  "private": true,
+  "type": "module",
+  "description": "Guru's blog: LinkedIn posts, restyled. Static site for GitHub Pages.",
+  "scripts": {
+    "build": "node build.mjs",
+    "check": "node tools/check.mjs dist && node tools/check.mjs dist/rebus --within dist",
+    "shots": "node tools/shots.mjs designs/cut-and-paste && node tools/shots.mjs designs/rebus"
+  },
+  "devDependencies": {
+    "playwright": "1.64.1"
+  }
+}

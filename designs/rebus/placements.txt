@@ -1,0 +1,53 @@
+# Rebus placements. Read by build.mjs. See DESIGN.md.
+#
+#   @ post-id                   start a post
+#   the room[[2]] had           a fragment of the post, verbatim, with a marker in it
+#   [[2]]                         image 2 of the post, set as a word right after "room"
+#   [[=]]                         a measure: a black bar drawn to scale from the number just before it
+#   / 4 6 8                     leave a blank line before these paragraphs
+#   @@ project-id               start a project page
+#   picture post-id 1           the image that stands between its title and its line
+#   excerpt 60                  how many words of each post it runs before trailing off
+#
+# A fragment that is not verbatim stops the build. Images with no marker are placed by the rule in build.mjs.
+
+@ commons-agent-logs
+from Sunday's hackathon[[3]].
+two coding agents cost[[5]].
+The build itself[[1]] took
+so the room[[2]] had four
+about 300 million tokens[[4]] went
+roughly $182[[=]].
+came to $2.79[[=]] for the day
+costs about $8[[=]] on AWS
+took about 3 minutes[[=]] under load
+now takes 44 seconds[[=]] with six
+/ 4 5 6 7 8 9 10 11 12 13 14 15
+
+@ apple-health-import
+The first full import took 26 minutes[[=]].
+down to 21 minutes[[=]].
+of my own data took 21 minutes[[=]],
+from 26 minutes[[=]] to 9.77 seconds[[=]] on the same
+/ 4 6 8 14 16 20 22 24
+
+@ commons-claude-switch
+Claude Code SG at Grab[[1]].
+my pets run on Claude[[4]],
+it walks onto the projector[[2]].
+The Codex setup[[3]] I was running
+
+@ commons-peoples-choice
+Codex writes it[[1]], tests it
+
+@ commons-best-use-of-tech
+Best Use of Tech[[3]] at the
+At 10:01 the organisers[[2]] went
+I built The Commons[[1]], a room
+
+@ friday-hacks-301
+Friday Hacks #301[[1]] )
+
+@@ the-commons
+picture commons-best-use-of-tech 1
+excerpt 62

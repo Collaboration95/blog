@@ -1,0 +1,2592 @@
+{
+ "site": "Guru's blog",
+ "author": "GuruPrasath Gopal",
+ "projects": [
+  {
+   "id": "the-commons",
+   "title": "The Commons",
+   "line": "a room that builds itself",
+   "posts": [
+    "commons-claude-switch",
+    "commons-agent-logs",
+    "commons-peoples-choice",
+    "commons-best-use-of-tech"
+   ],
+   "first": "2026-10-12",
+   "last": "2026-10-14"
+  },
+  {
+   "id": "researchagent",
+   "title": "ResearchAgent",
+   "line": "a research agent with a wallet.",
+   "posts": [
+    "researchagent-demo",
+    "hermes-agent-night",
+    "researchagent-lineup-repost",
+    "researchagent-team-repost",
+    "researchagent-invitation",
+    "singhacks-finalist",
+    "singhacks-day-1"
+   ],
+   "first": "2026-09-05",
+   "last": "2026-10-11"
+  },
+  {
+   "id": "screenshot-declutterer",
+   "title": "Screenshot Declutterer",
+   "line": "My desktop used to be a graveyard of screenshots.",
+   "posts": [
+    "screenshot-declutterer-3",
+    "screenshot-declutterer-2",
+    "screenshot-declutterer-1"
+   ],
+   "first": "2026-04-02",
+   "last": "2026-08-18"
+  },
+  {
+   "id": "aws-certs",
+   "title": "AWS certifications",
+   "line": "",
+   "posts": [
+    "aws-sap",
+    "aws-dva",
+    "aws-saa",
+    "aws-ai-practitioner",
+    "aws-cloud-practitioner"
+   ],
+   "first": "2026-03-07",
+   "last": "2026-06-08"
+  },
+  {
+   "id": "claude-code-notes",
+   "title": "Claude Code notes",
+   "line": "",
+   "posts": [
+    "pr-flow",
+    "agent-context-layer",
+    "cursor-to-claude-code",
+    "agent-done-notifier"
+   ],
+   "first": "2026-03-04",
+   "last": "2026-04-10"
+  }
+ ],
+ "posts": [
+  {
+   "id": "commons-claude-switch",
+   "date": "2026-10-14",
+   "dateApprox": false,
+   "project": "the-commons",
+   "kind": "project",
+   "label": "The Commons, moving to Claude",
+   "opening": "Yesterday, I went to Claude Code SG at Grab. A day later my pets run on Claude, and they show up three times faster.",
+   "blocks": [
+    {
+     "kind": "p",
+     "html": "Yesterday,  I went to Claude Code SG at Grab. A day later my pets run on Claude, and they show up three times faster."
+    },
+    {
+     "kind": "p",
+     "html": "I built Commons to increase async group interactions. You wish for a creature, and it walks onto the projector."
+    },
+    {
+     "kind": "p",
+     "html": "Every wish goes through three AI steps. Screen it, write its code, draw it. Until this week all three ran on my ChatGPT subscription, so if my plan ran out, the public vote would go down with it."
+    },
+    {
+     "kind": "p",
+     "html": "( had GPT-6 astra empty out my credits yesterday night after working for 6hrs on a \"research\" job)"
+    },
+    {
+     "kind": "p",
+     "html": "Meanwhile $100 a month of Anthropic API credit sat unused."
+    },
+    {
+     "kind": "p",
+     "html": "So I wrote the test before picking a model. 43 labelled wishes, 29 that must get through and 14 that must be declined, from real people and brand logos to prompt injection. Every check is deterministic, so no AI grades AI. Spend was capped at $5."
+    },
+    {
+     "kind": "p",
+     "html": "Claude Haiku 5.5 got all 43 verdicts right, and all 29 of its creatures ran in the simulator. It writes a creature's code in 4.9 seconds. The Codex setup I was running took 17 to 19."
+    },
+    {
+     "kind": "p",
+     "html": "Four pets at once went live in 13 to 16 seconds. If the API fails, that pet falls back to Codex."
+    },
+    {
+     "kind": "p",
+     "html": "The other slowdown was my own code. Six concurrent Claude calls took six times as long as one and It was the SDK's default fetch queueing them."
+    },
+    {
+     "kind": "p",
+     "html": "A plain HTTP/1.1 agent took 25 seconds down to 4.4. Twice this week the slow part was the plumbing. The models were fine."
+    },
+    {
+     "kind": "p",
+     "html": "The Claude side of the experiment cost me $2.62. The image API is on my OpenAI bill, and costs me 30cents ( including usage + evals)"
+    },
+    {
+     "kind": "p",
+     "html": "Thanks to Rishikesh Radhakrishnan for the talk and Fiachra (Fiki) MacFadden 马骏 and the presenters for their demos."
+    }
+   ],
+   "images": [
+    {
+     "src": "content/posts/commons-claude-switch/01.webp",
+     "w": 1600,
+     "h": 1200,
+     "alt": "Speakers on stage in front of a \"What's new for Builders\" slide."
+    },
+    {
+     "src": "content/posts/commons-claude-switch/02.webp",
+     "w": 1600,
+     "h": 1200,
+     "alt": "Chengyu Calendar demo on stage, a daily Chinese idiom widget."
+    },
+    {
+     "src": "content/posts/commons-claude-switch/03.webp",
+     "w": 1600,
+     "h": 1200,
+     "alt": "Handmade demo slide: \"Design in code. No round trip.\""
+    },
+    {
+     "src": "content/posts/commons-claude-switch/04.webp",
+     "w": 1600,
+     "h": 1100,
+     "alt": "Page hero: \"I switched to Claude. A pet goes live in 15 seconds. It took 47.\""
+    }
+   ],
+   "words": 306,
+   "links": [],
+   "linkedin": "https://www.linkedin.com/feed/update/urn:li:activity:7515981913485127680/"
+  },
+  {
+   "id": "commons-agent-logs",
+   "date": "2026-10-13",
+   "dateApprox": false,
+   "project": "the-commons",
+   "kind": "project",
+   "label": "The Commons, the day in data",
+   "opening": "tldr , i analysed data from my hackathon project , its really cool ( trust me ) .",
+   "blocks": [
+    {
+     "kind": "p",
+     "html": "tldr , i analysed data from my hackathon project , its really cool ( trust me ) ."
+    },
+    {
+     "kind": "p",
+     "html": "try -&gt; <a href=\"https://commons.tailca286e.ts.net\">commons.tailca286e.ts.net</a>"
+    },
+    {
+     "kind": "p",
+     "html": "vote for it -&gt; <a href=\"https://thisisshaw-04.github.io/Common-Ground-Makeathon/?project=42d8f39b-0c16-4fd5-8493-c37afeb808fc#choice\">thisisshaw-04.github.io/Common-Ground-Makeat…</a>"
+    },
+    {
+     "kind": "p",
+     "html": "I kept every prompt, token and timestamp from Sunday's hackathon. Here is what 18 hours with two coding agents cost."
+    },
+    {
+     "kind": "p",
+     "html": "The night before @ 2am ish , i launched a few agents to prototype some ideas that popped in my head throughout the week."
+    },
+    {
+     "kind": "p",
+     "html": "All ten were dropped within the first hour of the hackathon, once the organisers explained more. Picking the new idea took 50 minutes. The build itself took 2 hours 47 minutes."
+    },
+    {
+     "kind": "p",
+     "html": "Plenty broke. Four agent-session restarts took down the server and the public tunnel, so the room had four different URLs in one afternoon. A background-job time limit killed the tunnel at 17:11, in the middle of the demo window."
+    },
+    {
+     "kind": "p",
+     "html": "Across the whole day, about 300 million tokens went through my agents, and 96% of them were cache re-reads. Only about 2 million were actually generated. At API prices that is roughly $182. On subscriptions I paid nothing extra."
+    },
+    {
+     "kind": "p",
+     "html": "The one real bill was the OpenAI API key that redrew the venue photo. It came to $2.79 for the day, and it still ran dry a few minutes before the demo. I had to rush a top-up so the room could redraw itself on stage."
+    },
+    {
+     "kind": "p",
+     "html": "The biggest bill now is the server. Keeping the room alive for three days of public voting costs about $8 on AWS."
+    },
+    {
+     "kind": "p",
+     "html": "Once the room was public, a pet took about 3 minutes under load. The logs showed the model drawing each sprite sheet three to six times because saving kept failing. It now draws once, and coding starts while the wish is still being screened."
+    },
+    {
+     "kind": "p",
+     "html": "A pet now takes 44 seconds with six wishes in flight, about 4x faster."
+    },
+    {
+     "kind": "p",
+     "html": "Every number here comes from my own agent logs, aggregated with YALD, the usage dashboard I built."
+    },
+    {
+     "kind": "p",
+     "html": "i put them all in a writeup ( just click through the website , its very cool ( if i say so myself )."
+    },
+    {
+     "kind": "p",
+     "html": "and the CTA once again , Vote for it -&gt; <a href=\"https://thisisshaw-04.github.io/Common-Ground-Makeathon/?project=42d8f39b-0c16-4fd5-8493-c37afeb808fc#choice\">thisisshaw-04.github.io/Common-Ground-Makeat…</a>"
+    }
+   ],
+   "images": [
+    {
+     "src": "content/posts/commons-agent-logs/01.webp",
+     "w": 1600,
+     "h": 1200,
+     "alt": "The event schedule on a big screen: \"Now: Build session 02\" with a live countdown."
+    },
+    {
+     "src": "content/posts/commons-agent-logs/02.webp",
+     "w": 1600,
+     "h": 1200,
+     "alt": "Wide shot of the venue, rows of people building at laptops."
+    },
+    {
+     "src": "content/posts/commons-agent-logs/03.webp",
+     "w": 1600,
+     "h": 1199,
+     "alt": "Selfie of builders around one table, laptops open."
+    },
+    {
+     "src": "content/posts/commons-agent-logs/04.webp",
+     "w": 1600,
+     "h": 874,
+     "alt": "Bar chart of tokens per 15 minutes from 23:41 to 17:45, Claude Code in orange and Codex in teal."
+    },
+    {
+     "src": "content/posts/commons-agent-logs/05.webp",
+     "w": 1600,
+     "h": 1225,
+     "alt": "The cost page header: \"What it cost\", 300M tokens, a $2.79 API bill."
+    }
+   ],
+   "words": 357,
+   "links": [
+    "https://commons.tailca286e.ts.net",
+    "https://thisisshaw-04.github.io/Common-Ground-Makeathon/?project=42d8f39b-0c16-4fd5-8493-c37afeb808fc#choice"
+   ],
+   "linkedin": "https://www.linkedin.com/feed/update/urn:li:activity:7515625184553537536/"
+  },
+  {
+   "id": "commons-peoples-choice",
+   "date": "2026-10-12",
+   "dateApprox": false,
+   "project": "the-commons",
+   "kind": "project",
+   "label": "The Commons, People's Choice",
+   "opening": "VOTE FOR ME. My pets are running for Peoples Choice. ( poke your pet commons.tailca286e.ts.net )",
+   "blocks": [
+    {
+     "kind": "p",
+     "html": "VOTE FOR ME. My pets are running for Peoples Choice. ( poke your pet  <a href=\"https://commons.tailca286e.ts.net\">commons.tailca286e.ts.net</a> )"
+    },
+    {
+     "kind": "p",
+     "html": "On Sunday I built The Commons at the Common Ground makeathon, a room that builds itself."
+    },
+    {
+     "kind": "p",
+     "html": "You wish for a creature, Codex writes it, tests it and draws it, and about a minute later it walks into a shared room with your name on it. Public voting ends soon."
+    },
+    {
+     "kind": "p",
+     "html": "So the room has to stay alive for three days."
+    },
+    {
+     "kind": "p",
+     "html": "On the day it ran on my laptop behind a Cloudflare quick tunnel. Close the lid and the link dies. Restart it and you get a new URL."
+    },
+    {
+     "kind": "p",
+     "html": "The voting form locks its link at midnight. So I moved it to AWS. A 4 vCPU Lightsail box in Singapore costs about $8 for the three days, paid from credits. Tailscale Funnel gives it a permanent HTTPS address for free."
+    },
+    {
+     "kind": "p",
+     "html": "Codex signs in on the server with my ChatGPT account, so every pet is still built on codex. Moving from a Mac to Ubuntu broke three things. Codexs sandbox needs unprivileged user namespaces, which Ubuntu 24.04 blocks by default."
+    },
+    {
+     "kind": "p",
+     "html": "The server called sips, an image tool that only exists on macOS. And the model kept running python on a box that only had python3, so it drew sprite sheets and then couldnt save them. I also priced the runtime from my Codex logs. At API rates a wished pet costs about 10 to 13 cents."
+    },
+    {
+     "kind": "p",
+     "html": "Move every step to the small model and it drops to 2 to 6 cents, and most of whats left is the sprite sheet image."
+    },
+    {
+     "kind": "p",
+     "html": "A full room of ten pets comes to about a dollar. The biggest bill is the server."
+    },
+    {
+     "kind": "p",
+     "html": "Try it first. Wish a creature into the room at <a href=\"https://commons.tailca286e.ts.net\">commons.tailca286e.ts.net</a>. It works straight from your browser, no QR code needed."
+    },
+    {
+     "kind": "p",
+     "html": "Then vote: <a href=\"https://thisisshaw-04.github.io/Common-Ground-Makeathon/?project=42d8f39b-0c16-4fd5-8493-c37afeb808fc#choice\">thisisshaw-04.github.io/Common-Ground-Makeat…</a>"
+    },
+    {
+     "kind": "p",
+     "html": "No gmail signup needed."
+    },
+    {
+     "kind": "p",
+     "html": "1. Enter email"
+    },
+    {
+     "kind": "p",
+     "html": "2. paste in OTP"
+    },
+    {
+     "kind": "p",
+     "html": "3. vote for  “COMMONS” ."
+    },
+    {
+     "kind": "p",
+     "html": "Voting closes soon."
+    }
+   ],
+   "images": [
+    {
+     "src": "content/posts/commons-peoples-choice/01.webp",
+     "w": 1600,
+     "h": 900,
+     "alt": "Slide: behind the scenes, the Codex loop from phone wish to live sprite."
+    }
+   ],
+   "words": 324,
+   "links": [
+    "https://commons.tailca286e.ts.net",
+    "https://thisisshaw-04.github.io/Common-Ground-Makeathon/?project=42d8f39b-0c16-4fd5-8493-c37afeb808fc#choice"
+   ],
+   "linkedin": null
+  },
+  {
+   "id": "commons-best-use-of-tech",
+   "date": "2026-10-12",
+   "dateApprox": false,
+   "project": "the-commons",
+   "kind": "project",
+   "label": "The Commons, Best Use of Tech",
+   "opening": "Yesterday I won Best Use of Tech at the Common Grounds make-athon, and won a 1000$ in codex credits.",
+   "blocks": [
+    {
+     "kind": "p",
+     "html": "Yesterday I won Best Use of Tech at the Common Grounds make-athon, and won a 1000$ in codex credits."
+    },
+    {
+     "kind": "p",
+     "html": "It just goes to show you cant prepare for everything. I had stayed up until 2:30am the night before, and by morning agents had prototyped ten ideas for me."
+    },
+    {
+     "kind": "p",
+     "html": "At 10:01 the organisers went through the event slides. At 10.04 , I had dropped every idea that i prepped for."
+    },
+    {
+     "kind": "p",
+     "html": "I built The Commons, a room that builds itself. Everyone in the room scans a QR code and wishes for a creature. Codex checks the wish, writes it as a small program, tests it, fixes its own bugs and draws it."
+    },
+    {
+     "kind": "p",
+     "html": "About a minute later it walks into a cartoon of the room you're sitting in, with your name on it.I ran the day like a product team of one."
+    },
+    {
+     "kind": "p",
+     "html": "A spec by late morning, two builds in parallel, and a demo video cut minutes before submission."
+    },
+    {
+     "kind": "p",
+     "html": "I entered as a solo dev , but it doesnt mean i could have done it alone."
+    },
+    {
+     "kind": "p",
+     "html": "Thanks to Pizza Yap for sharing me his invite , thanks  Jun Bin Tan , Haziq Halifi Ab Rahman , Lee Yung Yau (Timothy) and Seoyoung Park for the pleasant company."
+    },
+    {
+     "kind": "p",
+     "html": "Kudos to Carissa Rosita Jayanto, Tanisha Shaw and Kian Seng Ng for running Common Ground, SQ Collective and Singapore Global Network (SGN) for the space, and OpenAI, Figma, Miro and Mobbin for backing the builders."
+    },
+    {
+     "kind": "p",
+     "html": "More to come."
+    },
+    {
+     "kind": "p",
+     "html": "Next Ill break down how The Commons works under the hood, and what the day looked like in data."
+    }
+   ],
+   "images": [
+    {
+     "src": "content/posts/commons-best-use-of-tech/01.webp",
+     "w": 1600,
+     "h": 900,
+     "alt": "Title slide of the pitch deck: \"The Commons, a room that builds itself\", over a pixel-art void deck at dusk."
+    },
+    {
+     "src": "content/posts/commons-best-use-of-tech/02.webp",
+     "w": 770,
+     "h": 1307,
+     "alt": "Guru presenting at a lectern; behind them a large screen shows The Commons live."
+    },
+    {
+     "src": "content/posts/commons-best-use-of-tech/03.webp",
+     "w": 1280,
+     "h": 1600,
+     "alt": "Winners and organisers in front of a \"Common Ground\" screen; Guru holds the award plaque."
+    }
+   ],
+   "words": 261,
+   "links": [],
+   "linkedin": null
+  },
+  {
+   "id": "researchagent-demo",
+   "date": "2026-10-11",
+   "dateApprox": true,
+   "project": "researchagent",
+   "kind": "project",
+   "label": "ResearchAgent, AI Tinkerers demo",
+   "opening": "On Saturday, I took ResearchAgent to the main stage at AI Tinkerers Singapore.",
+   "blocks": [
+    {
+     "kind": "p",
+     "html": "On Saturday, I took ResearchAgent to the main stage at AI Tinkerers Singapore."
+    },
+    {
+     "kind": "p",
+     "html": "ResearchAgent is a research agent with a wallet. It answers from free sources first. When the missing piece sits behind a paywall, it buys that one article straight from the writer, inside a budget you set, then checks every promise the writer made."
+    },
+    {
+     "kind": "p",
+     "html": "The live demo ran on Google Cloud Run and placed in the top three Cloud Run demos of the night, so it came home with US$100 in credits."
+    },
+    {
+     "kind": "p",
+     "html": "Huge thanks to Joe Heitzeberg , Son Le , Jake Laes for running a great event and Lisa Shen from Google Cloud Run too , her Cityscape Agent demo (an ADK agent on Cloud Run, a Maps-grounded MCP server and Nano Banana drawing the city) was simple but demonstrated Google Cloud Run's utility."
+    },
+    {
+     "kind": "p",
+     "html": "I like analysing things, so I turned the build itself into a page of charts: 39 days, 248 commits, 75 pull requests, 422 prompts to two coding agents and 2.3 billion tokens, 97% of them context the agents re-read."
+    },
+    {
+     "kind": "p",
+     "html": "My favourite chart is a single night: 23 pull requests between 1 am and 3:19 am."
+    },
+    {
+     "kind": "p",
+     "html": "Heres a writeup on how the last 40 days looked : <a href=\"https://collaboration95.github.io/theFastandtheFungible/evolution/\">collaboration95.github.io/theFastandtheFungi…</a>"
+    }
+   ],
+   "images": [],
+   "words": 204,
+   "links": [
+    "https://collaboration95.github.io/theFastandtheFungible/evolution/"
+   ],
+   "linkedin": null
+  },
+  {
+   "id": "sq-collective-jev",
+   "date": "2026-10-09",
+   "dateApprox": true,
+   "project": null,
+   "kind": "event",
+   "label": "SQ Collective, Jev talk",
+   "opening": "Spent Friday co-working at SQ Collective and caught Gang Rui 🚢's talk on Jev.",
+   "blocks": [
+    {
+     "kind": "p",
+     "html": "Spent Friday co-working at SQ Collective and caught Gang Rui 🚢's talk on Jev."
+    },
+    {
+     "kind": "p",
+     "html": "The format was pretty simple. Pause work, short talk, back to work."
+    },
+    {
+     "kind": "p",
+     "html": "Ended up chatting with Gang Rui and Pizza Yap long after the session wrapped."
+    },
+    {
+     "kind": "p",
+     "html": "This session gave me some ideas to explore on Jev's ( and other decision models') use cases in my projects ( more on that later today  🤔 ),"
+    },
+    {
+     "kind": "p",
+     "html": "Thanks, Gang Rui, for being so generous with your time, and to SQ Collective &amp; Michael Huang for hosting."
+    }
+   ],
+   "images": [
+    {
+     "src": "content/posts/sq-collective-jev/01.webp",
+     "w": 1600,
+     "h": 1200,
+     "alt": "Selfie of Guru and Gang Rui at SQ Collective."
+    },
+    {
+     "src": "content/posts/sq-collective-jev/02.webp",
+     "w": 1600,
+     "h": 1200,
+     "alt": "Gang Rui presenting Jev in a dark room, a product UI on the projector."
+    },
+    {
+     "src": "content/posts/sq-collective-jev/03.webp",
+     "w": 1600,
+     "h": 1200,
+     "alt": "Gang Rui on stage with the slide \"How do you define a useful task for Jev?\""
+    }
+   ],
+   "words": 87,
+   "links": [],
+   "linkedin": null
+  },
+  {
+   "id": "lorong-speech-embeddings",
+   "date": "2026-10-08",
+   "dateApprox": true,
+   "project": null,
+   "kind": "event",
+   "label": "Lorong AI, speech and embeddings",
+   "opening": "\"Eh, you makan already a not ah?\"",
+   "blocks": [
+    {
+     "kind": "p",
+     "html": "\"Eh, you makan already a not ah?\""
+    },
+    {
+     "kind": "p",
+     "html": "Spent Wednesday afternoon at Lorong AI's AI Wednesdays learning how people are getting speech and embedding models actually to understand sentences like that, and the languages around Southeast Asia."
+    },
+    {
+     "kind": "p",
+     "html": "En Lih Lye explained  how HTX adapted an existing spoken language model into HT-Moonstone, a 5B model that handles Singapore's four official languages and how the disparity in training data for Tamil and Malay was handled."
+    },
+    {
+     "kind": "p",
+     "html": "Vincent Nguyen, PhD shared his team's experience of adapting SEALion, and how sometimes adopting counterintuitive methods resulted in better outcomes, like instead of starting from the latest SEA-LION checkpoint from AISingapore, they went back to an earlier one."
+    },
+    {
+     "kind": "p",
+     "html": "Surprisingly, it performed better. From there, they tuned it to their own use case with upsampled data, harder negatives and a second look at which metrics actually mattered."
+    },
+    {
+     "kind": "p",
+     "html": "Their  model now beats both EmbeddingGemma and SEA-LION-Embedding on all five of their internal tasks."
+    },
+    {
+     "kind": "p",
+     "html": "The newest checkpoint isn't automatically the best starting point especially when your language is a small slice of what the model saw."
+    },
+    {
+     "kind": "p",
+     "html": "Raymond and Peerat Limkonchotiwat from AI Singapore also walked through the SEA-LION embedding work, including sequence packing to stop wasting compute on padding."
+    },
+    {
+     "kind": "p",
+     "html": "Thanks En Lih Lye for letting me pick your brain afterwards and answering all my questions."
+    },
+    {
+     "kind": "p",
+     "html": "And thanks to Lorong AI and As'safiy As'adi for hosting another great session."
+    }
+   ],
+   "images": [
+    {
+     "src": "content/posts/lorong-speech-embeddings/01.webp",
+     "w": 1600,
+     "h": 1200,
+     "alt": "Selfie of Guru and En Lih Lye after the session."
+    },
+    {
+     "src": "content/posts/lorong-speech-embeddings/02.webp",
+     "w": 1600,
+     "h": 1200,
+     "alt": "Slide: \"Singaporean speech is hard for generic models. Eh, you makan already a not ah?\""
+    },
+    {
+     "src": "content/posts/lorong-speech-embeddings/03.webp",
+     "w": 1600,
+     "h": 1200,
+     "alt": "Slide: two problems with training many tasks at once."
+    },
+    {
+     "src": "content/posts/lorong-speech-embeddings/04.webp",
+     "w": 1600,
+     "h": 1200,
+     "alt": "Speaker introduction slide for Nguyen Vincent Thong on the stage screen."
+    },
+    {
+     "src": "content/posts/lorong-speech-embeddings/05.webp",
+     "w": 1600,
+     "h": 1200,
+     "alt": "Results table slide: \"Where we are today and what we did\"."
+    },
+    {
+     "src": "content/posts/lorong-speech-embeddings/06.webp",
+     "w": 1600,
+     "h": 1200,
+     "alt": "Speaker in front of a \"Sequence Packing\" slide."
+    }
+   ],
+   "words": 227,
+   "links": [],
+   "linkedin": null
+  },
+  {
+   "id": "hermes-agent-night",
+   "date": "2026-10-07",
+   "dateApprox": true,
+   "project": "researchagent",
+   "kind": "event",
+   "label": "Hermes AI Agent Night at AWS",
+   "opening": "Hermes AI Agent Night at AWS was a blast!",
+   "blocks": [
+    {
+     "kind": "p",
+     "html": "Hermes AI Agent Night at AWS was a blast!"
+    },
+    {
+     "kind": "p",
+     "html": "Jiamin Wang And I are getting ready to present our Research Agent at AI Tinkerers ( Saturday Demo Meetup with Joe Heitzeberg ),  a project we built during Singhacks 2026."
+    },
+    {
+     "kind": "p",
+     "html": "We went along to learn more about deploying our agent on AWS and where Hermes might fit into what we’re building."
+    },
+    {
+     "kind": "p",
+     "html": "Nathaniel Ng gave us a helpful walkthrough of Amazon Bedrock AgentCore and Ashish Verma demoed 8mem, the memory layer for AI agents. It was useful to see these tools in action and think about how we could apply them to our own project."
+    },
+    {
+     "kind": "p",
+     "html": "There were plenty of other interesting demos throughout the evening, too."
+    },
+    {
+     "kind": "p",
+     "html": "Really enjoyed meeting Shaun-Paul L. and chatting with other people about what they’re building."
+    },
+    {
+     "kind": "p",
+     "html": "Huge Thanks to Lionel Sim  and May Yang and the Amazon Web Services (AWS) team for bringing everyone together."
+    }
+   ],
+   "images": [],
+   "words": 147,
+   "links": [],
+   "linkedin": null
+  },
+  {
+   "id": "researchagent-lineup-repost",
+   "date": "2026-10-06",
+   "dateApprox": true,
+   "project": "researchagent",
+   "kind": "repost",
+   "label": "ResearchAgent, lineup repost",
+   "opening": "Excited to present our project!",
+   "blocks": [
+    {
+     "kind": "p",
+     "html": "Excited to present our project!"
+    }
+   ],
+   "images": [],
+   "words": 5,
+   "links": [],
+   "linkedin": null
+  },
+  {
+   "id": "yald",
+   "date": "2026-10-04",
+   "dateApprox": true,
+   "project": null,
+   "kind": "project",
+   "label": "YALD, an LLM dashboard",
+   "opening": "I wanted to know where my AI coding tokens were going, so I built a dashboard for it.",
+   "blocks": [
+    {
+     "kind": "p",
+     "html": "I wanted to know where my AI coding tokens were going, so I built a dashboard for it."
+    },
+    {
+     "kind": "p",
+     "html": "Claude Code and OpenCodex already log every request on my machine, but their dashboards left much to be desired."
+    },
+    {
+     "kind": "p",
+     "html": "So I made yald (Yet Another LLM Dashboard). It's a read-only dashboard that shows token usage, spend, cache efficiency, latency and quota burn in one place."
+    },
+    {
+     "kind": "p",
+     "html": "Some Insights from the last 7 days:"
+    },
+    {
+     "kind": "p",
+     "html": "My busiest hour was Sunday at 9 pm, and I used up 3.7Btokens ( rookie numbers if you compare to someone like Varick Lim who is constantly building cool stuff )."
+    },
+    {
+     "kind": "p",
+     "html": "It started as a way to satisfy my curiosity; now it's a tab that's always open."
+    },
+    {
+     "kind": "p",
+     "html": "Check your own numbers - <a href=\"https://github.com/Collaboration95/yald\">github.com/Collaboration95/yald</a>"
+    }
+   ],
+   "images": [],
+   "words": 123,
+   "links": [
+    "https://github.com/Collaboration95/yald"
+   ],
+   "linkedin": null
+  },
+  {
+   "id": "researchagent-team-repost",
+   "date": "2026-10-03",
+   "dateApprox": true,
+   "project": "researchagent",
+   "kind": "repost",
+   "label": "ResearchAgent, team repost",
+   "opening": "Really excited to be presenting this project I built with Nguyễn Trần Thành Minh Jiamin Wang and Andrew Nguyen !",
+   "blocks": [
+    {
+     "kind": "p",
+     "html": "Really excited to be presenting this project I built with Nguyễn Trần Thành Minh Jiamin Wang and Andrew Nguyen !"
+    }
+   ],
+   "images": [],
+   "words": 20,
+   "links": [],
+   "linkedin": null
+  },
+  {
+   "id": "researchagent-invitation",
+   "date": "2026-10-02",
+   "dateApprox": true,
+   "project": "researchagent",
+   "kind": "project",
+   "label": "ResearchAgent, demo invitation",
+   "opening": "AI agents can do a lot nowadays, but we still aren't sure about giving them a wallet and spending ability.",
+   "blocks": [
+    {
+     "kind": "p",
+     "html": "AI agents can do a lot nowadays, but we still aren't sure about giving them a wallet and spending ability."
+    },
+    {
+     "kind": "p",
+     "html": "I am building an agent that can pay for paywalled articles when the article is worth the cost."
+    },
+    {
+     "kind": "p",
+     "html": "I’m excited to share that I’ll be demoing ResearchAgent: An Evidence Procurement Guard at the AI Tinkerers Singapore meetup with Joe Heitzeberg on October 10, 2026."
+    },
+    {
+     "kind": "p",
+     "html": "ResearchAgent is a project we’re actively evolving. The demo is not a polished “look what we built” pitch. It is a live walkthrough of the control boundary we’re trying to make useful:"
+    },
+    {
+     "kind": "p",
+     "html": "research mandate → open evidence → evidence-family clustering → named gap → premium-source comparison → human approval → evidence unlock → impact diff"
+    },
+    {
+     "kind": "p",
+     "html": "The agent starts with a question, approved sources, and a budget. It retrieves and clusters the open evidence, identifies what is still missing, and compares a candidate source by expected evidence impact—not price alone. In the canonical flow, it skips a redundant source, blocks one above the per-source ceiling, and only unlocks the approved evidence before showing how the answer changed."
+    },
+    {
+     "kind": "p",
+     "html": "If you work on retrieval, agents, evaluation, or AI systems that take real-world actions, I’d especially value your critique on three questions:"
+    },
+    {
+     "kind": "p",
+     "html": "- Is marginal evidence value a defensible way to rank what an agent should buy?"
+    },
+    {
+     "kind": "p",
+     "html": "- Is a self-issued evidence receipt enough accountability, or does it need independent verification?"
+    },
+    {
+     "kind": "p",
+     "html": "Here's the landing page:"
+    },
+    {
+     "kind": "p",
+     "html": "<a href=\"https://tftf-research.gpyes44.chatgpt.site/\">tftf-research.gpyes44.chatgpt.site</a>"
+    },
+    {
+     "kind": "p",
+     "html": "Learn more and register for the event on Oct 10:"
+    },
+    {
+     "kind": "p",
+     "html": "<a href=\"https://singapore.aitinkerers.org/p/ai-tinkerers-singapore-saturday-demo-meetup-with-joe-heitzeberg-oct-10\">singapore.aitinkerers.org/p/ai-tinkerers-sin…</a>"
+    },
+    {
+     "kind": "p",
+     "html": "Thanks to Son Le for helping us out."
+    }
+   ],
+   "images": [],
+   "words": 255,
+   "links": [
+    "https://singapore.aitinkerers.org/p/ai-tinkerers-singapore-saturday-demo-meetup-with-joe-heitzeberg-oct-10",
+    "https://tftf-research.gpyes44.chatgpt.site/"
+   ],
+   "linkedin": null
+  },
+  {
+   "id": "friday-hacks-301",
+   "date": "2026-09-19",
+   "dateApprox": true,
+   "project": null,
+   "kind": "event",
+   "label": "Friday Hacks #301",
+   "opening": "AI code review is not security testing.",
+   "blocks": [
+    {
+     "kind": "p",
+     "html": "AI code review is not security testing."
+    },
+    {
+     "kind": "p",
+     "html": "( My one-line takeaway from NUS Hackers 's Friday Hacks #301 )"
+    },
+    {
+     "kind": "p",
+     "html": "Jessie Ho, introduced Vigolium, the application-security platform he is building. It combines fast native scans with agentic scans that understand the repository, test exploit paths against the live application, and return evidence-backed findings instead of a list of maybes."
+    },
+    {
+     "kind": "p",
+     "html": "I was looking to implement a DAST tool for my course project, and I'm planning to give Vigolium a proper run."
+    },
+    {
+     "kind": "p",
+     "html": "I had also set up Terraform for AWS for that project the night before."
+    },
+    {
+     "kind": "p",
+     "html": "Justin Hoe's serverless Terraform demo made the next step clearer: the useful Terraform work starts when the configuration has to stay understandable as it grows."
+    },
+    {
+     "kind": "p",
+     "html": "Two different talks. One useful reminder: tools can speed up the work, but they do not remove the need to understand the system underneath."
+    }
+   ],
+   "images": [
+    {
+     "src": "content/posts/friday-hacks-301/01.webp",
+     "w": 1024,
+     "h": 768,
+     "alt": "Selfie of Guru with a speaker after Friday Hacks #301, thumbs up."
+    },
+    {
+     "src": "content/posts/friday-hacks-301/02.webp",
+     "w": 1024,
+     "h": 768,
+     "alt": "Slide: \"AI code review is not security testing\"."
+    },
+    {
+     "src": "content/posts/friday-hacks-301/03.webp",
+     "w": 1024,
+     "h": 768,
+     "alt": "Slide: \"What's the entrypoint for Terraform?\""
+    }
+   ],
+   "words": 142,
+   "links": [],
+   "linkedin": null
+  },
+  {
+   "id": "gpt-6-astra-night",
+   "date": "2026-09-16",
+   "dateApprox": false,
+   "project": null,
+   "kind": "event",
+   "label": "GPT-6 Astra Demo Night",
+   "opening": "Went to GPT-6 Astra Demo Night ✨",
+   "blocks": [
+    {
+     "kind": "p",
+     "html": "Went to GPT-6 Astra Demo Night ✨"
+    },
+    {
+     "kind": "p",
+     "html": "There are things benchmarks capture, and things they simply can’t. Astra seems pretty good at both."
+    },
+    {
+     "kind": "p",
+     "html": "But my favourite part of the night was seeing what people chose to build with it"
+    },
+    {
+     "kind": "p",
+     "html": "A lot of human creativity, with a lot of AI craftsmanship behind it."
+    },
+    {
+     "kind": "p",
+     "html": "Haze and Seek was basically Where’s Waldo?, except you’re hunting for Singapore’s famous mascots in a ridiculously packed Singapore scene."
+    },
+    {
+     "kind": "p",
+     "html": "And the one that really took the cake was a real-time AI-generated playable horror game by Varick Lim — which actually scared me and made me flinch."
+    },
+    {
+     "kind": "p",
+     "html": "Also got to reconnect with Sardor Ismatullaev after SingHacks and met Kavashgar M and a few more lovely people along the way."
+    },
+    {
+     "kind": "p",
+     "html": "Fun night. Good demos. Good company."
+    },
+    {
+     "kind": "p",
+     "html": "And a nice reminder that giving people better tools mostly makes me more curious about what people will do with them."
+    },
+    {
+     "kind": "p",
+     "html": "Thanks Lorong AI and As'safiy As'adi  for the pizza, demos and vibes. 🍕"
+    }
+   ],
+   "images": [],
+   "words": 161,
+   "links": [],
+   "linkedin": "https://www.linkedin.com/feed/update/urn:li:activity:7505994639787851777/"
+  },
+  {
+   "id": "handoff",
+   "date": "2026-09-12",
+   "dateApprox": false,
+   "project": null,
+   "kind": "project",
+   "label": "Handoff finance workflow agent",
+   "opening": "Meetings are great at producing decisions. Less great at getting them into Slack and CRMs.",
+   "blocks": [
+    {
+     "kind": "p",
+     "html": "Meetings are great at producing decisions. Less great at getting them into Slack and CRMs."
+    },
+    {
+     "kind": "p",
+     "html": "At the AI Tinkerers Agents, Everywhere hackathon, our team built Handoff: a finance workflow agent that lives inside a LiveKit meeting."
+    },
+    {
+     "kind": "p",
+     "html": "Ask it by voice to prepare an invoice, and Handoff checks the signed contract, pricing, fulfilment, quantities, taxes, payment terms, and source evidence. If anything is missing or conflicts, it stops for human review. Before creating anything, the exact invoice plan is shown for approval; only then does it create and verify an Airwallex sandbox draft."
+    },
+    {
+     "kind": "p",
+     "html": "The goal was simple: let teams discuss, approve, and complete a financial action in the same place ( with an audit trail, not blind automation)"
+    },
+    {
+     "kind": "p",
+     "html": "Built with a great team in a very intense day. 🚀"
+    },
+    {
+     "kind": "p",
+     "html": "We built it with AgentKit, GPT-Live-1, Langfuse, Airwallex MCP for developers and some good old Python."
+    },
+    {
+     "kind": "p",
+     "html": "Had an amazing time building with  Jazz Li and Chloe!"
+    },
+    {
+     "kind": "p",
+     "html": "A very fun, intense build day with a great team. 🚀"
+    },
+    {
+     "kind": "p",
+     "html": "#AITinkerers #AgentsEverywhere #OpenAI #LiveKit #Hackathon"
+    }
+   ],
+   "images": [],
+   "words": 170,
+   "links": [],
+   "linkedin": "https://www.linkedin.com/feed/update/urn:li:activity:7504445479192276992/"
+  },
+  {
+   "id": "friday-hacks-300",
+   "date": "2026-09-11",
+   "dateApprox": false,
+   "project": null,
+   "kind": "event",
+   "label": "Friday Hacks #300",
+   "opening": "Spent Friday evening at NUS Hackers' 300th Friday Hacks, and it was a pretty great way to cap off the week",
+   "blocks": [
+    {
+     "kind": "p",
+     "html": "Spent Friday evening at NUS Hackers' 300th Friday Hacks, and it was a pretty great way to cap off the week"
+    },
+    {
+     "kind": "p",
+     "html": "The first talk, by Ron Tay from Featherless AI was on The Long Tail of AI, particularly why the future of AI probably isn't one enormous model doing everything, but a much larger ecosystem of specialised models and multi-model systems."
+    },
+    {
+     "kind": "p",
+     "html": "What stood out to me was understanding the reasoning behind the trends: lower latency at the edge, better performance on narrow domains, more personalised systems, and less dependence on a single model provider."
+    },
+    {
+     "kind": "p",
+     "html": "One thing I particularly enjoyed was getting to pick Ron's brain afterwards. We ended up talking about things like whether the growth in demand for AI inference can continue to outpace the efficiency gains we're seeing in hardware and models, and what that means for the economics of serving increasingly specialised models."
+    },
+    {
+     "kind": "p",
+     "html": "Timothy Ye also gave a very different kind of talk on maintaining GoDNS for more than a decade. Less about the glamorous side of open source, and more about the surprisingly difficult parts: saying no to features, designing something strangers can contribute to, and keeping a project alive without burning yourself out."
+    },
+    {
+     "kind": "p",
+     "html": "And because this was Friday Hacks #300, we obviously had to bring out Quack and sing happy birthday. 🐥"
+    },
+    {
+     "kind": "p",
+     "html": "Good talks, interesting conversations, some merch, and a giant duck. Hard to complain about that Friday night."
+    },
+    {
+     "kind": "p",
+     "html": "Thanks for putting this  together NUS Hackers — here's to the next 300!"
+    }
+   ],
+   "images": [],
+   "words": 247,
+   "links": [],
+   "linkedin": "https://www.linkedin.com/feed/update/urn:li:activity:7504180994317385728/"
+  },
+  {
+   "id": "deepseek-off-peak",
+   "date": "2026-09-11",
+   "dateApprox": false,
+   "project": null,
+   "kind": "project",
+   "label": "DeepSeek off-peak pricing site",
+   "opening": "“Intelligence too cheap to meter.”",
+   "blocks": [
+    {
+     "kind": "p",
+     "html": "“Intelligence too cheap to meter.”"
+    },
+    {
+     "kind": "p",
+     "html": "At least that's the goal, according to Sam Altman."
+    },
+    {
+     "kind": "p",
+     "html": "<a href=\"https://fortune.com/2025/07/23/sam-altman-artificial-intelligence-too-cheap-jobs/\">fortune.com/2025/07/23/sam-altman-artificial…</a>"
+    },
+    {
+     "kind": "p",
+     "html": "DeepSeek V4.1 Flash has brought us one step closer."
+    },
+    {
+     "kind": "p",
+     "html": "I started building with it and made a tiny site to track DeepSeek’s off-peak API pricing: 50% cheaper for 17 hours a day, with a live countdown to the next switch."
+    },
+    {
+     "kind": "p",
+     "html": "At this price, the idea may cost more than building it."
+    },
+    {
+     "kind": "p",
+     "html": "Get your api token and start building now!"
+    }
+   ],
+   "images": [],
+   "words": 74,
+   "links": [
+    "https://fortune.com/2025/07/23/sam-altman-artificial-intelligence-too-cheap-jobs/"
+   ],
+   "linkedin": "https://www.linkedin.com/feed/update/urn:li:activity:7504106389385084928/"
+  },
+  {
+   "id": "singhacks-finalist",
+   "date": "2026-09-07",
+   "dateApprox": false,
+   "project": "researchagent",
+   "kind": "reflection",
+   "label": "SingHacks 2026, finalists",
+   "opening": "At 6pm on Saturday, we submitted our SingHacks 2026 project and gave a presentation to the judges.",
+   "blocks": [
+    {
+     "kind": "p",
+     "html": "At 6pm on Saturday, we submitted our SingHacks 2026 project and gave a presentation to the judges."
+    },
+    {
+     "kind": "p",
+     "html": "The finalist announcement was at 8pm."
+    },
+    {
+     "kind": "p",
+     "html": "I had 2 hours to kill. So I opened up my own coding-agent conversation history."
+    },
+    {
+     "kind": "p",
+     "html": "Hackathons compress an unusual amount of thinking into a small room and are a melting pot of ideas."
+    },
+    {
+     "kind": "p",
+     "html": "One idea that stuck with me was from Joel Mun, Ripple’s feedback hook in Codex. When an agent hit friction with XRPL docs, it would be captured as feedback and sent to a Cloudflare D1 database."
+    },
+    {
+     "kind": "p",
+     "html": "I realised that my own agent sessions contained a similar kind of signal."
+    },
+    {
+     "kind": "p",
+     "html": "They were not just prompts and answers. They contained:"
+    },
+    {
+     "kind": "p",
+     "html": "- what I thought the problem was at each stage;"
+    },
+    {
+     "kind": "p",
+     "html": "- which ideas I rejected, and why;"
+    },
+    {
+     "kind": "p",
+     "html": "- the moments where i had a good idea but did not fit the hackathon"
+    },
+    {
+     "kind": "p",
+     "html": "I decided to take a look, and after an hour of cleaning up JSON records, deleting unnecessary fields, and grouping the sessions and messages by intent, the hackathon looked different in retrospect."
+    },
+    {
+     "kind": "p",
+     "html": "The final product did not arrive as one brilliant idea on the first try."
+    },
+    {
+     "kind": "p",
+     "html": "I started by asking what XRPL, x402, and the starter kit hinted at."
+    },
+    {
+     "kind": "p",
+     "html": "Then explored agent spending controls, buying evidence before paying a suspicious invoice, media licensing, and other ways an agent could discover and purchase a useful digital service."
+    },
+    {
+     "kind": "p",
+     "html": "The ideas improved when we gave them a stricter test:"
+    },
+    {
+     "kind": "p",
+     "html": "Does the problem exist without blockchain?"
+    },
+    {
+     "kind": "p",
+     "html": "What exact value appears after the payment?"
+    },
+    {
+     "kind": "p",
+     "html": "What should be blocked, and can a reviewer understand what happened later?"
+    },
+    {
+     "kind": "p",
+     "html": "That process led us to ResearchAgent: a budget-aware research desk where an agent decides what paywalled articles are worth paying for, then returns a deeply cited, reviewable answer."
+    },
+    {
+     "kind": "p",
+     "html": "The  lesson is that an LLM conversation can be a record of intent, uncertainty, and decision-making—if you treat it as an artefact worth examining, rather than something to discard once the code works."
+    },
+    {
+     "kind": "p",
+     "html": "At 8 pm, I got the result: The Fast and the Fungible were finalists."
+    },
+    {
+     "kind": "p",
+     "html": "Our team will be presenting ResearchAgent at the Singapore FinTech Festival at the Swiss Podium."
+    },
+    {
+     "kind": "p",
+     "html": "I intend to spend them in much the same way I spent those two hours: keeping the decision trail, testing our assumptions, and sharpening the product rather than simply adding more to it."
+    },
+    {
+     "kind": "p",
+     "html": "Thank you to everyone who made SingHacks such a generous room for ideas:"
+    },
+    {
+     "kind": "p",
+     "html": "Tenity, Ripple, t54 Labs, Claire Jiyeon J., Freddy Lim, the mentors, the other teams, and my teammates at The Fast and the Fungible.(Andrew Nguyen , Nguyễn Trần Thành Minh and Jiamin Wang )"
+    },
+    {
+     "kind": "p",
+     "html": "Special shoutout to Cyrus C. and Ashraf Kamal for running the program smoothly!"
+    }
+   ],
+   "images": [],
+   "words": 449,
+   "links": [],
+   "linkedin": "https://www.linkedin.com/feed/update/urn:li:activity:7502550000044752896/"
+  },
+  {
+   "id": "singhacks-day-1",
+   "date": "2026-09-05",
+   "dateApprox": false,
+   "project": "researchagent",
+   "kind": "event",
+   "label": "SingHacks 2026, day 1",
+   "opening": "Often in hackathons, the people invent problems rather than solutions.",
+   "blocks": [
+    {
+     "kind": "p",
+     "html": "Often in hackathons, the people invent problems rather than solutions."
+    },
+    {
+     "kind": "p",
+     "html": "They invent a problem, add an AI agent, add a payment screen, and work backwards until the story sounds convincing."
+    },
+    {
+     "kind": "p",
+     "html": "Day 1 at SingHacks 2026 was a useful reset."
+    },
+    {
+     "kind": "p",
+     "html": "The Ripple brief was blunt: start with a real customer problem. Then build the shortest credible path from need → discovery → decision → payment → value delivered."
+    },
+    {
+     "kind": "p",
+     "html": "That sounds obvious. It is harder than it looks."
+    },
+    {
+     "kind": "p",
+     "html": "The opening sessions made the point from different angles."
+    },
+    {
+     "kind": "p",
+     "html": "Cyrus C. from Tenity shared how a team of students built a strong prototype in two and a half days. They didn't ship an application, but they had a real enough problem to focus on and iterated on it."
+    },
+    {
+     "kind": "p",
+     "html": "Shang Lim from Julius Bär framed the wealth-management challenge as moving from portfolio monitoring to intelligence: what does a client’s portfolio look like, what should the relationship manager know, and what should happen next — without removing the human relationship from the process."
+    },
+    {
+     "kind": "p",
+     "html": "In the Ripple track, the room was asked to look past the transaction itself. One slide described the current state of agentic payments as “lots of specs, SDKs, and hype.”"
+    },
+    {
+     "kind": "p",
+     "html": "The target is the part that matters: real-world use cases."
+    },
+    {
+     "kind": "p",
+     "html": "The Oliver Wyman session supplied the counterweight. An agent can be capable but still need boundaries and an audit trail tracking everything."
+    },
+    {
+     "kind": "p",
+     "html": "Who authorised it? What was it allowed to do? What did it actually do? Can someone reconstruct the decision later?"
+    },
+    {
+     "kind": "p",
+     "html": "The throughline that my team - The Fast and the Fungible ( ) - had picked up was that in this agentic age , the value is not to replace the human completely , it is to make the human the orchestrator and auditor while the agents do most of the grunt work."
+    },
+    {
+     "kind": "p",
+     "html": "Day 2 is the harder part: proving the loop."
+    },
+    {
+     "kind": "p",
+     "html": "Can an agent discover something useful, make a bounded decision, pay on XRPL, and deliver an outcome that someone actually wants?"
+    },
+    {
+     "kind": "p",
+     "html": "It all starts with a problem that exists whether or not blockchain does."
+    },
+    {
+     "kind": "p",
+     "html": "More tomorrow."
+    },
+    {
+     "kind": "p",
+     "html": "Thanks to Tenity for bringing everyone into the room;"
+    },
+    {
+     "kind": "p",
+     "html": "Ripple and Julius Bär for the challenge briefs; Oliver Wyman, t54, Cloud Singapore Community and the wider ecosystem partners for the support; and especially @Cyrus, Tatsuya (Tats) Kohrogi, Joel Mun, Freddy Lim, the mentors, and my teammates (Andrew Nguyen Jiamin and Nguyễn Trần Thành Minh"
+    },
+    {
+     "kind": "p",
+     "html": "As always, the conversations were more valuable than the code."
+    }
+   ],
+   "images": [],
+   "words": 411,
+   "links": [],
+   "linkedin": "https://www.linkedin.com/feed/update/urn:li:activity:7501841567545106432/"
+  },
+  {
+   "id": "mandateflow",
+   "date": "2026-09-01",
+   "dateApprox": false,
+   "project": null,
+   "kind": "project",
+   "label": "MandateFlow, TikTok TechJam",
+   "opening": "Most AI agent safety conversations start with: Which tools can the Agent call?",
+   "blocks": [
+    {
+     "kind": "p",
+     "html": "Most AI agent safety conversations start with: Which tools can the Agent call?"
+    },
+    {
+     "kind": "p",
+     "html": "But there is another question that matters just as much: what data got it there?"
+    },
+    {
+     "kind": "p",
+     "html": "Ie , as much as context engineering matters to the agent, it should matter to the middleware that judges agent actions."
+    },
+    {
+     "kind": "p",
+     "html": "For TikTok TechJam 2026, my team built something that solves this problem: MandateFlow. ( Public voting is now live; take a look and give us a like <a href=\"https://devpost.com/software/mandateflow\">devpost.com/software/mandateflow</a> )"
+    },
+    {
+     "kind": "p",
+     "html": "We put a policy gateway between an Agent and its protected tools. It tracks where a reference came from, then checks policy BEFORE the next tool is ever called."
+    },
+    {
+     "kind": "p",
+     "html": "In our demo, we showed  the following real-life scenario"
+    },
+    {
+     "kind": "p",
+     "html": "Support ticket → Case → CRM = allowed"
+    },
+    {
+     "kind": "p",
+     "html": "Payment failure → Case → CRM = denied before CRM is touched"
+    },
+    {
+     "kind": "p",
+     "html": "Same Agent. Same CRM permission. Same public Case type. Different provenance, different outcome."
+    },
+    {
+     "kind": "p",
+     "html": "Instead of just saying no, MandateFlow gives the Agent a safe alternative: aggregate the Payment failures without re-identifying a customer. Every decision leaves behind a redacted receipt too, so the flow can be inspected later."
+    },
+    {
+     "kind": "p",
+     "html": "We built it with React/Fastify, a disposable Codex runtime, and a Go MCP gateway that owns the policy and data lineage."
+    },
+    {
+     "kind": "p",
+     "html": "If MandateFlow resonates with you, give us a like -&gt; <a href=\"https://devpost.com/software/mandateflow\">devpost.com/software/mandateflow</a>"
+    },
+    {
+     "kind": "p",
+     "html": "Huge thanks to TikTok for hosting this hackathon our Team 'Cache Me If You Can' ( Andrew Nguyen Thang Nguyen Nam Dao )"
+    }
+   ],
+   "images": [],
+   "words": 239,
+   "links": [
+    "https://devpost.com/software/mandateflow"
+   ],
+   "linkedin": "https://www.linkedin.com/feed/update/urn:li:activity:7500451311562375170/"
+  },
+  {
+   "id": "screenshot-declutterer-3",
+   "date": "2026-08-18",
+   "dateApprox": false,
+   "project": "screenshot-declutterer",
+   "kind": "project",
+   "label": "Screenshot Declutterer, LiteRT-LM",
+   "opening": "When I built Screenshot Declutterer, I added a few features to help rename the screenshots I wanted to keep.",
+   "blocks": [
+    {
+     "kind": "p",
+     "html": "When I built Screenshot Declutterer, I added a few features to help rename the screenshots I wanted to keep."
+    },
+    {
+     "kind": "p",
+     "html": "The obvious next step was automated renaming."
+    },
+    {
+     "kind": "p",
+     "html": "I started with Ollama and Gemma 4 E2B. It was a small model by current LLM standards, but it still wanted about 7.7 GB of GPU memory on my 16 GB Mac. It also took around 21 seconds to suggest a name for one screenshot."
+    },
+    {
+     "kind": "p",
+     "html": "That is a long time to wait for \"customer-support-chat.png\"."
+    },
+    {
+     "kind": "p",
+     "html": "So I tried to avoid the vision model altogether."
+    },
+    {
+     "kind": "p",
+     "html": "Apple already has text recognition. I could OCR each screenshot, send the extracted text to a small text-only LLM, and use that to build the filename."
+    },
+    {
+     "kind": "p",
+     "html": "It was lighter. It was also becoming a second system to maintain. Screenshots are more than their text. Layouts, charts, UI state, diagrams. I couldn't get to a version I liked."
+    },
+    {
+     "kind": "p",
+     "html": "I even considered adding a bring-your-own-key option and sending the screenshots to a hosted provider like Groq."
+    },
+    {
+     "kind": "p",
+     "html": "That would have made Screenshot Declutterer a worse version of Windows Recall: it would look through your screenshots, and you would still need to bring your own API key."
+    },
+    {
+     "kind": "p",
+     "html": "Then YouTube recommended a video of Google developers getting Gemma 4 E2B running on a Raspberry Pi 5."
+    },
+    {
+     "kind": "p",
+     "html": "A model that felt too heavy for my Mac was running on a tiny board. That made me look at the runtime again."
+    },
+    {
+     "kind": "p",
+     "html": "That led me to LiteRT-LM."
+    },
+    {
+     "kind": "p",
+     "html": "LiteRT-LM averaged 6.5 seconds per image, compared with 20.9 seconds with Ollama."
+    },
+    {
+     "kind": "p",
+     "html": "Under the hood, the gain comes from a few edge-focused choices. Gemma 4 E2B uses mixed 2-, 4-, and 8-bit weights, which cuts the model size. LiteRT-LM memory-maps the large embedding layers, keeps the KV cache bounded, and loads the model weights once instead of duplicating them for every session. Less data, less duplication, and a smaller working set."
+    },
+    {
+     "kind": "p",
+     "html": "The model on disk dropped from 7.2 GB to 2.4 GB. The whole app plus LiteRT-LM uses about 1.8 GB of RAM on my machine."
+    },
+    {
+     "kind": "p",
+     "html": "The rename feature is now local, optional, and actually usable. The image goes to localhost, the model runs on the Mac, and nothing leaves the machine."
+    },
+    {
+     "kind": "p",
+     "html": "Small models only become useful when they fit the machine. That makes features like this possible inside a normal desktop app."
+    },
+    {
+     "kind": "p",
+     "html": "That opens up a lot more room for local agentic software. The model can work beside the app instead of every input being sent to a cloud API."
+    }
+   ],
+   "images": [
+    {
+     "src": "content/posts/screenshot-declutterer-3/01.webp",
+     "w": 1576,
+     "h": 642,
+     "alt": "Before and after of the rename feature in Screenshot Declutterer."
+    },
+    {
+     "src": "content/posts/screenshot-declutterer-3/02.webp",
+     "w": 1448,
+     "h": 1086,
+     "alt": "Whiteboard sketch: how LiteRT-LM makes Gemma 4 E2B practical on-device."
+    }
+   ],
+   "words": 409,
+   "links": [],
+   "linkedin": "https://www.linkedin.com/feed/update/urn:li:activity:7495317303589343232/"
+  },
+  {
+   "id": "anthropic-shared-chats",
+   "date": "2026-07-26",
+   "dateApprox": false,
+   "project": null,
+   "kind": "reflection",
+   "label": "Anthropic shared-chat privacy",
+   "opening": "Breaking: Anthropic leaks “public” chats onto the internet.",
+   "blocks": [
+    {
+     "kind": "p",
+     "html": "Breaking: Anthropic leaks “public” chats onto the internet."
+    },
+    {
+     "kind": "p",
+     "html": "They leaked their source code; now they \"leaked\" your chats."
+    },
+    {
+     "kind": "p",
+     "html": "While Anthropic is in the news warning about the risks of open-weight models, it may have a more immediate privacy problem to answer for."
+    },
+    {
+     "kind": "p",
+     "html": "Users reported that Claude shared-chat URLs were appearing in search results."
+    },
+    {
+     "kind": "p",
+     "html": "“Shared” is doing a lot of work there."
+    },
+    {
+     "kind": "p",
+     "html": "Maybe you sent a chat to a group. Maybe you wanted to save a link for later. Maybe you assumed an unguessable URL was a boundary. Then it becomes discoverable on the open web."
+    },
+    {
+     "kind": "p",
+     "html": "Some users had found chats involving someone setting up a Solana ( crypto ) , wallet, a concerning one about a lawyer in Kansas asking if they need to self-report in case of a breach of conduct violation."
+    },
+    {
+     "kind": "p",
+     "html": "I wanted to look into it and see if there was any personally identifiable data in these chats. And voila I hit the motherlode."
+    },
+    {
+     "kind": "p",
+     "html": "I found a shared conversation where someone was using Claude to write and edit a \"Security Engineering\" blog post."
+    },
+    {
+     "kind": "p",
+     "html": "The chat contained their name. The project had public traces. Public professional details corroborated the author’s identity and role at a major company (Hint: lake + chips)."
+    },
+    {
+     "kind": "p",
+     "html": "I cross-verified between the blog mentioned in the chats and their LinkedIn profile and sent them a quick message."
+    },
+    {
+     "kind": "p",
+     "html": "But this is not on them; Anthropic created the public page, and a search engine indexed it. This seems to me either a \"Vibe-Coding\" failure or a MAJOR OVERSIGHT."
+    },
+    {
+     "kind": "p",
+     "html": "I use Claude to think out loud. They paste in career plans, side projects, code, finances, work context, and drafts they would never publish under their own name."
+    },
+    {
+     "kind": "p",
+     "html": "If you build AI for that kind of trust, privacy cannot depend on users reverse-engineering what “Share” means after their conversations start appearing in search."
+    },
+    {
+     "kind": "p",
+     "html": "We taught rocks to think. That doesn’t mean we get to stop."
+    },
+    {
+     "kind": "p",
+     "html": "Links &amp; More in the appendix below"
+    }
+   ],
+   "images": [],
+   "words": 323,
+   "links": [],
+   "linkedin": "https://www.linkedin.com/feed/update/urn:li:activity:7487062668315344896/"
+  },
+  {
+   "id": "apple-health-import",
+   "date": "2026-07-02",
+   "dateApprox": false,
+   "project": null,
+   "kind": "project",
+   "label": "Apple Health import rewrite",
+   "opening": "I thought I had a slow import problem.",
+   "blocks": [
+    {
+     "kind": "p",
+     "html": "I thought I had a slow import problem."
+    },
+    {
+     "kind": "p",
+     "html": "What I actually had was a bad mental model of where the time was going."
+    },
+    {
+     "kind": "p",
+     "html": "But rewriting my architecture cut my import time by 163x."
+    },
+    {
+     "kind": "p",
+     "html": "I'm building a project that adds a conversational layer on top of Apple Watch / Apple Health data."
+    },
+    {
+     "kind": "p",
+     "html": "Before any of the interesting product work could matter, I needed a reliable way to take a Health export from my iPhone and ingest it into the system."
+    },
+    {
+     "kind": "p",
+     "html": "For my own testing, I cut the export down to the last 6 months."
+    },
+    {
+     "kind": "p",
+     "html": "It was still roughly 600MB. The first full import took 26 minutes."
+    },
+    {
+     "kind": "p",
+     "html": "I did the obvious round of improvements first."
+    },
+    {
+     "kind": "p",
+     "html": "Wrapped the database writes in a transaction."
+    },
+    {
+     "kind": "p",
+     "html": "Replaced slow timestamp parsing."
+    },
+    {
+     "kind": "p",
+     "html": "Collapsed multiple XML passes into one."
+    },
+    {
+     "kind": "p",
+     "html": "Cleaned up some regex usage."
+    },
+    {
+     "kind": "p",
+     "html": "That got the import down to 21 minutes."
+    },
+    {
+     "kind": "p",
+     "html": "If 6 months of my own data took 21 minutes, the real use case was going to be worse."
+    },
+    {
+     "kind": "p",
+     "html": "So I went back to basics and asked what the program was actually spending its time doing."
+    },
+    {
+     "kind": "p",
+     "html": "The bottleneck wasn't DuckDB."
+    },
+    {
+     "kind": "p",
+     "html": "It wasn't disk I/O either."
+    },
+    {
+     "kind": "p",
+     "html": "It was Python doing Python things 1.35 million times in a row."
+    },
+    {
+     "kind": "p",
+     "html": "The XML parser was building Python objects for every record, then pulling attributes back through the C/Python boundary one field at a time, all under the GIL."
+    },
+    {
+     "kind": "p",
+     "html": "So the second round was not tuning."
+    },
+    {
+     "kind": "p",
+     "html": "It was an architectural rewrite."
+    },
+    {
+     "kind": "p",
+     "html": "The new version mmap'd the export, split the file across workers, used regex byte-scans to extract the records directly, wrote Parquet shards, then loaded them into DuckDB."
+    },
+    {
+     "kind": "p",
+     "html": "That took the import from 26 minutes to 9.77 seconds on the same 6-month test export."
+    },
+    {
+     "kind": "p",
+     "html": "The useful lesson for me was simple:"
+    },
+    {
+     "kind": "p",
+     "html": "The first optimisation pass can prove your theory wrong."
+    },
+    {
+     "kind": "p",
+     "html": "Sometimes the real work starts when you stop tuning and start questioning the shape of the system."
+    }
+   ],
+   "images": [],
+   "words": 315,
+   "links": [],
+   "linkedin": "https://www.linkedin.com/feed/update/urn:li:activity:7478418199626080256/"
+  },
+  {
+   "id": "screenshot-declutterer-2",
+   "date": "2026-06-12",
+   "dateApprox": false,
+   "project": "screenshot-declutterer",
+   "kind": "project",
+   "label": "Screenshot Declutterer, OCR rename",
+   "opening": "A while back I built a little Flask app to clean up the screenshot graveyard on my desktop. Drag to keep, drag to trash, gone.",
+   "blocks": [
+    {
+     "kind": "p",
+     "html": "A while back I built a little Flask app to clean up the screenshot graveyard on my desktop. Drag to keep, drag to trash, gone."
+    },
+    {
+     "kind": "p",
+     "html": "But sorting was only half the problem."
+    },
+    {
+     "kind": "p",
+     "html": "Every screenshot I kept still had a name like Screenshot 2026-04-11 at 6.25.28 PM.png.  Good luck finding any of them later without opening each one first."
+    },
+    {
+     "kind": "p",
+     "html": "Since the first post, I've added the usual quality-of-life things: more image formats, keyboard shortcuts, a full-size preview. Under the hood, there's now a small memory store, so the app doesn't re-analyse a screenshot it's already seen. It fingerprints each file by name + size, no hashing, basically free since it already reads both."
+    },
+    {
+     "kind": "p",
+     "html": "I also added rename, so you can fix a file's name straight from the card."
+    },
+    {
+     "kind": "p",
+     "html": "Renaming by hand works. But the obvious next thing was to try to automate it by hand and have the app look at a screenshot and suggest a name itself."
+    },
+    {
+     "kind": "p",
+     "html": "The obvious way is a vision model: hand the whole screenshot to a local LLM and ask for a name. Gemma4:e2b does it well. It also wants ~7.7 GB of RAM and a second or two per image. On a 16 GB laptop, that's most of the machine."
+    },
+    {
+     "kind": "p",
+     "html": "I am lucky since my M1 Mac's Unified Memory means I can treat ram like VRAM ( generalising here) and it allows more headroom."
+    },
+    {
+     "kind": "p",
+     "html": "So I started poking in the other direction. Most screenshots are mostly text. What if I OCR the image first (pytesseract, no GPU), then send just the text to a tiny ~1.5 GB text-only model? Early numbers look like ~10x faster and ~80% less GPU RAM at similar quality. Either way, nothing leaves the machine."
+    }
+   ],
+   "images": [
+    {
+     "src": "content/posts/screenshot-declutterer-2/01.webp",
+     "w": 1600,
+     "h": 878,
+     "alt": "Screenshot Declutterer, the arc: before, sort and trash, then naming."
+    },
+    {
+     "src": "content/posts/screenshot-declutterer-2/02.webp",
+     "w": 1600,
+     "h": 878,
+     "alt": "Naming a screenshot: vision model versus OCR plus a text LLM."
+    }
+   ],
+   "words": 284,
+   "links": [],
+   "linkedin": "https://www.linkedin.com/feed/update/urn:li:activity:7471186821297676289/"
+  },
+  {
+   "id": "aws-sap",
+   "date": "2026-06-08",
+   "dateApprox": false,
+   "project": "aws-certs",
+   "kind": "cert",
+   "label": "AWS Solutions Architect Professional",
+   "opening": "Passed the AWS Certified Solutions Architect – Professional (SAP-C02). My first Professional certificate !!",
+   "blocks": [
+    {
+     "kind": "p",
+     "html": "Passed the AWS Certified Solutions Architect – Professional (SAP-C02). My first Professional certificate !!"
+    },
+    {
+     "kind": "p",
+     "html": "SAP tests whether you can design systems that span accounts, survive regional failures, and justify their cost. Not theoretical systems. The kind production teams actually run."
+    },
+    {
+     "kind": "p",
+     "html": "Used Stéphane Maarek's SAP-C02 course on Udemy and TutorialsDojo practice tests."
+    },
+    {
+     "kind": "p",
+     "html": "I had trouble choosing between the DR tiers for a long time. Most engineers treat backups as a checkbox. SAP makes you treat RTO and RPO as hard constraints from day one."
+    },
+    {
+     "kind": "p",
+     "html": "The four patterns, in order of cost vs. recovery speed:"
+    },
+    {
+     "kind": "p",
+     "html": "Backup and Restore: store snapshots, restore on failure, RTO in hours. Cheapest. Fine for non-critical workloads."
+    },
+    {
+     "kind": "p",
+     "html": "Pilot Light: keep core services running at minimal capacity. Scale out on disaster. Faster than cold restore, cheaper than full standby."
+    },
+    {
+     "kind": "p",
+     "html": "Warm Standby: scaled-down production stack always running. Fast failover because the infrastructure already exists. You pay to keep it warm."
+    },
+    {
+     "kind": "p",
+     "html": "Multi-site Active-Active: full capacity in two regions, traffic split between them. Near-zero RTO. You're paying for two full stacks."
+    },
+    {
+     "kind": "p",
+     "html": "The exam forces you to match pattern to business requirement rather than pick the safest option. That framing carries directly into real architecture decisions where budget and SLA are both hard constraints."
+    },
+    {
+     "kind": "p",
+     "html": "Happy to chat if you're prepping."
+    }
+   ],
+   "images": [
+    {
+     "src": "content/posts/aws-sap/01.webp",
+     "w": 1536,
+     "h": 1024,
+     "alt": "AWS disaster recovery strategies from Backup and Restore to Multi-site Active-Active, ordered by cost and recovery time."
+    }
+   ],
+   "words": 207,
+   "links": [],
+   "linkedin": "https://www.linkedin.com/feed/update/urn:li:activity:7469676877729759232/"
+  },
+  {
+   "id": "stylemind",
+   "date": "2026-05-04",
+   "dateApprox": false,
+   "project": null,
+   "kind": "project",
+   "label": "StyleMind",
+   "opening": "Last week, I took a stab at building a fashion chatbot that learns your style from conversation — without ever asking for it.",
+   "blocks": [
+    {
+     "kind": "p",
+     "html": "Last week, I took a stab at building a fashion chatbot that learns your style from conversation — without ever asking for it."
+    },
+    {
+     "kind": "p",
+     "html": "That's StyleMind. Every message runs through an extraction layer. The LLM outputs structured JSON (aesthetic preferences, disliked materials, budget signals, and occasions), and those signals update a StylePersona node in Neo4j. Turn one: pure vector ranking, confidence at 0.0. By turn five, the reranker is boosting matched aesthetics, penalising dismissed materials, and filtering by budget tier."
+    },
+    {
+     "kind": "p",
+     "html": "Neo4j handles both the property graph and the vector indexes. Ten node types, fifteen relationship types: brands, aesthetics, occasions, outfit pairings, budget tiers. Product embeddings sit in native vector indexes alongside the graph data. One system, no separate store to sync. Outfit coherence runs as a Cypher traversal: a PAIRS_WITH edge only holds if both products share season and occasion overlap. Deterministic, not guessed by the model."
+    },
+    {
+     "kind": "p",
+     "html": "The RAG pipeline is simple. No LangChain, no LlamaIndex. Retriever, reranker, and generator each built from scratch, around 150 lines apiece. When vector search returns fewer than three results, it falls back through the graph to products sharing the same aesthetic."
+    },
+    {
+     "kind": "p",
+     "html": "Tokens stream via SSE. After the stream closes, persona inference fires as a background asyncio task (completely decoupled)."
+    },
+    {
+     "kind": "p",
+     "html": "Served as both a CLI &amp; Streamlit app with a proper web UI."
+    },
+    {
+     "kind": "p",
+     "html": "Next post covers the build process and tooling."
+    },
+    {
+     "kind": "p",
+     "html": "[GitHub →]"
+    }
+   ],
+   "images": [
+    {
+     "src": "content/posts/stylemind/01.webp",
+     "w": 1536,
+     "h": 1024,
+     "alt": "StyleMind overview: learns your style from conversation and recommends with context."
+    },
+    {
+     "src": "content/posts/stylemind/02.webp",
+     "w": 1536,
+     "h": 1024,
+     "alt": "StyleMind architecture: CLI and web UI, FastAPI, RAG and persona layers, Neo4j."
+    },
+    {
+     "src": "content/posts/stylemind/03.webp",
+     "w": 1024,
+     "h": 1536,
+     "alt": "Outfit graph traversal, from anchor product through coherence filter to the suggestion."
+    }
+   ],
+   "words": 228,
+   "links": [],
+   "linkedin": "https://www.linkedin.com/feed/update/urn:li:activity:7457092933930967040/"
+  },
+  {
+   "id": "aws-dva",
+   "date": "2026-04-23",
+   "dateApprox": false,
+   "project": "aws-certs",
+   "kind": "cert",
+   "label": "AWS Developer Associate",
+   "opening": "Excited to announce that i passed the AWS Certified Developer – Associate (DVA-C02).",
+   "blocks": [
+    {
+     "kind": "p",
+     "html": "Excited to announce that i passed the AWS Certified Developer – Associate (DVA-C02)."
+    },
+    {
+     "kind": "p",
+     "html": "Same playbook as SAA: Stéphane Maarek's course on Udemy, followed by  TutorialsDojo practice tests."
+    },
+    {
+     "kind": "p",
+     "html": "The topic I came away actually thinking about was DynamoDB caching. I'd been writing code against cached data for years without naming the tradeoffs I was making."
+    },
+    {
+     "kind": "p",
+     "html": "There are only two hard things in Computer Science: cache invalidation and naming things."
+    },
+    {
+     "kind": "p",
+     "html": "Heres my attempt to simplify some caching concepts :"
+    },
+    {
+     "kind": "p",
+     "html": "Lazy loading (cache-aside). Read from cache, miss, fetch from the DB, populate. Simple and cheap. The cost is stale data, and the first read after a miss is always slow."
+    },
+    {
+     "kind": "p",
+     "html": "Write-through. Every write hits the cache and the DB in the same path. Cache stays fresh for anything you wrote through it. You pay to cache data that may never be read, and any DB-only write still leaves the cache stale."
+    },
+    {
+     "kind": "p",
+     "html": "Write-behind. Write to the cache first, flush to the DB asynchronously. Fast writes, but if the cache dies before the flush lands, the write is gone."
+    },
+    {
+     "kind": "p",
+     "html": "Excited to apply the skills i learnt to better architect production systems."
+    }
+   ],
+   "images": [
+    {
+     "src": "content/posts/aws-dva/01.webp",
+     "w": 1302,
+     "h": 890,
+     "alt": "Certificate card: AWS Certified Developer Associate, listing the cert stack."
+    },
+    {
+     "src": "content/posts/aws-dva/02.webp",
+     "w": 1563,
+     "h": 1006,
+     "alt": "Diagram of lazy loading, write-through and write-behind caching between app, cache and DB."
+    }
+   ],
+   "words": 186,
+   "links": [],
+   "linkedin": "https://www.linkedin.com/feed/update/urn:li:activity:7452900932851380224/"
+  },
+  {
+   "id": "aws-saa",
+   "date": "2026-04-18",
+   "dateApprox": false,
+   "project": "aws-certs",
+   "kind": "cert",
+   "label": "AWS Solutions Architect Associate",
+   "opening": "\"Excited to announce\" that I recently passed the AWS Certified Solutions Architect (SAA-C03) from Amazon Web Services (AWS) — scored 911/1000!",
+   "blocks": [
+    {
+     "kind": "p",
+     "html": "\"Excited to announce\" that I recently passed the AWS Certified Solutions Architect (SAA-C03) from Amazon Web Services (AWS) — scored 911/1000!"
+    },
+    {
+     "kind": "p",
+     "html": "Three certs down now: Cloud Practitioner, AI Practitioner, and now SAA."
+    },
+    {
+     "kind": "p",
+     "html": "This one felt different. Cloud Practitioner and AI Practitioner were mostly about knowing what AWS services exist."
+    },
+    {
+     "kind": "p",
+     "html": "SAA-C03 is about knowing why you'd pick one service over another and how they fit together at a system level."
+    },
+    {
+     "kind": "p",
+     "html": "My timeline looked like this:"
+    },
+    {
+     "kind": "p",
+     "html": "3 weeks of study —&gt; working through the slides and labs in Stéphane Maarek's SAA-C03 course on Udemy."
+    },
+    {
+     "kind": "p",
+     "html": "1 week of review —&gt; practice tests on Udemy, plus the section-based and topic-based tests on TutorialsDojo."
+    },
+    {
+     "kind": "p",
+     "html": "The area that pushed me the most was networking VPCs, subnets, and routing, all of it. It took a second pass through the slides and working through some tricky scenarios with Claude before it really clicked."
+    },
+    {
+     "kind": "p",
+     "html": "Once it did, a lot of the architecture questions started making a lot more sense."
+    },
+    {
+     "kind": "p",
+     "html": "If you're thinking about taking the SAA-C03, I'd strongly recommend starting with Stéphane Maarek's course on Udemy. The way he builds up from first principles and ties each service to real use cases made the difference for me, especially the focus on architecture-related questions covered during the course."
+    },
+    {
+     "kind": "p",
+     "html": "Pair it with TutorialsDojo for practice tests, and you'll be in good shape."
+    },
+    {
+     "kind": "p",
+     "html": "Udemy Course Link - <a href=\"https://www.udemy.com/course/aws-certified-solutions-architect-associate-saa-c03/\">udemy.com/course/aws-certified-solutions-arc…</a>"
+    },
+    {
+     "kind": "p",
+     "html": "Happy to chat if you're prepping for it — drop a comment or reach out"
+    }
+   ],
+   "images": [],
+   "words": 241,
+   "links": [
+    "https://www.udemy.com/course/aws-certified-solutions-architect-associate-saa-c03/"
+   ],
+   "linkedin": "https://www.linkedin.com/feed/update/urn:li:activity:7451279575390609408/"
+  },
+  {
+   "id": "pr-flow",
+   "date": "2026-04-10",
+   "dateApprox": false,
+   "project": "claude-code-notes",
+   "kind": "tool",
+   "label": "PR flow skill",
+   "opening": "Agentic coding made shipping code faster. It also made PRs worse.",
+   "blocks": [
+    {
+     "kind": "p",
+     "html": "Agentic coding made shipping code faster. It also made PRs worse."
+    },
+    {
+     "kind": "p",
+     "html": "When you've got multiple agents running across worktrees, nobody's holding the quality bar. Intent gets lost, assumptions go unchecked, context rots mid-session, and the model just fills in the gaps."
+    },
+    {
+     "kind": "p",
+     "html": "I wanted to ship faster without shipping garbage and share the framework across my team."
+    },
+    {
+     "kind": "p",
+     "html": "The trick? : Treat Claude Code like a junior engineer with a checklist, not a magic box. Define intent → validate → enrich → implement → ship."
+    },
+    {
+     "kind": "p",
+     "html": "Clear context between phases so it doesn't hallucinate from stale conversation, and you don't hit your session limits."
+    },
+    {
+     "kind": "p",
+     "html": "Every commit traces back to an issue."
+    },
+    {
+     "kind": "p",
+     "html": "Packaged as a Claude Code skill."
+    },
+    {
+     "kind": "p",
+     "html": "Just run: \"/pr-flow \"your intent here\""
+    }
+   ],
+   "images": [
+    {
+     "src": "content/posts/pr-flow/01.webp",
+     "w": 836,
+     "h": 584,
+     "alt": "PR flow skill card: \"Ship faster. Without shipping garbage.\""
+    },
+    {
+     "src": "content/posts/pr-flow/02.webp",
+     "w": 1600,
+     "h": 837,
+     "alt": "The PR flow skill running in the terminal."
+    }
+   ],
+   "words": 120,
+   "links": [],
+   "linkedin": "https://www.linkedin.com/feed/update/urn:li:activity:7448404333127417856/"
+  },
+  {
+   "id": "screenshot-declutterer-1",
+   "date": "2026-04-02",
+   "dateApprox": false,
+   "project": "screenshot-declutterer",
+   "kind": "project",
+   "label": "Screenshot Declutterer, first post",
+   "opening": "My desktop used to be a graveyard of screenshots. Hundreds of them. Each one was a mystery I had to open, decide whether to keep it or banish it to the bin.",
+   "blocks": [
+    {
+     "kind": "p",
+     "html": "My desktop used to be a graveyard of screenshots. Hundreds of them. Each one was a mystery I had to open, decide whether to keep it or banish it to the bin."
+    },
+    {
+     "kind": "p",
+     "html": "I made a simple Flask app you can run to help you view and sort/discard your screenshots into Kanban-style boards."
+    },
+    {
+     "kind": "p",
+     "html": "To make sure any action is not \"permanent\", it uses the send2trash package (<a href=\"https://github.com/arsenetar/send2trash\">github.com/arsenetar/send2trash</a>) to send it to your Bin."
+    },
+    {
+     "kind": "p",
+     "html": "Works with macOS, Windows, Linux, and BSD"
+    },
+    {
+     "kind": "p",
+     "html": "It's small, it works, and it solved a problem I had."
+    },
+    {
+     "kind": "p",
+     "html": "tested only with macOS - theoretically, the same package should work with Linux and Windows github link -&gt; <a href=\"https://github.com/Collaboration95/screenshot-declutterer\">github.com/Collaboration95/screenshot-declut…</a>"
+    },
+    {
+     "kind": "p",
+     "html": "I built it with Claude code + opencode and used an intent to PR pipeline skill to be more hands off, more on that later 🤫"
+    }
+   ],
+   "images": [],
+   "words": 135,
+   "links": [
+    "https://github.com/Collaboration95/screenshot-declutterer",
+    "https://github.com/arsenetar/send2trash"
+   ],
+   "linkedin": "https://www.linkedin.com/feed/update/urn:li:activity:7445500278713348096/"
+  },
+  {
+   "id": "agent-context-layer",
+   "date": "2026-03-24",
+   "dateApprox": false,
+   "project": "claude-code-notes",
+   "kind": "tool",
+   "label": "Agent context layer",
+   "opening": "Part 2 of my Claude Code post. This one is about context.",
+   "blocks": [
+    {
+     "kind": "p",
+     "html": "Part 2 of my Claude Code post. This one is about context."
+    },
+    {
+     "kind": "p",
+     "html": "Context is everything in agentic coding. The more work you want to orchestrate, the better your context handling needs to be."
+    },
+    {
+     "kind": "p",
+     "html": "Two tasks side by side:"
+    },
+    {
+     "kind": "p",
+     "html": "▸ Modify function argument to indicate return type"
+    },
+    {
+     "kind": "p",
+     "html": "→ Doesn't need much context. Most IDEs already tell the agent which files are open."
+    },
+    {
+     "kind": "p",
+     "html": "▸ Add StreamingBuffer implementation to buffer object writes"
+    },
+    {
+     "kind": "p",
+     "html": "→ Compressed or uncompressed size? What triggers a flush vs. a hard close? Callbacks per-part or only at the end?"
+    },
+    {
+     "kind": "p",
+     "html": "None of that is inferable from the file alone or given intent."
+    },
+    {
+     "kind": "p",
+     "html": "Before I switched to Claude Code, I was on Cursor + OpenCode for lighter tasks. So even then, I couldn't rely on Cursor's indexing alone."
+    },
+    {
+     "kind": "p",
+     "html": "I cobbled together a simple flow — and when I moved to CC, I took it with me with minimal changes."
+    },
+    {
+     "kind": "heading",
+     "html": "━━━ THE AI CONTEXT LAYER ━━━"
+    },
+    {
+     "kind": "p",
+     "html": "The idea was simple:"
+    },
+    {
+     "kind": "pre",
+     "html": "global skills (update-context, plan-feature)\n↓\nper-repo .context/ folder\n├── SERVICE.md ← architecture, data flow, integrations\n├── PAST_LEARNINGS.md ← append-only gotcha log\n└── CHANGELOG.context.md ← drift detection via SHA tracking"
+    },
+    {
+     "kind": "p",
+     "html": "The skills read this context before doing anything."
+    },
+    {
+     "kind": "p",
+     "html": "Keeps the AI grounded. No re-explaining the codebase every session."
+    },
+    {
+     "kind": "p",
+     "html": "For Claude Code the equivalent is:"
+    },
+    {
+     "kind": "p",
+     "html": "CLAUDE.md → AGENTS.md → .context/"
+    },
+    {
+     "kind": "p",
+     "html": "CLAUDE.md = entry point, 3 lines, points to AGENTS.md"
+    },
+    {
+     "kind": "p",
+     "html": "AGENTS.md = points to .context/ files, lists available /skills"
+    },
+    {
+     "kind": "p",
+     "html": ".context/ = the actual knowledge base (same structure as above)"
+    },
+    {
+     "kind": "p",
+     "html": "Claude Code doesn't do codebase indexing (mentioned in my last post)."
+    },
+    {
+     "kind": "p",
+     "html": "This is the workaround. You build the \"index\" yourself, once, and maintain it."
+    },
+    {
+     "kind": "p",
+     "html": "Sure, you can use Claude's built-in memory — but the moment you move to OpenCode, Codex CLI, or anything else, that context is gone. This approach is tool-agnostic."
+    },
+    {
+     "kind": "p",
+     "html": "/update-context → checks git log since last SHA, rewrites only drifted sections"
+    },
+    {
+     "kind": "p",
+     "html": "/plan-feature → reads SERVICE.md + PAST_LEARNINGS before any planning"
+    },
+    {
+     "kind": "p",
+     "html": "Never explain your service topology to an AI again."
+    },
+    {
+     "kind": "p",
+     "html": "Full setup, file templates, and sample structure (github link)"
+    },
+    {
+     "kind": "p",
+     "html": "→ <a href=\"https://www.github.com/Collaboration95/ClaudeCodeTips\">github.com/Collaboration95/ClaudeCodeTips</a>"
+    },
+    {
+     "kind": "heading",
+     "html": "━━━ QUICK TIPS ━━━"
+    },
+    {
+     "kind": "p",
+     "html": "/improve — prompts Claude to reflect on your session and suggest workflow improvements. Actually useful after a long task."
+    },
+    {
+     "kind": "p",
+     "html": "/color red (or any color) — changes the prompt bar color. Useful when running multiple Claude sessions in parallel — instant visual cue for which window you're in."
+    },
+    {
+     "kind": "p",
+     "html": "/context — shows how much context you're consuming in the current session. Check before kicking off something expensive. Push on or start fresh?"
+    },
+    {
+     "kind": "p",
+     "html": "! &lt;shell command&gt; — bypasses Claude and runs directly in the CLI."
+    },
+    {
+     "kind": "p",
+     "html": "eg: ! gh pr list"
+    },
+    {
+     "kind": "heading",
+     "html": "━━━ NEXT UP ━━━"
+    },
+    {
+     "kind": "p",
+     "html": "If you're a Claude Code power user, what do you use to orchestrate and keep track of work across sessions?"
+    },
+    {
+     "kind": "p",
+     "html": "Been looking at Superset (<a href=\"https://superset.sh/\">superset.sh</a>) — looks interesting. More on that next time."
+    }
+   ],
+   "images": [],
+   "words": 464,
+   "links": [
+    "https://superset.sh/",
+    "https://www.github.com/Collaboration95/ClaudeCodeTips"
+   ],
+   "linkedin": "https://www.linkedin.com/feed/update/urn:li:activity:7442248751899066369/"
+  },
+  {
+   "id": "cursor-to-claude-code",
+   "date": "2026-03-21",
+   "dateApprox": false,
+   "project": "claude-code-notes",
+   "kind": "reflection",
+   "label": "Cursor to Claude Code migration",
+   "opening": "Just moved from Cursor to Claude Code",
+   "blocks": [
+    {
+     "kind": "p",
+     "html": "Just moved from Cursor to Claude Code"
+    },
+    {
+     "kind": "p",
+     "html": "Here are some pointers for others looking to do the same"
+    },
+    {
+     "kind": "p",
+     "html": "Setup is straightforward:"
+    },
+    {
+     "kind": "p",
+     "html": "Get a Claude Max plan (5x) [recommended]"
+    },
+    {
+     "kind": "p",
+     "html": "Install + authenticate"
+    },
+    {
+     "kind": "p",
+     "html": "<a href=\"https://docs.claude.com/authentication\">docs.claude.com/authentication</a>"
+    },
+    {
+     "kind": "p",
+     "html": "Open terminal + run claude code . and follow the initial setup instructions, configure skills permissions, etc"
+    },
+    {
+     "kind": "p",
+     "html": "My main concern before switching:"
+    },
+    {
+     "kind": "p",
+     "html": "I was under Cursor’s 500 requests/month legacy plan which had just ended. I had tailored my workflows to be “request” efficient and not token efficient (I was loading it lots of skills, planning docs, reference PRs, etc)"
+    },
+    {
+     "kind": "p",
+     "html": "I was concerned that Claude Code’s 5 hr session limit &amp; weekly usage limits (which are themselves quite vague) would reduce my output"
+    },
+    {
+     "kind": "p",
+     "html": "But I had some prior experience using opencode and decided to give this a try"
+    },
+    {
+     "kind": "p",
+     "html": "Some observations after switching:"
+    },
+    {
+     "kind": "p",
+     "html": "There's a real learning curve"
+    },
+    {
+     "kind": "p",
+     "html": "The desktop app smooths out a lot of the friction"
+    },
+    {
+     "kind": "p",
+     "html": "Claude Code doesn't do codebase indexing (unlike Cursor) — so CLAUDE.md and .context files become essential. Migrate your rules and context early"
+    },
+    {
+     "kind": "p",
+     "html": "The docs are very detailed — even cover team-level adoption tracking (docs.claude.com/analytics)"
+    },
+    {
+     "kind": "p",
+     "html": "Two commands worth bookmarking:"
+    },
+    {
+     "kind": "p",
+     "html": "/clear — reset context when switching to a completely different task to cut token costs"
+    },
+    {
+     "kind": "p",
+     "html": "/usage — check session + weekly usage at a glance"
+    },
+    {
+     "kind": "p",
+     "html": "One major feature that I started using from the beginning is /remote-control, which allows an active Claude session’s responses to be streamed to your Claude app. So you can keep up with its progress and give new tasks."
+    },
+    {
+     "kind": "p",
+     "html": "This is a step up from my one-way /agent-done-notifier skill that I made a post about earlier (check it here <a href=\"https://www.linkedin.com/posts/guruprasath3200_if-you-use-cursor-agents-claude-code-or-activity-7434982735221338113-Gf7M?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAADNS2NUBI2jjJS1hyLaxwBaBqSXRTEf0WoI\">linkedin.com/posts/guruprasath3200_if-you-us…</a>)"
+    },
+    {
+     "kind": "p",
+     "html": "Quick tip: I would recommend using the Claude Code plugin for your IDE (VS Code / Cursor / JetBrains, etc) if the terminal feels confusing."
+    },
+    {
+     "kind": "p",
+     "html": "Feels very smooth to use, and you can still look at the files, etc."
+    }
+   ],
+   "images": [],
+   "words": 309,
+   "links": [
+    "https://docs.claude.com/authentication",
+    "https://www.linkedin.com/posts/guruprasath3200_if-you-use-cursor-agents-claude-code-or-activity-7434982735221338113-Gf7M?utm_source=share&utm_medium=member_desktop&rcm=ACoAADNS2NUBI2jjJS1hyLaxwBaBqSXRTEf0WoI"
+   ],
+   "linkedin": "https://www.linkedin.com/feed/update/urn:li:activity:7441153705384603648/"
+  },
+  {
+   "id": "aws-ai-practitioner",
+   "date": "2026-03-10",
+   "dateApprox": false,
+   "project": "aws-certs",
+   "kind": "cert",
+   "label": "AWS AI Practitioner",
+   "opening": "\"Excited to announce\" that I recently passed the AWS Certified AI Practitioner exam (AIF-C01) -- scored 929/1000!",
+   "blocks": [
+    {
+     "kind": "p",
+     "html": "\"Excited to announce\" that I recently passed the AWS Certified AI Practitioner exam (AIF-C01) -- scored 929/1000!"
+    },
+    {
+     "kind": "p",
+     "html": "No, I didn't just repost my previous post."
+    },
+    {
+     "kind": "p",
+     "html": "This time, I decided to pair the AI Practitioner certification with the Cloud Practitioner certification I got earlier."
+    },
+    {
+     "kind": "p",
+     "html": "For my Cloud Practitioner prep, I relied on a great free practice-test site. But for the AI Practitioner exam, the same source only offered basic MCQs with no way to actually take a timed test or track scores. So I decided to make something to help myself."
+    },
+    {
+     "kind": "p",
+     "html": "What started as a quick Python script to display questions locally turned into a full quiz \"app\" hosted on GitHub Pages -- so I could fill up my time on the MRT (this way I could \"study\" on the way to my climbing gym)."
+    },
+    {
+     "kind": "p",
+     "html": "I scraped the questions into structured JSON, built a Flask version for local use, then rewrote the frontend as a static single-page app for zero-setup mobile access. Since there were only 7 practice tests, I also added a randomised 8th test that shuffles questions from all tests on every load."
+    },
+    {
+     "kind": "p",
+     "html": "If you're prepping for either cert, feel free to try it out or check out the repo:"
+    },
+    {
+     "kind": "p",
+     "html": "<a href=\"https://collaboration95.github.io/aws-tests-ai/\">collaboration95.github.io/aws-tests-ai</a>"
+    },
+    {
+     "kind": "p",
+     "html": "<a href=\"https://github.com/Collaboration95/aws-tests-ai\">github.com/Collaboration95/aws-tests-ai</a>"
+    },
+    {
+     "kind": "p",
+     "html": "Original Website I scraped the questions from: <a href=\"https://notezio.com/aws-certified-ai-practitioner/\">notezio.com/aws-certified-ai-practitioner</a>"
+    },
+    {
+     "kind": "p",
+     "html": "Happy to chat if you're thinking about taking either exam!"
+    }
+   ],
+   "images": [],
+   "words": 221,
+   "links": [
+    "https://collaboration95.github.io/aws-tests-ai/",
+    "https://github.com/Collaboration95/aws-tests-ai",
+    "https://notezio.com/aws-certified-ai-practitioner/"
+   ],
+   "linkedin": "https://www.linkedin.com/feed/update/urn:li:activity:7437162933094227968/"
+  },
+  {
+   "id": "aws-cloud-practitioner",
+   "date": "2026-03-07",
+   "dateApprox": false,
+   "project": "aws-certs",
+   "kind": "cert",
+   "label": "AWS Cloud Practitioner",
+   "opening": "\"Excited to announce\" that I recently passed the AWS Certified Cloud Practitioner exam!",
+   "blocks": [
+    {
+     "kind": "p",
+     "html": "\"Excited to announce\" that I recently passed the AWS Certified Cloud Practitioner exam!"
+    },
+    {
+     "kind": "p",
+     "html": "In my current role, I work with AWS services on a daily basis. While I was getting things done, I wanted to truly understand the 'why' behind the services I was using. I wanted to build intuition around AWS cloud behaviour, make more informed decisions, and be a stronger contributor when discussions around service selection and usage come up."
+    },
+    {
+     "kind": "p",
+     "html": "If you're thinking about taking the exam, feel free to reach out! Happy to share what worked for me."
+    },
+    {
+     "kind": "p",
+     "html": "One free resource I found especially useful (apart from AWS Skill Builder):"
+    },
+    {
+     "kind": "p",
+     "html": "<a href=\"https://kananinirav.com/practice-exam/exams.html\">kananinirav.com/practice-exam/exams.html</a> --&gt; 17 practice tests, 50 questions each. [Also contains overview notes]"
+    },
+    {
+     "kind": "p",
+     "html": "Good luck!"
+    }
+   ],
+   "images": [],
+   "words": 117,
+   "links": [
+    "https://kananinirav.com/practice-exam/exams.html"
+   ],
+   "linkedin": "https://www.linkedin.com/feed/update/urn:li:activity:7436048088559071232/"
+  },
+  {
+   "id": "agent-done-notifier",
+   "date": "2026-03-04",
+   "dateApprox": false,
+   "project": "claude-code-notes",
+   "kind": "tool",
+   "label": "Agent-done notifier skill",
+   "opening": "If you use Cursor agents, Claude Code, or similar agentic coding tools a lot (especially kicking off multiple async tasks), this post will be useful.",
+   "blocks": [
+    {
+     "kind": "p",
+     "html": "If you use Cursor agents, Claude Code, or similar agentic coding tools a lot (especially kicking off multiple async tasks), this post will be useful."
+    },
+    {
+     "kind": "p",
+     "html": "TLDR: shared across a SKILL.md that solved a problem of mine"
+    },
+    {
+     "kind": "p",
+     "html": "I often encountered the same issue: starting an agent on a task, then getting distracted while waiting for it to finish, only to realize I had no idea when it completed or if there were any roadblocks. I would either check too early (still running) or too late (finished 30 minutes ago). I needed a notification system that could work across all these tools, as I switch between Cursor, Open Code, Gemini-CLI, and Codex."
+    },
+    {
+     "kind": "p",
+     "html": "Spent about 10 minutes and put together a simple solution using <a href=\"https://ntfy.sh/\">ntfy.sh</a>"
+    },
+    {
+     "kind": "p",
+     "html": "It's a free, open-source notification service -- no account, no server, no API keys. (as long as you remain &lt;250 daily notifications, but you can self-host it for free)."
+    },
+    {
+     "kind": "p",
+     "html": "The agent POSTS a message to a topic URL as its final step, and your phone gets a push notification."
+    },
+    {
+     "kind": "p",
+     "html": "I turned it into a reusable agent skill with pre-built folders for Cursor, Claude Code, and OpenCode. Clone, copy one folder, subscribe on your phone. That's it."
+    },
+    {
+     "kind": "p",
+     "html": "<a href=\"https://github.com/Collaboration95/agent-done-skill\">github.com/Collaboration95/agent-done-skill</a> --&gt; contains drag and drop for cursor, Claude, and agentskills format."
+    }
+   ],
+   "images": [],
+   "words": 210,
+   "links": [
+    "https://github.com/Collaboration95/agent-done-skill",
+    "https://ntfy.sh/"
+   ],
+   "linkedin": "https://www.linkedin.com/feed/update/urn:li:activity:7434982735221338113/"
+  },
+  {
+   "id": "primech-internship",
+   "date": "2024-09-25",
+   "dateApprox": false,
+   "project": null,
+   "kind": "career",
+   "label": "Primech A&P internship",
+   "opening": "I'm pleased to announce the completion of my 9-month journey as a Software Engineer Intern at Primech A&P, an experience that has been both challenging and rewarding.",
+   "blocks": [
+    {
+     "kind": "p",
+     "html": "I'm pleased to announce the completion of my 9-month journey as a Software Engineer Intern at Primech A&amp;P, an experience that has been both challenging and rewarding."
+    },
+    {
+     "kind": "p",
+     "html": "During my internship, I focused on two key areas:"
+    },
+    {
+     "kind": "p",
+     "html": "Shipping features in PHP codebases: I contributed to enhancing and maintaining our core applications, improving functionality and performance."
+    },
+    {
+     "kind": "p",
+     "html": "Writing APIs for robot-frontend interactions: I developed crucial interfaces that enable our cleaning robots to communicate effectively with our user-facing applications, enhancing our overall service delivery."
+    },
+    {
+     "kind": "p",
+     "html": "These projects allowed me to apply and expand my software engineering skills in real-world scenarios, particularly in backend development and API design."
+    },
+    {
+     "kind": "p",
+     "html": "I'd like to express my sincere gratitude to Eric Ho, Senior Applications Developer, and Charles Ng, VP of Innovation and Technology, for their invaluable mentorship and guidance throughout this internship."
+    },
+    {
+     "kind": "p",
+     "html": "The collaborative environment at Primech A&amp;P has not only honed my technical abilities but also deepened my understanding of the software engineering field. I'm looking forward to applying these learnings as I transition into a full-time software engineering role."
+    },
+    {
+     "kind": "p",
+     "html": "As I move into the next phase of my career, I'm eager to tackle new challenges and continue developing my skills."
+    },
+    {
+     "kind": "p",
+     "html": "P.S. I've attached a few pictures from my time at Primech A&amp;P. These capture some great moments with the team who made this internship so memorable!"
+    }
+   ],
+   "images": [],
+   "words": 218,
+   "links": [],
+   "linkedin": "https://www.linkedin.com/feed/update/urn:li:activity:7244587865471361025/"
+  }
+ ]
+}

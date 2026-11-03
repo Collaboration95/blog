@@ -1,0 +1,356 @@
+/* Rebus. Every colour on this page has R = G = B. Every tile sits on the same band: descender line to ascender line. */
+@font-face {
+  font-family: "Schibsted Grotesk";
+  src: url("fonts/schibsted-grotesk-var.woff2") format("woff2");
+  font-weight: 400 700;
+  font-display: swap;
+}
+
+:root {
+  --paper: #d4d4d4;
+  --ink: #0b0b0b;
+  --mid: #4a4a4a;
+  --light: #ffffff;
+  --hole: #c5c5c5; /* the tint of anything hollowed out of the line */
+  /* d rises .732em, p falls .19em. The band clears both by .04em: exactly 1em tall, .23em below the baseline. */
+  --space: .24em;
+  --t: clamp(27px, calc(17.6px + 2.4vw), 50px);
+  --s: clamp(13px, calc(10.8px + .5vw), 17px);
+  --m: clamp(16px, 3.6vw, 56px);
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  background: var(--paper);
+  color: var(--ink);
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  overflow-anchor: none;
+}
+
+body {
+  margin: 0;
+  padding: 0 var(--m) 3lh;
+  font-family: "Schibsted Grotesk", -apple-system, system-ui, sans-serif;
+  font-size: var(--t);
+  font-weight: 440;
+  line-height: 1.22;
+  line-height: round(1.22em, 1px);
+  letter-spacing: -.012em;
+  font-kerning: normal;
+  font-synthesis: none;
+  font-variant-ligatures: common-ligatures;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection { background: var(--ink); color: var(--paper); }
+img::selection { background: transparent; }
+
+/* ---- the labels: the only other size on the site ---- */
+.lab {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px 1em;
+  padding: 14px 0 0;
+  font-size: var(--s);
+  line-height: 1.3;
+  font-weight: 500;
+  letter-spacing: 0;
+  color: var(--mid);
+}
+.d { font-style: normal; font-variant-numeric: tabular-nums; } /* digits only: this font's tnum also widens . and , */
+.lab a, .lab button {
+  all: unset;
+  color: var(--ink);
+  cursor: pointer;
+  width: fit-content;
+  position: relative;
+}
+.lab > :nth-child(even) { justify-self: start; }
+.lab a::after, .lab button::after { content: ""; position: absolute; inset: -11px -6px; }
+@media (hover: hover) { .lab a:hover, .lab button:hover { background: var(--light); box-shadow: 0 0 0 3px var(--light); } }
+
+@media (min-width: 760px) {
+  .lab { display: flex; gap: 0 2.4em; padding-top: 20px; }
+}
+
+/* ---- the text ---- */
+.text {
+  max-width: 23.2em;
+  margin-top: 1.5lh;
+}
+footer { max-width: 23.2em; margin-top: 2lh; }
+
+h1, h2, p, pre { margin: 0; font: inherit; }
+h1, p { hyphens: auto; -webkit-hyphens: auto; hyphenate-limit-chars: 8 4 4; text-wrap: pretty; overflow-wrap: break-word; }
+/* A paragraph that holds a glyph must keep every break it had, or the line could not part where it stood. */
+.set { text-wrap: wrap; }
+.gap { margin-top: 1lh; }
+h2 { font-weight: 640; font-feature-settings: "case"; }
+
+/* paragraph numbers: the anchor of one exact sentence */
+.n {
+  display: inline-block;
+  width: 1.05em;
+  position: relative;
+  vertical-align: baseline;
+  font-size: var(--s);
+  width: calc(var(--t) * 1.05);
+  line-height: 0;
+  font-weight: 500;
+  letter-spacing: 0;
+  color: var(--mid);
+  text-decoration: none;
+  font-variant-numeric: tabular-nums;
+  -webkit-user-select: none;
+  user-select: none;
+  transform: translateY(calc(var(--t) * -.33));
+}
+.n::after { content: ""; position: absolute; left: -10px; right: 0; top: -22px; height: 44px; }
+:target > .n { color: var(--ink); font-weight: 700; }
+
+/* a link is a hole in the line with the word still in it: the mortise's tint on the picture's band, floor drawn */
+article a:not(.n), .g .full {
+  color: inherit;
+  text-decoration: none;
+  background:
+    linear-gradient(var(--ink), var(--ink)) no-repeat 0 calc(.207em + 1em - 1px) / 100% 1px,
+    linear-gradient(var(--hole), var(--hole)) no-repeat 0 .207em / 100% 1em;
+  hyphens: manual;
+  -webkit-hyphens: manual;
+  padding: 0 .1em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  overflow-wrap: anywhere;
+}
+article .g a { background: none; padding: 0; }
+
+/* ---- glyphs ---- */
+.w { white-space: nowrap; }
+
+.g {
+  display: inline-block;
+  position: relative;
+  height: 1em;
+  height: round(1em, 1px);
+  margin-left: var(--space);
+  vertical-align: -.23em;
+  vertical-align: round(-.23em, 1px);
+  line-height: 0;
+  letter-spacing: 0;
+  white-space: normal;
+}
+.g + .g { margin-left: .12em; }
+.g > a { display: block; height: 100%; color: inherit; cursor: zoom-in; position: relative; }
+.g > a::after { /* a real tap target around a small picture */
+  content: "";
+  position: absolute;
+  left: 50%; top: 50%;
+  width: max(100%, 44px);
+  height: max(100%, 46px);
+  transform: translate(-50%, -50%);
+}
+.g img { display: block; height: 100%; width: auto; max-width: none; transform-origin: 0 0; }
+
+.g.m .bar {
+  display: block;
+  height: 100%;
+  width: calc(var(--r) * 5em);
+  min-width: 1px;
+  background: var(--ink);
+  transform-origin: 0 0;
+}
+
+/* the hole the picture left: it stays on the upper line, and closes the picture when tapped */
+.mortise {
+  display: inline-block;
+  height: 1em;
+  height: round(1em, 1px);
+  margin-left: var(--space);
+  vertical-align: -.23em;
+  vertical-align: round(-.23em, 1px);
+  width: calc(var(--a, 0) * 1em); /* site.js sets the exact glyph width */
+  box-shadow: inset 0 0 0 1px var(--ink);
+  background: var(--hole);
+  cursor: zoom-out;
+  position: relative;
+}
+.mortise::after { content: ""; position: absolute; left: 50%; top: 50%; width: max(100%, 44px); height: max(100%, 46px); transform: translate(-50%, -50%); }
+
+.tab { display: none; height: 0; } /* only a line that really continues gets one, or its first space would indent it */
+.tab[style] { display: inline-block; }
+
+.g.open {
+  display: block;
+  height: auto;
+  margin: 0;
+  padding: 7px 0 10px;
+  white-space: normal;
+  vertical-align: baseline;
+  z-index: 1;
+}
+.g.open > a { height: auto; width: fit-content; cursor: zoom-out; }
+.g.open > a::after { display: none; }
+.g.open img { height: auto; width: min(100%, calc(max(260px, 74vh) * var(--a, 1))); }
+.g.m.open > a { width: 100%; }
+.g.m.open .bar { position: relative; height: 100%; width: calc(var(--r) * 100%); min-width: 1px; }
+.frame { position: absolute; inset: 0; box-shadow: inset 0 0 0 1px var(--ink); }
+
+.cap {
+  display: block;
+  padding-top: 7px;
+  font-size: var(--s);
+  line-height: 1.3;
+  font-weight: 500;
+  letter-spacing: 0;
+  white-space: normal;
+  color: var(--ink);
+  hyphens: manual;
+  -webkit-hyphens: manual;
+}
+.cap .size { white-space: nowrap; font-variant-numeric: tabular-nums; }
+.cap .full {
+  border: 0;
+  margin: 0;
+  font: inherit;
+  letter-spacing: inherit;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  cursor: pointer;
+  padding: 0 .3em;
+  background-position: 0 calc(1.08em - 1px), 0 .08em;
+}
+
+/* without script, the link target opens the same way, without the parting */
+html:not(.js) .g:target { display: block; height: auto; margin: 7px 0; }
+html:not(.js) .g:target img { height: auto; width: auto; max-width: 100%; max-height: 80vh; }
+html:not(.js) .g:target::after { content: attr(data-cap); display: block; font-size: var(--s); line-height: 1.3; padding-top: 7px; }
+html:not(.js) .g.m:target .bar { height: 3lh; width: calc(var(--r) * 100%); }
+
+/* ---- a tree, in the one post that has one ---- */
+pre {
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: .6em;
+  line-height: 1.34;
+  letter-spacing: 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+pre span { display: block; padding-left: 4ch; text-indent: -4ch; }
+
+/* ---- the running paragraph: index, and the end of every post ---- */
+.run { hyphens: auto; text-wrap: wrap; }
+.run a { color: inherit; text-decoration: none; }
+.u { hyphens: manual; -webkit-hyphens: manual; overflow-wrap: anywhere; }
+.run .g a { background: none; padding: 0; }
+.t { font-weight: 640; hyphens: manual; -webkit-hyphens: manual; }
+.v {
+  font-size: var(--s);
+  line-height: 0;
+  font-weight: 500;
+  letter-spacing: 0;
+  color: var(--mid);
+  vertical-align: baseline;
+  position: relative;
+  top: calc(var(--t) * -.33);
+  margin-right: .1em;
+  white-space: nowrap;
+}
+.e .g { color: var(--ink); }
+.f1 { color: #2a2a2a; } .f2 { color: #4a4a4a; } .f3 { color: #686868; } .f4 { color: #828282; } .f5 { color: #989898; } .f6 { color: #aaaaaa; } .f7 { color: #b8b8b8; }
+
+@media (hover: hover) {
+  .e:has(> a:hover, .w > a:hover) a:not(.g a), .e:has(> a:hover, .w > a:hover) [class^="f"] { color: var(--ink); }
+  article a:not(.n):not(.g a):hover, .g .full:hover { background: linear-gradient(var(--light), var(--light)) no-repeat 0 .207em / 100% 1em; }
+  .g .full:hover { background-position: 0 .08em; }
+}
+
+/* ---- project page ---- */
+.project h1 { margin-bottom: 1lh; }
+
+/* ---- focus: white appears nowhere else but inside pictures ---- */
+:focus { outline: none; }
+a:focus-visible, button:focus-visible, .mortise:focus-visible {
+  outline: 3px solid var(--light);
+  outline-offset: 2px;
+}
+article a:not(.n):not(.g a):focus-visible { background: linear-gradient(var(--light), var(--light)) no-repeat 0 .207em / 100% 1em; outline: none; }
+
+@media (hover: hover) { .g:not(.open) > a:hover { outline: 2px solid var(--ink); outline-offset: 1px; } }
+
+/* ---- the project marker in an index label: date, then "The Commons · 4 of 4", linking to the project ---- */
+.v a { position: relative; }
+.v a::after { content: ""; position: absolute; inset: -14px -4px; }
+@media (hover: hover) { .v a:hover { background: var(--light); box-shadow: 0 0 0 3px var(--light); color: var(--ink); } }
+
+/* ---- the series rail: the shared base is spliced in here by build.mjs, then restyled below ---- */
+/* rail:base */
+.rail{--rail-ink:currentColor;--rail-quiet:color-mix(in srgb,currentColor 32%,transparent);--rail-bg:Canvas;--rail-font:inherit;--rail-dash:22px;
+  font:13px/18px var(--rail-font);font-variant-numeric:tabular-nums}
+.rail ol{list-style:none;margin:0;padding:0}
+.rail a{color:inherit;text-decoration:none}
+@media (min-width:1100px){
+  .rail{position:fixed;left:18px;top:50%;transform:translateY(-50%);z-index:20;width:calc(var(--rail-dash) + 8px)}
+  .rail-head{position:absolute;bottom:100%;left:0;padding-bottom:10px;white-space:nowrap;color:var(--rail-quiet);opacity:0;transition:opacity .15s}
+  .rail:hover .rail-head,.rail:focus-within .rail-head{opacity:1}
+  .rail-head .rail-of::before{content:" · "}
+  .rail li{position:relative}
+  .rail li>a{display:block;height:14px;position:relative}
+  .rail li>a::before{content:"";position:absolute;left:0;top:6px;height:2px;border-radius:1px;width:calc(var(--rail-dash)*var(--rail-w));background:var(--rail-quiet);transition:background .15s,width .15s}
+  .rail li>a[aria-current]::before{background:var(--rail-ink);width:calc(var(--rail-dash)*var(--rail-w) + 6px)}
+  .rail li>a:hover::before,.rail li>a:focus-visible::before{background:var(--rail-ink)}
+  .rail li>a:focus-visible{outline:none}
+  .rail-n,.rail-l{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+  .rail-tip{position:absolute;left:calc(100% + 14px);top:50%;transform:translateY(-50%);width:max-content;max-width:300px;padding:9px 12px 10px;
+    background:var(--rail-bg);color:var(--rail-ink);box-shadow:0 0 0 1px var(--rail-quiet);visibility:hidden;opacity:0;transition:opacity .12s}
+  .rail-tip b{display:block;font-weight:600}
+  .rail-tip i{display:block;font-style:normal;color:var(--rail-quiet);margin-bottom:4px}
+  .rail li>a:hover .rail-tip,.rail li>a:focus-visible .rail-tip{visibility:visible;opacity:1}
+}
+@media (max-width:1099.98px){
+  .rail{margin:24px 0}
+  .rail-head{display:flex;justify-content:space-between;gap:12px;padding:0 0 6px;border-bottom:1px solid var(--rail-quiet)}
+  .rail-tip{display:none}
+  .rail li>a{display:grid;grid-template-columns:2ch 1fr;gap:10px;align-items:baseline;min-height:44px;padding:12px 0 0}
+  .rail-n{color:var(--rail-quiet);text-align:right}
+  .rail li>a[aria-current]{font-weight:600}
+  .rail li>a[aria-current] .rail-n{color:var(--rail-ink)}
+}
+@media (prefers-reduced-motion:reduce){.rail *{transition:none!important}}
+/* rail:end */
+.rail {
+  --rail-ink: var(--ink);
+  --rail-quiet: #8a8a8a;
+  --rail-bg: var(--hole);
+  --rail-font: "Schibsted Grotesk", -apple-system, system-ui, sans-serif;
+  font-size: var(--s);
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: 0;
+  color: var(--mid);
+}
+.rail-tip { box-shadow: inset 0 0 0 1px var(--ink); padding: 10px 14px 12px; max-width: 320px; }
+.rail-tip b { font-weight: 640; }
+.rail-tip i { color: var(--mid); }
+.rail-tip span { display: block; }
+.rail li > a:hover::before, .rail li > a:focus-visible::before { background: var(--ink); }
+@media (min-width: 1100px) {
+  /* make room: the dashes live in the margin, the text starts to their right (the rail is 18px in, at most 46px wide) */
+  body.railed { padding-left: calc(var(--m) + 44px); }
+  .rail-head { display: none; } /* the header line already says "The Commons · 3 of 4"; a label here would sit under the preview */
+}
+@media (max-width: 1099.98px) {
+  .rail { max-width: 23.2em; margin: 2lh 0 0; }
+  .rail-head { justify-content: flex-start; gap: 0; border-bottom-color: var(--ink); color: var(--mid); font-weight: 500; }
+  .rail-head .rail-p { color: var(--ink); }
+  .rail-head .rail-of::before { content: "·"; margin: 0 .5em; }
+  .rail li > a { color: var(--ink); }
+  .rail li > a:not([aria-current]) { color: var(--mid); }
+  .rail li > a[aria-current] { font-weight: 640; }
+  .rail-n { color: var(--mid); }
+  .rail li > a[aria-current] .rail-n { color: var(--ink); }
+}
+@media (hover: hover) and (max-width: 1099.98px) { .rail li > a:hover { color: var(--ink); } }
