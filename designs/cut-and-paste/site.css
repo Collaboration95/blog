@@ -185,7 +185,9 @@ a.print:focus-visible{outline-offset:6px}
 .clip .reg a::before{content:"";position:absolute;inset:-14px -14px -640px;z-index:1}
 .meta{display:flex;flex-wrap:wrap;gap:5px;margin:0 0 12px}
 .pv{display:block;line-height:0;margin:0 0 12px}
-.pv img{display:block;width:100%;height:auto;object-fit:contain}
+.pv{container-type:inline-size}
+/* on the front page a tall picture is scaled down to fit a square, never cropped */
+.pv img{display:block;width:auto;height:auto;max-width:100%;max-height:100cqw;margin:0 auto}
 .pline{font-size:19px;margin:0 0 12px}
 /* an entry that belongs to a project says so, quietly, and goes to the project */
 .proj{position:relative;z-index:2;align-self:center;font:700 11.5px/1 "Label",monospace;letter-spacing:.11em;text-transform:uppercase;padding:5px 0 7px}
@@ -196,6 +198,9 @@ a.print:focus-visible{outline-offset:6px}
 .trail.whole{height:auto;clip-path:none}
 .clip .scrap{padding-bottom:0}
 .clip .scrap::after{content:"";display:block;height:0}
+.dek{margin:0 0 16px;font-size:19px;line-height:26px;text-wrap:pretty}
+.dek .more{margin-left:.15em;color:var(--pink)}
+.c-blue .dek .more{color:var(--paper)}
 .c-white .scrap,.c-pink .scrap,.c-blue .scrap{clip-path:none}
 .top{margin-bottom:24px}
 .clip:hover .reg{--r:0deg}
@@ -280,8 +285,8 @@ a.print:focus-visible{outline-offset:6px}
   .scrap{flex:1;min-width:0;display:flex;flex-direction:column}
   .scrap>*{flex:none}
   .clip .reg{font-size:clamp(34px,3.5vw,50px)}
-  .scrap>.trail{flex:1 1 0;height:auto;min-height:calc(23px*4 + 12px)}
-  .row .scrap>.trail{min-height:calc(23px*8 + 12px)}
+  .dek{font-size:23px;line-height:31px;margin-bottom:22px}
+  .row .dek{font-size:21px;line-height:29px}
   .row .clip .reg{font-size:clamp(30px,2.9vw,42px)}
   body:has(.board){--sheet-w:min(1280px,calc(100vw - 56px))}
   /* a repost is one line: a slip of blue, not a sheet of it */

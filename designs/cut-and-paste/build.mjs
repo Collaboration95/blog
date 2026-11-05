@@ -405,11 +405,21 @@ function entryFor(p) {
   const ang = im ? angle('glue', r) : angle('tape', r) // big scraps lean least
   const tape = `<span class="t t-${im ? 'washi' : 'clear'} top" style="--tx:${18 + Math.round(r() * 56)}%;--tj:${f1((r() - .5) * 7)}deg"></span>`
   const img = im ? `<span class="pv"><img src="../../content/${im.src.replace(/^content\//, '')}" width="${im.w}" height="${im.h}" alt="${esc(im.alt)}" loading="lazy" decoding="async"></span>` : ''
+  // the front page gives only the opening line, set large; an ellipsis says there's more.
+  // When the first line is already the headline, the dek is the line after it.
+  const paras = p.blocks.filter(b => b.kind === 'p').map(b => plain(b.html).replace(/\s+/g, ' ').trim()).filter(Boolean)
+  const from = headlineOf(p).first ? 1 : 0, all = paras.slice(from).join(' ')
+  let dek = paras[from] ?? ''
+  if (dek.length > 220) { const s = dek.slice(0, 220), end = Math.max(s.lastIndexOf('. '), s.lastIndexOf('! '), s.lastIndexOf('? ')); dek = end > 60 ? s.slice(0, end + 1) : s.slice(0, s.lastIndexOf(' ')) }
+  const more = all.length > dek.length + 8
   const mark = pj ? `<a class="proj" href="projects/${pj.id}.html">${escText(pj.title)} &middot; ${[...pj.posts].reverse().indexOf(p.id) + 1} of ${pj.posts.length}</a>` : ''
-  return { pic: !!im, html: `<article class="clip c-${stock}" style="--r:${ang}deg"><div class="scrap">${tape}
+  // rough desktop height of this scrap at a given text width, used to balance the bands
+  const lines = (s, w, em) => Math.ceil(s.length * 1.12 / (w / em))
+  const tall = w => 14 + lines(hl, w, 24) * 49 + 14 + 34 + (im ? w * Math.min(1, im.h / im.w) + 12 : 0) + (dek ? lines(dek + '…', w, 13.8) * 31 + 22 : 0)
+  return { pic: !!im, tall, html: `<article class="clip c-${stock}" style="--r:${ang}deg"><div class="scrap">${tape}
 ${reg('h2', hl, '', 0, `<a href="posts/${p.id}.html">${escText(hl)}</a>`)}
 <p class="meta"><span class="dymo">${fdate(p)}</span>${mark}</p>
-${img}<p class="trail${wholeOpening(p) ? ' whole' : ''}">${trailText(p)}</p>
+${img}${dek ? `<p class="dek">${escText(dek)}${more ? '<span class="more" aria-hidden="true">…</span>' : ''}</p>` : ''}
 </div></article>` }
 }
 
@@ -418,11 +428,18 @@ function indexPage() {
   const entries = [...posts].sort((a, b) => b.date.localeCompare(a.date)).map(entryFor), bands = []
   // The board is pasted up in bands, read in strict date order. A picture leads its band at 7 of
   // 12 columns and the scraps next to it fill the other 5, trimmed to the same depth, so no band
-  // has a hole. Runs of text with no picture coming up are cut into threes.
+  // has a hole. Runs of text with no picture coming up are cut into threes. The stack beside a
+  // picture takes however many of the next scraps (one to three) come closest to its height.
   const html = list => list.map(e => e.html).join('\n')
+  const LEAD = 621, SIDE = 435, GAP = 30
   for (let i = 0; i < entries.length;) {
-    const next = entries.slice(i + 1, i + 3), k = next.findIndex(e => e.pic)
-    if (entries[i].pic) { bands.push(`<div class="band lead-l">${html([entries[i]])}<div class="stack">${html(next)}</div></div>`); i += 1 + next.length }
+    let next = entries.slice(i + 1, i + 3), k = next.findIndex(e => e.pic)
+    if (entries[i].pic) {
+      const want = entries[i].tall(LEAD), cand = entries.slice(i + 1, i + 4)
+      let best = 1, h = 0, miss = Infinity
+      cand.forEach((e, j) => { h += e.tall(SIDE) + (j ? GAP : 0); if (Math.abs(want - h) < miss) { miss = Math.abs(want - h); best = j + 1 } })
+      next = cand.slice(0, best)
+      bands.push(`<div class="band lead-l">${html([entries[i]])}<div class="stack">${html(next)}</div></div>`); i += 1 + next.length }
     else if (k >= 0) { bands.push(`<div class="band lead-r"><div class="stack">${html(entries.slice(i, i + k + 1))}</div>${html([next[k]])}</div>`); i += k + 2 }
     else { const row = entries.slice(i, i + 3); bands.push(`<div class="band row">${html(row)}</div>`); i += row.length }
   }

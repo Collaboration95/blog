@@ -7,6 +7,10 @@
 3. **Frontend**: the shared design language the live site uses.
 4. **Labs** (`/labs`): experiments with different models and UIs, plus a place to demo widgets.
 
+## Decisions, 5 Nov 2026
+
+- **Cut and Paste front page:** each card shows only the post's opening line (or the line after it, when the first line is already the headline), set larger and ending in a pink `…`. It replaced the torn-paper excerpt. Pictures are scaled to fit within a square (never cropped), and the stack beside a picture takes one to three scraps, whichever comes closest to the picture card's height.
+
 ## Decisions, 4 Nov 2026
 
 - **Live site:** Cut and Paste (at the root) and Rebus (under `rebus/`), same pages in both. One design per day, alternating; a small switch in the top right picks one and remembers it. Its icon is a tiny picture of the other design.
