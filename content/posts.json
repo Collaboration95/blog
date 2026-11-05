@@ -3,6 +3,40 @@
  "author": "GuruPrasath Gopal",
  "projects": [
   {
+   "id": "yald",
+   "title": "yald",
+   "line": "the dashboard I built to see where my AI coding tokens go.",
+   "posts": [
+    "yald-speed",
+    "yald-meet-yaldi",
+    "yald"
+   ],
+   "first": "2026-10-07",
+   "last": "2026-11-03"
+  },
+  {
+   "id": "ai-grand-prix",
+   "title": "AI Grand Prix",
+   "line": "",
+   "posts": [
+    "ai-grand-prix-team",
+    "prompt-fu"
+   ],
+   "first": "2026-10-26",
+   "last": "2026-10-27"
+  },
+  {
+   "id": "plotline",
+   "title": "Plotline",
+   "line": "",
+   "posts": [
+    "plotline-track-win",
+    "plotline"
+   ],
+   "first": "2026-10-21",
+   "last": "2026-10-23"
+  },
+  {
    "id": "the-commons",
    "title": "The Commons",
    "line": "a room that builds itself",
@@ -21,15 +55,15 @@
    "line": "a research agent with a wallet.",
    "posts": [
     "researchagent-demo",
+    "researchagent-team-repost",
     "hermes-agent-night",
     "researchagent-lineup-repost",
-    "researchagent-team-repost",
     "researchagent-invitation",
     "singhacks-finalist",
     "singhacks-day-1"
    ],
    "first": "2026-09-05",
-   "last": "2026-10-11"
+   "last": "2026-10-12"
   },
   {
    "id": "screenshot-declutterer",
@@ -72,6 +106,388 @@
   }
  ],
  "posts": [
+  {
+   "id": "yald-speed",
+   "date": "2026-11-03",
+   "dateApprox": false,
+   "project": "yald",
+   "kind": "project",
+   "label": "yald 0.3.0, faster",
+   "opening": "Yald , My dashboard to track expensive AI usage , was itself getting slow. Fixed Now ! ( v0.3.0 out )",
+   "blocks": [
+    {
+     "kind": "p",
+     "html": "Yald , My dashboard to track expensive AI usage , was itself getting slow. Fixed Now ! ( v0.3.0 out )"
+    },
+    {
+     "kind": "p",
+     "html": "On my real history (about 157k requests) the Cost page took 4.5 seconds to open. The cause was dumb: it worked out each request's timezone bucket over and over, about 5 times per request. That was 2.2 million lookups for one Cost request. Now it's 3,624."
+    },
+    {
+     "kind": "p",
+     "html": "The Cost page now opens in about 0.14 s, roughly 30x faster, and in under 10 ms when you come back to it. Usage went from 3.5 s to under 0.2 s. Every number is unchanged: 401 API responses came back byte-identical."
+    },
+    {
+     "kind": "p",
+     "html": "While I was in there, it got three new views: a Context page (how long your contexts get, per model), Spend structure on Cost (how concentrated your spend is across sessions), and Spend spikes in Labs, where Yaldi flags days above 2.5x your trailing median."
+    },
+    {
+     "kind": "p",
+     "html": "More features in the works , going to be a busy week !"
+    }
+   ],
+   "images": [
+    {
+     "src": "content/posts/yald-speed/01.webp",
+     "w": 1200,
+     "h": 627,
+     "alt": "Before and after bars for yald's Cost and Usage pages on a linear scale: Cost about 33x and Usage about 20x faster on first open, with Yaldi."
+    },
+    {
+     "src": "content/posts/yald-speed/02.webp",
+     "w": 1200,
+     "h": 628,
+     "alt": "Four poses of Yaldi, a small robot detective with a coral cap."
+    }
+   ],
+   "words": 167,
+   "links": [],
+   "linkedin": "https://www.linkedin.com/feed/update/urn:li:activity:7523296584030208001/"
+  },
+  {
+   "id": "ai-grand-prix-team",
+   "date": "2026-10-27",
+   "dateApprox": false,
+   "project": "ai-grand-prix",
+   "kind": "event",
+   "label": "AI Grand Prix, team build",
+   "opening": "Went to my first 24hr hackathon over the weekend , camped out at Carousell Group and built something cool !",
+   "blocks": [
+    {
+     "kind": "p",
+     "html": "Went to my first 24hr hackathon over the weekend , camped out at Carousell Group and built something cool !"
+    },
+    {
+     "kind": "p",
+     "html": "Our idea was to make shopping apps interesting again by making each UI unique to the user and no two screens would ever be the same!"
+    },
+    {
+     "kind": "p",
+     "html": "We did not land on this idea instantly though , had a lot of discussions with the team , talked to Alex Yoon , Tyler Ryu to get their perspectives and ideated until 5am ( 17hrs in ) and then finally decided to back my idea."
+    },
+    {
+     "kind": "p",
+     "html": "Was glad to have met some amazing people : Shawn Beck Md Muhim Muktadir Khan Rakib Ahsan , Akshi Gupta , Shreyansh Agarwal , Priyadharshan Kannan and to see some familiar faces Danon Gabriel The , Lee Yung Yau (Timothy) and Umang Gupta again."
+    }
+   ],
+   "images": [
+    {
+     "src": "content/posts/ai-grand-prix-team/01.webp",
+     "w": 800,
+     "h": 458,
+     "alt": "Slide \"The idea\": \"Same simple text box. A new screen every time.\" over a wall of generated shopping screens."
+    },
+    {
+     "src": "content/posts/ai-grand-prix-team/02.webp",
+     "w": 480,
+     "h": 360,
+     "alt": "The team presenting on stage, a phone UI and a \"click\" slide on the projector."
+    },
+    {
+     "src": "content/posts/ai-grand-prix-team/03.webp",
+     "w": 480,
+     "h": 360,
+     "alt": "Selfie of Guru with teammates at table 8, laptops open."
+    },
+    {
+     "src": "content/posts/ai-grand-prix-team/04.webp",
+     "w": 480,
+     "h": 360,
+     "alt": "A speaker in front of a \"Build the experience customers will ask for\" slide."
+    },
+    {
+     "src": "content/posts/ai-grand-prix-team/05.webp",
+     "w": 800,
+     "h": 1067,
+     "alt": "The team in a red-lit hallway."
+    }
+   ],
+   "words": 136,
+   "links": [],
+   "linkedin": "https://www.linkedin.com/feed/update/urn:li:activity:7520708838182830080/"
+  },
+  {
+   "id": "prompt-fu",
+   "date": "2026-10-26",
+   "dateApprox": false,
+   "project": "ai-grand-prix",
+   "kind": "project",
+   "label": "Prompt Fu, AI Grand Prix",
+   "opening": "Built Prompt-Fu for AI GrandPrix , a 24hr hackathon , co-hosted by OpenAi & Coupang at Carousell Sg.",
+   "blocks": [
+    {
+     "kind": "p",
+     "html": "Built Prompt-Fu for AI GrandPrix  , a 24hr hackathon , co-hosted by OpenAi &amp; Coupang at Carousell Sg."
+    },
+    {
+     "kind": "p",
+     "html": "The first individual challenge had a simple brief. Build a game that's fun, creative and polished, and publish it on Sites."
+    },
+    {
+     "kind": "p",
+     "html": "I hadn't used ChatGPT Sites for a project with a backend before. The Site opens the game in an iframe, while a separate Node server serves the game and connects the phones over WebSockets."
+    },
+    {
+     "kind": "p",
+     "html": "I built Prompt Fu, a couch party game inspired by Boomerang Fu. One screen runs the arena. Scan a QR code and your phone becomes the controller."
+    },
+    {
+     "kind": "p",
+     "html": "Describe a snack and Codex turns it into a fighter, complete with a weapon. Describe a place and it becomes the arena theme. Then throw boomerangs, dash, hide in bushes and try to be the last snack standing."
+    },
+    {
+     "kind": "p",
+     "html": "Code and slides: <a href=\"https://github.com/Collaboration95/prompt-fu\">github.com/Collaboration95/prompt-fu</a>"
+    },
+    {
+     "kind": "p",
+     "html": "Thanks to Tyler Ryu for the codex resets !"
+    }
+   ],
+   "images": [
+    {
+     "src": "content/posts/prompt-fu/01.webp",
+     "w": 1600,
+     "h": 900,
+     "alt": "Prompt Fu title slide: \"Make a snack. Start a food fight.\", with four food fighters."
+    },
+    {
+     "src": "content/posts/prompt-fu/02.webp",
+     "w": 1600,
+     "h": 671,
+     "alt": "Slide \"The arena is yours too\": three arena themes, Desert, Autumn Dojo and Candy Land."
+    },
+    {
+     "src": "content/posts/prompt-fu/03.webp",
+     "w": 480,
+     "h": 242,
+     "alt": "Slide \"The snack lineup\": Vock the avocado, Donny the donut, Shari the sushi and Greg the eggplant."
+    },
+    {
+     "src": "content/posts/prompt-fu/04.webp",
+     "w": 480,
+     "h": 220,
+     "alt": "Slide \"Your phone is the controller\": scan the QR code, take a fighter slot, then move and throw."
+    },
+    {
+     "src": "content/posts/prompt-fu/05.webp",
+     "w": 480,
+     "h": 360,
+     "alt": "An organiser on stage beside a \"Welcome, builders. AI Grand Prix\" slide."
+    }
+   ],
+   "words": 151,
+   "links": [
+    "https://github.com/Collaboration95/prompt-fu"
+   ],
+   "linkedin": "https://www.linkedin.com/feed/update/urn:li:activity:7520355469060911105/"
+  },
+  {
+   "id": "yald-meet-yaldi",
+   "date": "2026-10-23",
+   "dateApprox": false,
+   "project": "yald",
+   "kind": "project",
+   "label": "yald 0.2.0, meet Yaldi",
+   "opening": "A few weeks ago I posted yald, the dashboard I built to see where my AI coding tokens go.",
+   "blocks": [
+    {
+     "kind": "p",
+     "html": "A few weeks ago I posted yald, the dashboard I built to see where my AI coding tokens go."
+    },
+    {
+     "kind": "p",
+     "html": "It got a v2 ( actually a 0.2.0 )"
+    },
+    {
+     "kind": "p",
+     "html": "Meet Yaldi, a small robot detective in a coral cap."
+    },
+    {
+     "kind": "p",
+     "html": "Yaldi shows up in the new Labs investigations."
+    },
+    {
+     "kind": "p",
+     "html": "Project Radar shows which projects drive your usage and cost."
+    },
+    {
+     "kind": "p",
+     "html": "Cache Detective checks whether your cache reads actually paid for your cache writes."
+    },
+    {
+     "kind": "p",
+     "html": "Context Replay shows how your context grew inside a session. Every finding links back to the exact requests behind it."
+    },
+    {
+     "kind": "p",
+     "html": "yald reads Claude Code transcripts now too, and yald demo lets you try it on synthetic data (it's what these screenshots show)."
+    }
+   ],
+   "images": [
+    {
+     "src": "content/posts/yald-meet-yaldi/01.webp",
+     "w": 1600,
+     "h": 837,
+     "alt": "Four poses of Yaldi, a small robot detective with a coral cap: looking through a magnifying glass, reading a bar-chart notebook, spotting a clue, and asleep."
+    },
+    {
+     "src": "content/posts/yald-meet-yaldi/02.webp",
+     "w": 1280,
+     "h": 880,
+     "alt": "yald Overview page in light theme showing synthetic demo usage, with a Demo banner and the Yaldi mascot."
+    },
+    {
+     "src": "content/posts/yald-meet-yaldi/03.webp",
+     "w": 1280,
+     "h": 880,
+     "alt": "Project Radar in light theme: synthetic project comparison against the preceding window, with Yaldi."
+    }
+   ],
+   "words": 111,
+   "links": [],
+   "linkedin": "https://www.linkedin.com/feed/update/urn:li:activity:7519280527179329539/"
+  },
+  {
+   "id": "plotline-track-win",
+   "date": "2026-10-23",
+   "dateApprox": false,
+   "project": "plotline",
+   "kind": "project",
+   "label": "Plotline, track win",
+   "opening": "Last week I took part in Hack & Hire: Sustainability Edition, a week-long hackathon at NUS, and won our track 🏆",
+   "blocks": [
+    {
+     "kind": "p",
+     "html": "Last week I took part in Hack &amp; Hire: Sustainability Edition, a week-long hackathon at NUS, and won our track 🏆"
+    },
+    {
+     "kind": "p",
+     "html": "In case you missed my last post:"
+    },
+    {
+     "kind": "p",
+     "html": "Our solution speeds up the EU's deforestation check for farm plots and makes the data it needs much lighter."
+    },
+    {
+     "kind": "p",
+     "html": "The stored maps are 99% smaller, checks are about 5× faster, and re-checks are up to 44× faster."
+    },
+    {
+     "kind": "p",
+     "html": "Thank you to SystemEarth for a fun / hard problem and for judging our work, and to Andrei Loh for running a smooth event."
+    },
+    {
+     "kind": "p",
+     "html": "Built with Mrigakshi Roy Choudhury and Ibrahim Mammadov ."
+    }
+   ],
+   "images": [
+    {
+     "src": "content/posts/plotline-track-win/01.webp",
+     "w": 1600,
+     "h": 1131,
+     "alt": "Certificate of Merit, Hack & Hire 2026: Guruprasath Gopal, Mrigakshi Roy Choudhury and Ibrahim Mammadov, ranked joint 1st of 4 entries."
+    },
+    {
+     "src": "content/posts/plotline-track-win/02.webp",
+     "w": 1600,
+     "h": 1000,
+     "alt": "Plotline brief site: \"Decision layer: algorithm, schema and benchmarks\", with its headline numbers."
+    },
+    {
+     "src": "content/posts/plotline-track-win/03.webp",
+     "w": 800,
+     "h": 328,
+     "alt": "The Plotline wordmark drawn in map-cell dots."
+    }
+   ],
+   "words": 98,
+   "links": [],
+   "linkedin": "https://www.linkedin.com/feed/update/urn:li:activity:7519334153662660610/"
+  },
+  {
+   "id": "plotline",
+   "date": "2026-10-21",
+   "dateApprox": false,
+   "project": "plotline",
+   "kind": "project",
+   "label": "Plotline, Hack&Hire",
+   "opening": "If you sell products like rubber, coffee or wood in the EU, you have to prove they didn't come from deforestation. It involves checking every farm plot against years of satellite maps and doing it again whenever they update.",
+   "blocks": [
+    {
+     "kind": "p",
+     "html": "If you sell products like rubber, coffee or wood in the EU, you have to prove they didn't come from deforestation. It involves checking every farm plot against years of satellite maps and doing it again whenever they update."
+    },
+    {
+     "kind": "p",
+     "html": "Last week I built Plotline at Hack&amp;Hire: Sustainability Edition, for SystemEarth geospatial challenge to help"
+    },
+    {
+     "kind": "p",
+     "html": "Our project makes that check must faster and lighter. ( 99% smaller , 5x faster on average , 44x faster on rechecks from the starting point )"
+    },
+    {
+     "kind": "p",
+     "html": "check it out -&gt; <a href=\"https://collaboration95.github.io/hr-2026/brief/\">collaboration95.github.io/hr-2026/brief</a>"
+    },
+    {
+     "kind": "p",
+     "html": "Every dot in the scroll animations is a real map cell, and the dots regroup into each step of the pipeline as you scroll (best on a computer)."
+    },
+    {
+     "kind": "p",
+     "html": "Built with Mrigakshi Roy Choudhury"
+    }
+   ],
+   "images": [
+    {
+     "src": "content/posts/plotline/01.webp",
+     "w": 1600,
+     "h": 1000,
+     "alt": "Plotline brief site: \"Decision layer: algorithm, schema and benchmarks\", with its headline numbers."
+    },
+    {
+     "src": "content/posts/plotline/02.webp",
+     "w": 1600,
+     "h": 1000,
+     "alt": "\"Four source rasters, one decision plane\": the input map layers stacked into one."
+    },
+    {
+     "src": "content/posts/plotline/03.webp",
+     "w": 1600,
+     "h": 1000,
+     "alt": "The .plds byte layout of the decision store."
+    },
+    {
+     "src": "content/posts/plotline/04.webp",
+     "w": 1600,
+     "h": 1000,
+     "alt": "\"20 codes, two levels\": the screening and decision codes."
+    },
+    {
+     "src": "content/posts/plotline/05.webp",
+     "w": 1600,
+     "h": 1431,
+     "alt": "Forest-loss map of the sample region with a year timeline, private plots hidden."
+    }
+   ],
+   "words": 119,
+   "links": [
+    "https://collaboration95.github.io/hr-2026/brief/"
+   ],
+   "linkedin": "https://www.linkedin.com/feed/update/urn:li:activity:7518502930782502912/"
+  },
   {
    "id": "commons-claude-switch",
    "date": "2026-10-14",
@@ -133,27 +549,21 @@
    "images": [
     {
      "src": "content/posts/commons-claude-switch/01.webp",
-     "w": 1600,
-     "h": 1200,
-     "alt": "Speakers on stage in front of a \"What's new for Builders\" slide."
+     "w": 1280,
+     "h": 998,
+     "alt": "Page hero: \"I switched to Claude. A pet goes live in 15 seconds. It took 47.\""
     },
     {
      "src": "content/posts/commons-claude-switch/02.webp",
      "w": 1600,
      "h": 1200,
-     "alt": "Chengyu Calendar demo on stage, a daily Chinese idiom widget."
+     "alt": "Speakers on stage in front of a \"What's new for Builders\" slide."
     },
     {
      "src": "content/posts/commons-claude-switch/03.webp",
      "w": 1600,
      "h": 1200,
-     "alt": "Handmade demo slide: \"Design in code. No round trip.\""
-    },
-    {
-     "src": "content/posts/commons-claude-switch/04.webp",
-     "w": 1600,
-     "h": 1100,
-     "alt": "Page hero: \"I switched to Claude. A pet goes live in 15 seconds. It took 47.\""
+     "alt": "Chengyu Calendar demo on stage, a daily Chinese idiom widget."
     }
    ],
    "words": 306,
@@ -233,33 +643,27 @@
    "images": [
     {
      "src": "content/posts/commons-agent-logs/01.webp",
-     "w": 1600,
-     "h": 1200,
-     "alt": "The event schedule on a big screen: \"Now: Build session 02\" with a live countdown."
+     "w": 800,
+     "h": 460,
+     "alt": "Page section \"One pet costs about a dime\": cost per wished pet at API rates, $0.89 to $1.29 for 10 pets."
     },
     {
      "src": "content/posts/commons-agent-logs/02.webp",
-     "w": 1600,
-     "h": 1200,
-     "alt": "Wide shot of the venue, rows of people building at laptops."
+     "w": 800,
+     "h": 595,
+     "alt": "Page section \"The biggest bill is the server\": a laptop and quick tunnel on demo day for $0, then a Lightsail box for about $8 over three days."
     },
     {
      "src": "content/posts/commons-agent-logs/03.webp",
-     "w": 1600,
-     "h": 1199,
-     "alt": "Selfie of builders around one table, laptops open."
+     "w": 800,
+     "h": 734,
+     "alt": "Design boards: storyboards of the room, table sketches and pocket-stage frames."
     },
     {
      "src": "content/posts/commons-agent-logs/04.webp",
-     "w": 1600,
-     "h": 874,
-     "alt": "Bar chart of tokens per 15 minutes from 23:41 to 17:45, Claude Code in orange and Codex in teal."
-    },
-    {
-     "src": "content/posts/commons-agent-logs/05.webp",
-     "w": 1600,
-     "h": 1225,
-     "alt": "The cost page header: \"What it cost\", 300M tokens, a $2.79 API bill."
+     "w": 800,
+     "h": 600,
+     "alt": "A laptop on a round table beside a plate of pastries."
     }
    ],
    "words": 357,
@@ -268,6 +672,82 @@
     "https://thisisshaw-04.github.io/Common-Ground-Makeathon/?project=42d8f39b-0c16-4fd5-8493-c37afeb808fc#choice"
    ],
    "linkedin": "https://www.linkedin.com/feed/update/urn:li:activity:7515625184553537536/"
+  },
+  {
+   "id": "researchagent-demo",
+   "date": "2026-10-12",
+   "dateApprox": false,
+   "project": "researchagent",
+   "kind": "project",
+   "label": "ResearchAgent, AI Tinkerers demo",
+   "opening": "On Saturday, I took ResearchAgent to the main stage at AI Tinkerers Singapore.",
+   "blocks": [
+    {
+     "kind": "p",
+     "html": "On Saturday, I took ResearchAgent to the main stage at AI Tinkerers Singapore."
+    },
+    {
+     "kind": "p",
+     "html": "ResearchAgent is a research agent with a wallet. It answers from free sources first. When the missing piece sits behind a paywall, it buys that one article straight from the writer, inside a budget you set, then checks every promise the writer made."
+    },
+    {
+     "kind": "p",
+     "html": "The live demo ran on Google Cloud Run and placed in the top three Cloud Run demos of the night, so it came home with US$100 in credits."
+    },
+    {
+     "kind": "p",
+     "html": "Huge thanks to Joe Heitzeberg , Son Le , Jake Laes for running a great event and Lisa Shen from Google Cloud Run too , her Cityscape Agent demo (an ADK agent on Cloud Run, a Maps-grounded MCP server and Nano Banana drawing the city) was simple but demonstrated Google Cloud Run's utility."
+    },
+    {
+     "kind": "p",
+     "html": "I like analysing things, so I turned the build itself into a page of charts: 39 days, 248 commits, 75 pull requests, 422 prompts to two coding agents and 2.3 billion tokens, 97% of them context the agents re-read."
+    },
+    {
+     "kind": "p",
+     "html": "My favourite chart is a single night: 23 pull requests between 1 am and 3:19 am."
+    },
+    {
+     "kind": "p",
+     "html": "Heres a writeup on how the last 40 days looked : <a href=\"https://collaboration95.github.io/theFastandtheFungible/evolution/\">collaboration95.github.io/theFastandtheFungi…</a>"
+    }
+   ],
+   "images": [
+    {
+     "src": "content/posts/researchagent-demo/01.webp",
+     "w": 800,
+     "h": 450,
+     "alt": "Guru at a podium presenting \"Three layers: A asks, B sells, C settles\"."
+    },
+    {
+     "src": "content/posts/researchagent-demo/02.webp",
+     "w": 800,
+     "h": 600,
+     "alt": "Selfie of Guru with three others giving thumbs up."
+    },
+    {
+     "src": "content/posts/researchagent-demo/03.webp",
+     "w": 480,
+     "h": 642,
+     "alt": "AI Tinkerers main stage speaker card: \"ResearchAgent: Evidence Procurement Guard\", Guruprasath Gopal, Singapore, October 10."
+    },
+    {
+     "src": "content/posts/researchagent-demo/04.webp",
+     "w": 480,
+     "h": 640,
+     "alt": "Selfie of Guru in the audience."
+    },
+    {
+     "src": "content/posts/researchagent-demo/05.webp",
+     "w": 800,
+     "h": 600,
+     "alt": "A presenter on stage with an illustrated city on the screen."
+    }
+   ],
+   "words": 204,
+   "links": [
+    "https://collaboration95.github.io/theFastandtheFungible/evolution/"
+   ],
+   "linkedin": "https://www.linkedin.com/feed/update/urn:li:activity:7515218555169050625/"
   },
   {
    "id": "commons-peoples-choice",
@@ -280,7 +760,7 @@
    "blocks": [
     {
      "kind": "p",
-     "html": "VOTE FOR ME. My pets are running for Peoples Choice. ( poke your pet  <a href=\"https://commons.tailca286e.ts.net\">commons.tailca286e.ts.net</a> )"
+     "html": "VOTE FOR ME. My pets are running for Peoples Choice. ( poke your pet <a href=\"https://commons.tailca286e.ts.net\">commons.tailca286e.ts.net</a> )"
     },
     {
      "kind": "p",
@@ -360,7 +840,7 @@
     "https://commons.tailca286e.ts.net",
     "https://thisisshaw-04.github.io/Common-Ground-Makeathon/?project=42d8f39b-0c16-4fd5-8493-c37afeb808fc#choice"
    ],
-   "linkedin": null
+   "linkedin": "https://www.linkedin.com/feed/update/urn:li:activity:7515410709598359552/"
   },
   {
    "id": "commons-best-use-of-tech",
@@ -401,7 +881,7 @@
     },
     {
      "kind": "p",
-     "html": "Thanks to Pizza Yap for sharing me his invite , thanks  Jun Bin Tan , Haziq Halifi Ab Rahman , Lee Yung Yau (Timothy) and Seoyoung Park for the pleasant company."
+     "html": "Thanks to Pizza Yap for sharing me his invite , thanks Jun Bin Tan , Haziq Halifi Ab Rahman , Lee Yung Yau (Timothy) and Seoyoung Park for the pleasant company."
     },
     {
      "kind": "p",
@@ -419,76 +899,43 @@
    "images": [
     {
      "src": "content/posts/commons-best-use-of-tech/01.webp",
+     "w": 800,
+     "h": 800,
+     "alt": "Winners and organisers in front of the \"Common Ground\" screen, holding the award."
+    },
+    {
+     "src": "content/posts/commons-best-use-of-tech/02.webp",
      "w": 1600,
      "h": 900,
      "alt": "Title slide of the pitch deck: \"The Commons, a room that builds itself\", over a pixel-art void deck at dusk."
     },
     {
-     "src": "content/posts/commons-best-use-of-tech/02.webp",
-     "w": 770,
-     "h": 1307,
-     "alt": "Guru presenting at a lectern; behind them a large screen shows The Commons live."
+     "src": "content/posts/commons-best-use-of-tech/03.webp",
+     "w": 800,
+     "h": 1016,
+     "alt": "Instant photo of Guru and a teammate at their laptops."
     },
     {
-     "src": "content/posts/commons-best-use-of-tech/03.webp",
-     "w": 1280,
-     "h": 1600,
-     "alt": "Winners and organisers in front of a \"Common Ground\" screen; Guru holds the award plaque."
+     "src": "content/posts/commons-best-use-of-tech/04.webp",
+     "w": 800,
+     "h": 599,
+     "alt": "Selfie of builders around a table of laptops."
+    },
+    {
+     "src": "content/posts/commons-best-use-of-tech/05.webp",
+     "w": 800,
+     "h": 600,
+     "alt": "The Common Ground stage, two screens of event slides and people at laptops in front."
     }
    ],
    "words": 261,
    "links": [],
-   "linkedin": null
-  },
-  {
-   "id": "researchagent-demo",
-   "date": "2026-10-11",
-   "dateApprox": true,
-   "project": "researchagent",
-   "kind": "project",
-   "label": "ResearchAgent, AI Tinkerers demo",
-   "opening": "On Saturday, I took ResearchAgent to the main stage at AI Tinkerers Singapore.",
-   "blocks": [
-    {
-     "kind": "p",
-     "html": "On Saturday, I took ResearchAgent to the main stage at AI Tinkerers Singapore."
-    },
-    {
-     "kind": "p",
-     "html": "ResearchAgent is a research agent with a wallet. It answers from free sources first. When the missing piece sits behind a paywall, it buys that one article straight from the writer, inside a budget you set, then checks every promise the writer made."
-    },
-    {
-     "kind": "p",
-     "html": "The live demo ran on Google Cloud Run and placed in the top three Cloud Run demos of the night, so it came home with US$100 in credits."
-    },
-    {
-     "kind": "p",
-     "html": "Huge thanks to Joe Heitzeberg , Son Le , Jake Laes for running a great event and Lisa Shen from Google Cloud Run too , her Cityscape Agent demo (an ADK agent on Cloud Run, a Maps-grounded MCP server and Nano Banana drawing the city) was simple but demonstrated Google Cloud Run's utility."
-    },
-    {
-     "kind": "p",
-     "html": "I like analysing things, so I turned the build itself into a page of charts: 39 days, 248 commits, 75 pull requests, 422 prompts to two coding agents and 2.3 billion tokens, 97% of them context the agents re-read."
-    },
-    {
-     "kind": "p",
-     "html": "My favourite chart is a single night: 23 pull requests between 1 am and 3:19 am."
-    },
-    {
-     "kind": "p",
-     "html": "Heres a writeup on how the last 40 days looked : <a href=\"https://collaboration95.github.io/theFastandtheFungible/evolution/\">collaboration95.github.io/theFastandtheFungi…</a>"
-    }
-   ],
-   "images": [],
-   "words": 204,
-   "links": [
-    "https://collaboration95.github.io/theFastandtheFungible/evolution/"
-   ],
-   "linkedin": null
+   "linkedin": "https://www.linkedin.com/feed/update/urn:li:activity:7515271023642968066/"
   },
   {
    "id": "sq-collective-jev",
-   "date": "2026-10-09",
-   "dateApprox": true,
+   "date": "2026-10-10",
+   "dateApprox": false,
    "project": null,
    "kind": "event",
    "label": "SQ Collective, Jev talk",
@@ -520,13 +967,13 @@
      "src": "content/posts/sq-collective-jev/01.webp",
      "w": 1600,
      "h": 1200,
-     "alt": "Selfie of Guru and Gang Rui at SQ Collective."
+     "alt": "Gang Rui presenting Jev in a dark room, a product UI on the projector."
     },
     {
      "src": "content/posts/sq-collective-jev/02.webp",
      "w": 1600,
      "h": 1200,
-     "alt": "Gang Rui presenting Jev in a dark room, a product UI on the projector."
+     "alt": "Selfie of Guru and Gang Rui at SQ Collective."
     },
     {
      "src": "content/posts/sq-collective-jev/03.webp",
@@ -537,12 +984,12 @@
    ],
    "words": 87,
    "links": [],
-   "linkedin": null
+   "linkedin": "https://www.linkedin.com/feed/update/urn:li:activity:7514501212868706304/"
   },
   {
    "id": "lorong-speech-embeddings",
    "date": "2026-10-08",
-   "dateApprox": true,
+   "dateApprox": false,
    "project": null,
    "kind": "event",
    "label": "Lorong AI, speech and embeddings",
@@ -594,13 +1041,13 @@
      "src": "content/posts/lorong-speech-embeddings/01.webp",
      "w": 1600,
      "h": 1200,
-     "alt": "Selfie of Guru and En Lih Lye after the session."
+     "alt": "Slide: \"Singaporean speech is hard for generic models. Eh, you makan already a not ah?\""
     },
     {
      "src": "content/posts/lorong-speech-embeddings/02.webp",
      "w": 1600,
      "h": 1200,
-     "alt": "Slide: \"Singaporean speech is hard for generic models. Eh, you makan already a not ah?\""
+     "alt": "Selfie of Guru and En Lih Lye after the session."
     },
     {
      "src": "content/posts/lorong-speech-embeddings/03.webp",
@@ -612,94 +1059,32 @@
      "src": "content/posts/lorong-speech-embeddings/04.webp",
      "w": 1600,
      "h": 1200,
-     "alt": "Speaker introduction slide for Nguyen Vincent Thong on the stage screen."
+     "alt": "Speaker in front of a \"Sequence Packing\" slide."
     },
     {
      "src": "content/posts/lorong-speech-embeddings/05.webp",
      "w": 1600,
      "h": 1200,
-     "alt": "Results table slide: \"Where we are today and what we did\"."
+     "alt": "Speaker introduction slide for Nguyen Vincent Thong on the stage screen."
     },
     {
      "src": "content/posts/lorong-speech-embeddings/06.webp",
      "w": 1600,
      "h": 1200,
-     "alt": "Speaker in front of a \"Sequence Packing\" slide."
+     "alt": "Results table slide: \"Where we are today and what we did\"."
     }
    ],
    "words": 227,
    "links": [],
-   "linkedin": null
-  },
-  {
-   "id": "hermes-agent-night",
-   "date": "2026-10-07",
-   "dateApprox": true,
-   "project": "researchagent",
-   "kind": "event",
-   "label": "Hermes AI Agent Night at AWS",
-   "opening": "Hermes AI Agent Night at AWS was a blast!",
-   "blocks": [
-    {
-     "kind": "p",
-     "html": "Hermes AI Agent Night at AWS was a blast!"
-    },
-    {
-     "kind": "p",
-     "html": "Jiamin Wang And I are getting ready to present our Research Agent at AI Tinkerers ( Saturday Demo Meetup with Joe Heitzeberg ),  a project we built during Singhacks 2026."
-    },
-    {
-     "kind": "p",
-     "html": "We went along to learn more about deploying our agent on AWS and where Hermes might fit into what we’re building."
-    },
-    {
-     "kind": "p",
-     "html": "Nathaniel Ng gave us a helpful walkthrough of Amazon Bedrock AgentCore and Ashish Verma demoed 8mem, the memory layer for AI agents. It was useful to see these tools in action and think about how we could apply them to our own project."
-    },
-    {
-     "kind": "p",
-     "html": "There were plenty of other interesting demos throughout the evening, too."
-    },
-    {
-     "kind": "p",
-     "html": "Really enjoyed meeting Shaun-Paul L. and chatting with other people about what they’re building."
-    },
-    {
-     "kind": "p",
-     "html": "Huge Thanks to Lionel Sim  and May Yang and the Amazon Web Services (AWS) team for bringing everyone together."
-    }
-   ],
-   "images": [],
-   "words": 147,
-   "links": [],
-   "linkedin": null
-  },
-  {
-   "id": "researchagent-lineup-repost",
-   "date": "2026-10-06",
-   "dateApprox": true,
-   "project": "researchagent",
-   "kind": "repost",
-   "label": "ResearchAgent, lineup repost",
-   "opening": "Excited to present our project!",
-   "blocks": [
-    {
-     "kind": "p",
-     "html": "Excited to present our project!"
-    }
-   ],
-   "images": [],
-   "words": 5,
-   "links": [],
-   "linkedin": null
+   "linkedin": "https://www.linkedin.com/feed/update/urn:li:activity:7513799134433341440/"
   },
   {
    "id": "yald",
-   "date": "2026-10-04",
-   "dateApprox": true,
-   "project": null,
+   "date": "2026-10-07",
+   "dateApprox": false,
+   "project": "yald",
    "kind": "project",
-   "label": "YALD, an LLM dashboard",
+   "label": "yald, an LLM dashboard",
    "opening": "I wanted to know where my AI coding tokens were going, so I built a dashboard for it.",
    "blocks": [
     {
@@ -731,17 +1116,30 @@
      "html": "Check your own numbers - <a href=\"https://github.com/Collaboration95/yald\">github.com/Collaboration95/yald</a>"
     }
    ],
-   "images": [],
+   "images": [
+    {
+     "src": "content/posts/yald/01.webp",
+     "w": 800,
+     "h": 420,
+     "alt": "yald activity heatmap by weekday and hour, one cell at 170.7M tokens."
+    },
+    {
+     "src": "content/posts/yald/02.webp",
+     "w": 800,
+     "h": 398,
+     "alt": "yald Usage page: totals, token composition over time and cache efficiency."
+    }
+   ],
    "words": 123,
    "links": [
     "https://github.com/Collaboration95/yald"
    ],
-   "linkedin": null
+   "linkedin": "https://www.linkedin.com/feed/update/urn:li:activity:7513444304380448768/"
   },
   {
    "id": "researchagent-team-repost",
-   "date": "2026-10-03",
-   "dateApprox": true,
+   "date": "2026-10-02",
+   "dateApprox": false,
    "project": "researchagent",
    "kind": "repost",
    "label": "ResearchAgent, team repost",
@@ -752,15 +1150,115 @@
      "html": "Really excited to be presenting this project I built with Nguyễn Trần Thành Minh Jiamin Wang and Andrew Nguyen !"
     }
    ],
-   "images": [],
+   "images": [
+    {
+     "src": "content/posts/researchagent-team-repost/01.webp",
+     "w": 800,
+     "h": 999,
+     "alt": "AI Tinkerers Singapore speaker spotlight: \"ResearchAgent: An Evidence Procurement Guard for AI Research\", Guruprasath Gopal, Saturday 10 October 2026."
+    }
+   ],
    "words": 20,
    "links": [],
-   "linkedin": null
+   "linkedin": "https://www.linkedin.com/feed/update/urn:li:activity:7511678485141086211/"
+  },
+  {
+   "id": "hermes-agent-night",
+   "date": "2026-09-30",
+   "dateApprox": false,
+   "project": "researchagent",
+   "kind": "event",
+   "label": "Hermes AI Agent Night at AWS",
+   "opening": "Hermes AI Agent Night at AWS was a blast!",
+   "blocks": [
+    {
+     "kind": "p",
+     "html": "Hermes AI Agent Night at AWS was a blast!"
+    },
+    {
+     "kind": "p",
+     "html": "Jiamin Wang And I are getting ready to present our Research Agent at AI Tinkerers ( Saturday Demo Meetup with Joe Heitzeberg ),  a project we built during Singhacks 2026."
+    },
+    {
+     "kind": "p",
+     "html": "We went along to learn more about deploying our agent on AWS and where Hermes might fit into what we’re building."
+    },
+    {
+     "kind": "p",
+     "html": "Nathaniel Ng gave us a helpful walkthrough of Amazon Bedrock AgentCore and Ashish Verma demoed 8mem, the memory layer for AI agents. It was useful to see these tools in action and think about how we could apply them to our own project."
+    },
+    {
+     "kind": "p",
+     "html": "There were plenty of other interesting demos throughout the evening, too."
+    },
+    {
+     "kind": "p",
+     "html": "Really enjoyed meeting Shaun-Paul L. and chatting with other people about what they’re building."
+    },
+    {
+     "kind": "p",
+     "html": "Huge Thanks to Lionel Sim and May Yang and the Amazon Web Services (AWS) team for bringing everyone together."
+    }
+   ],
+   "images": [
+    {
+     "src": "content/posts/hermes-agent-night/01.webp",
+     "w": 800,
+     "h": 600,
+     "alt": "A speaker at an AWS podium presenting \"So what is Bedrock AgentCore?\""
+    },
+    {
+     "src": "content/posts/hermes-agent-night/02.webp",
+     "w": 480,
+     "h": 610,
+     "alt": "Instant photo of Guru with three others at the event."
+    },
+    {
+     "src": "content/posts/hermes-agent-night/03.webp",
+     "w": 800,
+     "h": 600,
+     "alt": "A speaker on stage at AWS, two screens and a seated audience."
+    },
+    {
+     "src": "content/posts/hermes-agent-night/04.webp",
+     "w": 480,
+     "h": 610,
+     "alt": "Instant photo of a speaker at a podium."
+    },
+    {
+     "src": "content/posts/hermes-agent-night/05.webp",
+     "w": 800,
+     "h": 598,
+     "alt": "Group photo of the attendees on the steps at AWS."
+    }
+   ],
+   "words": 147,
+   "links": [],
+   "linkedin": "https://www.linkedin.com/feed/update/urn:li:activity:7510898895686688768/"
+  },
+  {
+   "id": "researchagent-lineup-repost",
+   "date": "2026-09-23",
+   "dateApprox": false,
+   "project": "researchagent",
+   "kind": "repost",
+   "label": "ResearchAgent, lineup repost",
+   "opening": "Excited to present our project!",
+   "blocks": [
+    {
+     "kind": "p",
+     "html": "Excited to present our project!"
+    }
+   ],
+   "images": [],
+   "words": 5,
+   "links": [],
+   "linkedin": "https://www.linkedin.com/feed/update/urn:li:activity:7508438934750928896/"
   },
   {
    "id": "researchagent-invitation",
-   "date": "2026-10-02",
-   "dateApprox": true,
+   "date": "2026-09-21",
+   "dateApprox": false,
    "project": "researchagent",
    "kind": "project",
    "label": "ResearchAgent, demo invitation",
@@ -823,18 +1321,31 @@
      "html": "Thanks to Son Le for helping us out."
     }
    ],
-   "images": [],
+   "images": [
+    {
+     "src": "content/posts/researchagent-invitation/01.webp",
+     "w": 800,
+     "h": 280,
+     "alt": "Diagram \"ResearchAgent: a calm research loop\": the research desk, a pause to price a source, an optional checkout, back to the answer."
+    },
+    {
+     "src": "content/posts/researchagent-invitation/02.webp",
+     "w": 800,
+     "h": 426,
+     "alt": "Slide \"A better kind of receipt. Not a chat transcript. Not a vibes score.\" beside a one-page research briefing."
+    }
+   ],
    "words": 255,
    "links": [
     "https://singapore.aitinkerers.org/p/ai-tinkerers-singapore-saturday-demo-meetup-with-joe-heitzeberg-oct-10",
     "https://tftf-research.gpyes44.chatgpt.site/"
    ],
-   "linkedin": null
+   "linkedin": "https://www.linkedin.com/feed/update/urn:li:activity:7507633498610962432/"
   },
   {
    "id": "friday-hacks-301",
    "date": "2026-09-19",
-   "dateApprox": true,
+   "dateApprox": false,
    "project": null,
    "kind": "event",
    "label": "Friday Hacks #301",
@@ -878,9 +1389,9 @@
     },
     {
      "src": "content/posts/friday-hacks-301/02.webp",
-     "w": 1024,
-     "h": 768,
-     "alt": "Slide: \"AI code review is not security testing\"."
+     "w": 768,
+     "h": 1024,
+     "alt": "A notebook page of handwritten questions from the talks, on AI code review, agent memory and model-found exploits."
     },
     {
      "src": "content/posts/friday-hacks-301/03.webp",
@@ -891,7 +1402,7 @@
    ],
    "words": 142,
    "links": [],
-   "linkedin": null
+   "linkedin": "https://www.linkedin.com/feed/update/urn:li:activity:7506910157650604032/"
   },
   {
    "id": "gpt-6-astra-night",
@@ -940,10 +1451,41 @@
     },
     {
      "kind": "p",
-     "html": "Thanks Lorong AI and As'safiy As'adi  for the pizza, demos and vibes. 🍕"
+     "html": "Thanks Lorong AI and As'safiy As'adi for the pizza, demos and vibes. 🍕"
     }
    ],
-   "images": [],
+   "images": [
+    {
+     "src": "content/posts/gpt-6-astra-night/01.webp",
+     "w": 800,
+     "h": 600,
+     "alt": "Selfie of Guru with two others at GPT-6 Astra Demo Night."
+    },
+    {
+     "src": "content/posts/gpt-6-astra-night/02.webp",
+     "w": 800,
+     "h": 600,
+     "alt": "A dense illustrated scene of Singapore on the big screen."
+    },
+    {
+     "src": "content/posts/gpt-6-astra-night/03.webp",
+     "w": 800,
+     "h": 600,
+     "alt": "The audience facing a lit stage in a dark room."
+    },
+    {
+     "src": "content/posts/gpt-6-astra-night/04.webp",
+     "w": 800,
+     "h": 600,
+     "alt": "Selfie of Guru with a friend in the audience."
+    },
+    {
+     "src": "content/posts/gpt-6-astra-night/05.webp",
+     "w": 800,
+     "h": 600,
+     "alt": "A browser game demo on the projector."
+    }
+   ],
    "words": 161,
    "links": [],
    "linkedin": "https://www.linkedin.com/feed/update/urn:li:activity:7505994639787851777/"
@@ -983,7 +1525,7 @@
     },
     {
      "kind": "p",
-     "html": "Had an amazing time building with  Jazz Li and Chloe!"
+     "html": "Had an amazing time building with Jazz Li and Chloe!"
     },
     {
      "kind": "p",
@@ -994,7 +1536,20 @@
      "html": "#AITinkerers #AgentsEverywhere #OpenAI #LiveKit #Hackathon"
     }
    ],
-   "images": [],
+   "images": [
+    {
+     "src": "content/posts/handoff/01.webp",
+     "w": 800,
+     "h": 600,
+     "alt": "Selfie of Guru with a teammate at their laptops."
+    },
+    {
+     "src": "content/posts/handoff/02.webp",
+     "w": 800,
+     "h": 450,
+     "alt": "Slide \"Behind the scenes\": Handoff goes from a live meeting through the voice agent and finance API to human approval."
+    }
+   ],
    "words": 170,
    "links": [],
    "linkedin": "https://www.linkedin.com/feed/update/urn:li:activity:7504445479192276992/"
@@ -1041,7 +1596,26 @@
      "html": "Thanks for putting this  together NUS Hackers — here's to the next 300!"
     }
    ],
-   "images": [],
+   "images": [
+    {
+     "src": "content/posts/friday-hacks-300/01.webp",
+     "w": 800,
+     "h": 600,
+     "alt": "Selfie of Guru with two friends at Friday Hacks."
+    },
+    {
+     "src": "content/posts/friday-hacks-300/02.webp",
+     "w": 800,
+     "h": 600,
+     "alt": "A duck mascot on stage at Friday Hacks #300."
+    },
+    {
+     "src": "content/posts/friday-hacks-300/03.webp",
+     "w": 800,
+     "h": 600,
+     "alt": "A speaker presenting \"Getting the word out (without being annoying)\"."
+    }
+   ],
    "words": 247,
    "links": [],
    "linkedin": "https://www.linkedin.com/feed/update/urn:li:activity:7504180994317385728/"
@@ -1084,7 +1658,20 @@
      "html": "Get your api token and start building now!"
     }
    ],
-   "images": [],
+   "images": [
+    {
+     "src": "content/posts/deepseek-off-peak/01.webp",
+     "w": 800,
+     "h": 501,
+     "alt": "DeepSeek API pricing page: \"Peak right now.\", with a countdown to off-peak."
+    },
+    {
+     "src": "content/posts/deepseek-off-peak/02.webp",
+     "w": 771,
+     "h": 726,
+     "alt": "Benchmark table comparing DeepSeek V4 models with GLM, Kimi, GPT and Claude."
+    }
+   ],
    "words": 74,
    "links": [
     "https://fortune.com/2025/07/23/sam-altman-artificial-intelligence-too-cheap-jobs/"
@@ -1205,7 +1792,32 @@
      "html": "Special shoutout to Cyrus C. and Ashraf Kamal for running the program smoothly!"
     }
    ],
-   "images": [],
+   "images": [
+    {
+     "src": "content/posts/singhacks-finalist/01.webp",
+     "w": 800,
+     "h": 600,
+     "alt": "The team on stage in front of \"The Fast and The Fungible\"."
+    },
+    {
+     "src": "content/posts/singhacks-finalist/02.webp",
+     "w": 800,
+     "h": 600,
+     "alt": "Selfie of the team giving thumbs up."
+    },
+    {
+     "src": "content/posts/singhacks-finalist/03.webp",
+     "w": 800,
+     "h": 600,
+     "alt": "Selfie of the team at their table, one holding up a laptop."
+    },
+    {
+     "src": "content/posts/singhacks-finalist/04.webp",
+     "w": 800,
+     "h": 450,
+     "alt": "ResearchAgent architecture: researcher, research desk, an API with query planner, budget guard and cited synthesizer."
+    }
+   ],
    "words": 449,
    "links": [],
    "linkedin": "https://www.linkedin.com/feed/update/urn:li:activity:7502550000044752896/"
@@ -1225,7 +1837,7 @@
     },
     {
      "kind": "p",
-     "html": "They invent a problem, add an AI agent, add a payment screen, and work backwards until the story sounds convincing."
+     "html": "They invent a problem, add an AI agent, add a payment screen, and work backwards until the story sounds convincing."
     },
     {
      "kind": "p",
@@ -1245,7 +1857,7 @@
     },
     {
      "kind": "p",
-     "html": "Cyrus C. from Tenity shared how a team of students built a strong prototype in two and a half days. They didn't ship an application, but they had a real enough problem to focus on and iterated on it."
+     "html": "Cyrus C. from Tenity shared how a team of students built a strong prototype in two and a half days. They didn't ship an application, but they had a real enough problem to focus on and iterated on it."
     },
     {
      "kind": "p",
@@ -1300,7 +1912,32 @@
      "html": "As always, the conversations were more valuable than the code."
     }
    ],
-   "images": [],
+   "images": [
+    {
+     "src": "content/posts/singhacks-day-1/01.webp",
+     "w": 800,
+     "h": 600,
+     "alt": "A speaker in front of a curved screen showing an \"Agentic payments\" maturity curve."
+    },
+    {
+     "src": "content/posts/singhacks-day-1/02.webp",
+     "w": 800,
+     "h": 600,
+     "alt": "Slide \"Agentic payments and blockchain\": a Venn diagram beside trust, transparency, velocity, anonymity and autonomy."
+    },
+    {
+     "src": "content/posts/singhacks-day-1/03.webp",
+     "w": 800,
+     "h": 600,
+     "alt": "The SingHacks 2026 title on a curved red screen."
+    },
+    {
+     "src": "content/posts/singhacks-day-1/04.webp",
+     "w": 800,
+     "h": 600,
+     "alt": "A laptop on a desk beside a coffee cup and a wooden fork."
+    }
+   ],
    "words": 411,
    "links": [],
    "linkedin": "https://www.linkedin.com/feed/update/urn:li:activity:7501841567545106432/"
@@ -1367,7 +2004,20 @@
      "html": "Huge thanks to TikTok for hosting this hackathon our Team 'Cache Me If You Can' ( Andrew Nguyen Thang Nguyen Nam Dao )"
     }
    ],
-   "images": [],
+   "images": [
+    {
+     "src": "content/posts/mandateflow/01.webp",
+     "w": 800,
+     "h": 451,
+     "alt": "Title slide: \"MandateFlow.\" for TikTok TechJam 2026, by team Cache Me If You Can."
+    },
+    {
+     "src": "content/posts/mandateflow/02.webp",
+     "w": 800,
+     "h": 215,
+     "alt": "MandateFlow flow: agent calls pass through a gateway that allows them, denies them or offers a safe aggregate."
+    }
+   ],
    "words": 239,
    "links": [
     "https://devpost.com/software/mandateflow"
@@ -1459,15 +2109,15 @@
    "images": [
     {
      "src": "content/posts/screenshot-declutterer-3/01.webp",
-     "w": 1576,
-     "h": 642,
-     "alt": "Before and after of the rename feature in Screenshot Declutterer."
-    },
-    {
-     "src": "content/posts/screenshot-declutterer-3/02.webp",
      "w": 1448,
      "h": 1086,
      "alt": "Whiteboard sketch: how LiteRT-LM makes Gemma 4 E2B practical on-device."
+    },
+    {
+     "src": "content/posts/screenshot-declutterer-3/02.webp",
+     "w": 1576,
+     "h": 642,
+     "alt": "Before and after of the rename feature in Screenshot Declutterer."
     }
    ],
    "words": 409,
@@ -1548,7 +2198,14 @@
      "html": "Links &amp; More in the appendix below"
     }
    ],
-   "images": [],
+   "images": [
+    {
+     "src": "content/posts/anthropic-shared-chats/01.webp",
+     "w": 800,
+     "h": 655,
+     "alt": "A shared Claude chat page answering a question about Kansas attorney ethics reporting rules."
+    }
+   ],
    "words": 323,
    "links": [],
    "linkedin": "https://www.linkedin.com/feed/update/urn:li:activity:7487062668315344896/"
@@ -1667,7 +2324,14 @@
      "html": "Sometimes the real work starts when you stop tuning and start questioning the shape of the system."
     }
    ],
-   "images": [],
+   "images": [
+    {
+     "src": "content/posts/apple-health-import/01.webp",
+     "w": 715,
+     "h": 867,
+     "alt": "Infographic \"How I made a 26-min import run in 9.77 seconds (163x faster)\": baseline, first optimisations, profiling, rewrite, result."
+    }
+   ],
    "words": 315,
    "links": [],
    "linkedin": "https://www.linkedin.com/feed/update/urn:li:activity:7478418199626080256/"
@@ -1743,11 +2407,15 @@
    "project": "aws-certs",
    "kind": "cert",
    "label": "AWS Solutions Architect Professional",
-   "opening": "Passed the AWS Certified Solutions Architect – Professional (SAP-C02). My first Professional certificate !!",
+   "opening": "I’m happy to share that I’ve obtained a new certification: AWS Certified Solutions Architect Professional from Amazon Web Services (AWS)!",
    "blocks": [
     {
      "kind": "p",
-     "html": "Passed the AWS Certified Solutions Architect – Professional (SAP-C02). My first Professional certificate !!"
+     "html": "I’m happy to share that I’ve obtained a new certification: AWS Certified Solutions Architect Professional from Amazon Web Services (AWS)!"
+    },
+    {
+     "kind": "p",
+     "html": "My first Professional certificate!"
     },
     {
      "kind": "p",
@@ -1755,11 +2423,15 @@
     },
     {
      "kind": "p",
-     "html": "Used Stéphane Maarek's SAP-C02 course on Udemy and TutorialsDojo practice tests."
+     "html": "Used Stéphane Maarek's SAP-C02 course on Udemy and TutorialsDojo's practice tests."
     },
     {
      "kind": "p",
-     "html": "I had trouble choosing between the DR tiers for a long time. Most engineers treat backups as a checkbox. SAP makes you treat RTO and RPO as hard constraints from day one."
+     "html": "The exam forces you to match patterns to business requirements rather than pick the safest option. That framing carries directly into real architecture decisions where budget and SLA are both hard constraints."
+    },
+    {
+     "kind": "p",
+     "html": "I had trouble choosing between the DR tiers for a long time. Most engineers treat backups as a checkbox. SAP makes you treat RTO and RPO as hard constraints from day one when building the system."
     },
     {
      "kind": "p",
@@ -1783,11 +2455,7 @@
     },
     {
      "kind": "p",
-     "html": "The exam forces you to match pattern to business requirement rather than pick the safest option. That framing carries directly into real architecture decisions where budget and SLA are both hard constraints."
-    },
-    {
-     "kind": "p",
-     "html": "Happy to chat if you're prepping."
+     "html": "Happy to chat if you're prepping for the same."
     }
    ],
    "images": [
@@ -1798,7 +2466,7 @@
      "alt": "AWS disaster recovery strategies from Backup and Restore to Multi-site Active-Active, ordered by cost and recovery time."
     }
    ],
-   "words": 207,
+   "words": 224,
    "links": [],
    "linkedin": "https://www.linkedin.com/feed/update/urn:li:activity:7469676877729759232/"
   },
@@ -1841,7 +2509,7 @@
     },
     {
      "kind": "p",
-     "html": "[GitHub →]"
+     "html": "Github -&gt; <a href=\"https://github.com/Collaboration95/stylemind/blob/main/README.md\">github.com/Collaboration95/stylemind/blob/ma…</a>"
     }
    ],
    "images": [
@@ -1864,8 +2532,10 @@
      "alt": "Outfit graph traversal, from anchor product through coherence filter to the suggestion."
     }
    ],
-   "words": 228,
-   "links": [],
+   "words": 229,
+   "links": [
+    "https://github.com/Collaboration95/stylemind/blob/main/README.md"
+   ],
    "linkedin": "https://www.linkedin.com/feed/update/urn:li:activity:7457092933930967040/"
   },
   {
@@ -1883,7 +2553,7 @@
     },
     {
      "kind": "p",
-     "html": "Same playbook as SAA: Stéphane Maarek's course on Udemy, followed by  TutorialsDojo practice tests."
+     "html": "Same playbook as SAA: Stéphane Maarek's  course on Udemy, followed by  TutorialsDojo practice tests."
     },
     {
      "kind": "p",
@@ -1911,24 +2581,28 @@
     },
     {
      "kind": "p",
-     "html": "Excited to apply the skills i learnt to better architect production systems."
+     "html": "Excited to apply the skills i learnt to better architect production systems !"
+    },
+    {
+     "kind": "p",
+     "html": "disclaimer: caching diagram generated via gpt-image-2 ( OpenAI's SOTA image-gen model )"
     }
    ],
    "images": [
     {
      "src": "content/posts/aws-dva/01.webp",
-     "w": 1302,
-     "h": 890,
-     "alt": "Certificate card: AWS Certified Developer Associate, listing the cert stack."
-    },
-    {
-     "src": "content/posts/aws-dva/02.webp",
      "w": 1563,
      "h": 1006,
      "alt": "Diagram of lazy loading, write-through and write-behind caching between app, cache and DB."
+    },
+    {
+     "src": "content/posts/aws-dva/02.webp",
+     "w": 1302,
+     "h": 890,
+     "alt": "Certificate card: AWS Certified Developer Associate, listing the cert stack."
     }
    ],
-   "words": 186,
+   "words": 199,
    "links": [],
    "linkedin": "https://www.linkedin.com/feed/update/urn:li:activity:7452900932851380224/"
   },
@@ -1991,10 +2665,17 @@
     },
     {
      "kind": "p",
-     "html": "Happy to chat if you're prepping for it — drop a comment or reach out"
+     "html": "Happy to chat if you're prepping for it — drop a comment or reach out."
     }
    ],
-   "images": [],
+   "images": [
+    {
+     "src": "content/posts/aws-saa/01.webp",
+     "w": 800,
+     "h": 450,
+     "alt": "Certificate card: AWS Certified Solutions Architect Associate, score 911/1000."
+    }
+   ],
    "words": 241,
    "links": [
     "https://www.udemy.com/course/aws-certified-solutions-architect-associate-saa-c03/"
@@ -2040,7 +2721,11 @@
     },
     {
      "kind": "p",
-     "html": "Just run: \"/pr-flow \"your intent here\""
+     "html": "Just run: /pr-flow \"your intent here\""
+    },
+    {
+     "kind": "p",
+     "html": "→ <a href=\"https://github.com/Collaboration95/ClaudeCodeTips/tree/pr-flow-skill\">github.com/Collaboration95/ClaudeCodeTips/tr…</a>"
     }
    ],
    "images": [
@@ -2057,8 +2742,10 @@
      "alt": "The PR flow skill running in the terminal."
     }
    ],
-   "words": 120,
-   "links": [],
+   "words": 122,
+   "links": [
+    "https://github.com/Collaboration95/ClaudeCodeTips/tree/pr-flow-skill"
+   ],
    "linkedin": "https://www.linkedin.com/feed/update/urn:li:activity:7448404333127417856/"
   },
   {
@@ -2080,7 +2767,7 @@
     },
     {
      "kind": "p",
-     "html": "To make sure any action is not \"permanent\", it uses the send2trash package (<a href=\"https://github.com/arsenetar/send2trash\">github.com/arsenetar/send2trash</a>) to send it to your Bin."
+     "html": "To make sure any action is not \"permanent\", it uses the send2trash package (<a href=\"https://github.com/arsenetar/send2trash\">github.com/arsenetar/send2trash</a> ) to send it to your Bin."
     },
     {
      "kind": "p",
@@ -2099,8 +2786,21 @@
      "html": "I built it with Claude code + opencode and used an intent to PR pipeline skill to be more hands off, more on that later 🤫"
     }
    ],
-   "images": [],
-   "words": 135,
+   "images": [
+    {
+     "src": "content/posts/screenshot-declutterer-1/01.webp",
+     "w": 800,
+     "h": 500,
+     "alt": "Screenshot Declutterer board with Keep, Unsorted and Trash columns of screenshots."
+    },
+    {
+     "src": "content/posts/screenshot-declutterer-1/02.webp",
+     "w": 800,
+     "h": 500,
+     "alt": "Confirm dialog: \"Move 3 screenshots to Trash?\", recoverable from the macOS Trash."
+    }
+   ],
+   "words": 136,
    "links": [
     "https://github.com/Collaboration95/screenshot-declutterer",
     "https://github.com/arsenetar/send2trash"
@@ -2214,7 +2914,7 @@
     },
     {
      "kind": "p",
-     "html": "/plan-feature → reads SERVICE.md + PAST_LEARNINGS before any planning"
+     "html": "/plan-feature  → reads SERVICE.md + PAST_LEARNINGS before any planning"
     },
     {
      "kind": "p",
@@ -2265,7 +2965,14 @@
      "html": "Been looking at Superset (<a href=\"https://superset.sh/\">superset.sh</a>) — looks interesting. More on that next time."
     }
    ],
-   "images": [],
+   "images": [
+    {
+     "src": "content/posts/agent-context-layer/01.webp",
+     "w": 800,
+     "h": 554,
+     "alt": "Two Claude Code sessions side by side, one showing /context token usage, the other the /config settings."
+    }
+   ],
    "words": 464,
    "links": [
     "https://superset.sh/",
@@ -2300,11 +3007,7 @@
     },
     {
      "kind": "p",
-     "html": "Install + authenticate"
-    },
-    {
-     "kind": "p",
-     "html": "<a href=\"https://docs.claude.com/authentication\">docs.claude.com/authentication</a>"
+     "html": "Install + authenticate <a href=\"https://docs.claude.com/authentication\">docs.claude.com/authentication</a>"
     },
     {
      "kind": "p",
@@ -2360,11 +3063,11 @@
     },
     {
      "kind": "p",
-     "html": "One major feature that I started using from the beginning is /remote-control, which allows an active Claude session’s responses to be streamed to your Claude app. So you can keep up with its progress and give new tasks."
+     "html": "One major feature that I started using from the beginning is /remote-control, which allows an active Claude session’s responses to be streamed to your Claude app. So you can keep up with its progress and give new tasks ."
     },
     {
      "kind": "p",
-     "html": "This is a step up from my one-way /agent-done-notifier skill that I made a post about earlier (check it here <a href=\"https://www.linkedin.com/posts/guruprasath3200_if-you-use-cursor-agents-claude-code-or-activity-7434982735221338113-Gf7M?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAADNS2NUBI2jjJS1hyLaxwBaBqSXRTEf0WoI\">linkedin.com/posts/guruprasath3200_if-you-us…</a>)"
+     "html": "This is a step up from my one-way /agent-done-notifier skill that I made a post about earlier ( check it here <a href=\"https://www.linkedin.com/posts/guruprasath3200_if-you-use-cursor-agents-claude-code-or-activity-7434982735221338113-Gf7M?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAADNS2NUBI2jjJS1hyLaxwBaBqSXRTEf0WoI\">linkedin.com/posts/guruprasath3200_if-you-us…</a> )"
     },
     {
      "kind": "p",
@@ -2375,8 +3078,15 @@
      "html": "Feels very smooth to use, and you can still look at the files, etc."
     }
    ],
-   "images": [],
-   "words": 309,
+   "images": [
+    {
+     "src": "content/posts/cursor-to-claude-code/01.webp",
+     "w": 800,
+     "h": 352,
+     "alt": "Claude Code open in a terminal window on the desktop."
+    }
+   ],
+   "words": 312,
    "links": [
     "https://docs.claude.com/authentication",
     "https://www.linkedin.com/posts/guruprasath3200_if-you-use-cursor-agents-claude-code-or-activity-7434982735221338113-Gf7M?utm_source=share&utm_medium=member_desktop&rcm=ACoAADNS2NUBI2jjJS1hyLaxwBaBqSXRTEf0WoI"
@@ -2410,7 +3120,7 @@
     },
     {
      "kind": "p",
-     "html": "What started as a quick Python script to display questions locally turned into a full quiz \"app\" hosted on GitHub Pages -- so I could fill up my time on the MRT (this way I could \"study\" on the way to my climbing gym)."
+     "html": "What started as a quick Python script to display questions locally turned into a full quiz “app” hosted on GitHub Pages -- so I could fill up my time on the MRT (this way I could “study” on the way to my climbing gym)."
     },
     {
      "kind": "p",
@@ -2437,7 +3147,14 @@
      "html": "Happy to chat if you're thinking about taking either exam!"
     }
    ],
-   "images": [],
+   "images": [
+    {
+     "src": "content/posts/aws-ai-practitioner/01.webp",
+     "w": 1008,
+     "h": 606,
+     "alt": "LinkedIn's animated certification card: binoculars looking out over a sea with a bird."
+    }
+   ],
    "words": 221,
    "links": [
     "https://collaboration95.github.io/aws-tests-ai/",
@@ -2453,11 +3170,11 @@
    "project": "aws-certs",
    "kind": "cert",
    "label": "AWS Cloud Practitioner",
-   "opening": "\"Excited to announce\" that I recently passed the AWS Certified Cloud Practitioner exam!",
+   "opening": "“Excited to announce” that I recently passed the AWS Certified Cloud Practitioner exam!",
    "blocks": [
     {
      "kind": "p",
-     "html": "\"Excited to announce\" that I recently passed the AWS Certified Cloud Practitioner exam!"
+     "html": "“Excited to announce” that I recently passed the AWS Certified Cloud Practitioner exam!"
     },
     {
      "kind": "p",
@@ -2469,19 +3186,26 @@
     },
     {
      "kind": "p",
-     "html": "One free resource I found especially useful (apart from AWS Skill Builder):"
+     "html": "One free resource I found especially useful (apart from AWS Skill Builder) :"
     },
     {
      "kind": "p",
-     "html": "<a href=\"https://kananinirav.com/practice-exam/exams.html\">kananinirav.com/practice-exam/exams.html</a> --&gt; 17 practice tests, 50 questions each. [Also contains overview notes]"
+     "html": "<a href=\"https://kananinirav.com/practice-exam/exams.html\">kananinirav.com/practice-exam/exams.html</a> — 17 practice tests, 50 questions each. [ Also contains overview notes ]"
     },
     {
      "kind": "p",
      "html": "Good luck!"
     }
    ],
-   "images": [],
-   "words": 117,
+   "images": [
+    {
+     "src": "content/posts/aws-cloud-practitioner/01.webp",
+     "w": 1008,
+     "h": 606,
+     "alt": "LinkedIn's animated certification card: a book of illustrated pages flipping."
+    }
+   ],
+   "words": 120,
    "links": [
     "https://kananinirav.com/practice-exam/exams.html"
    ],
@@ -2494,11 +3218,11 @@
    "project": "claude-code-notes",
    "kind": "tool",
    "label": "Agent-done notifier skill",
-   "opening": "If you use Cursor agents, Claude Code, or similar agentic coding tools a lot (especially kicking off multiple async tasks), this post will be useful.",
+   "opening": "If you use Cursor agents, Claude Code, or similar agentic coding tools a lot ( especially kicking off multiple async tasks) , this post will be useful.",
    "blocks": [
     {
      "kind": "p",
-     "html": "If you use Cursor agents, Claude Code, or similar agentic coding tools a lot (especially kicking off multiple async tasks), this post will be useful."
+     "html": "If you use Cursor agents, Claude Code, or similar agentic coding tools a lot ( especially kicking off multiple async tasks) , this post will be useful."
     },
     {
      "kind": "p",
@@ -2510,15 +3234,15 @@
     },
     {
      "kind": "p",
-     "html": "Spent about 10 minutes and put together a simple solution using <a href=\"https://ntfy.sh/\">ntfy.sh</a>"
+     "html": "Spent about 10 minutes and put together a simple solution using <a href=\"https://ntfy.sh/\">ntfy.sh</a> ."
     },
     {
      "kind": "p",
-     "html": "It's a free, open-source notification service -- no account, no server, no API keys. (as long as you remain &lt;250 daily notifications, but you can self-host it for free)."
+     "html": "It's a free, open-source notification service -- no account, no server, no API keys. ( as long as you remain &lt;250 daily notifications, but you can self-host it for free ) ."
     },
     {
      "kind": "p",
-     "html": "The agent POSTS a message to a topic URL as its final step, and your phone gets a push notification."
+     "html": "The agent POSTs a message to a topic URL as its final step, and your phone gets a push notification."
     },
     {
      "kind": "p",
@@ -2526,11 +3250,18 @@
     },
     {
      "kind": "p",
-     "html": "<a href=\"https://github.com/Collaboration95/agent-done-skill\">github.com/Collaboration95/agent-done-skill</a> --&gt; contains drag and drop for cursor, Claude, and agentskills format."
+     "html": "<a href=\"https://github.com/Collaboration95/agent-done-skill\">github.com/Collaboration95/agent-done-skill</a> -&gt; contains drag and drop for cursor, Claude, and agentskills format."
     }
    ],
-   "images": [],
-   "words": 210,
+   "images": [
+    {
+     "src": "content/posts/agent-done-notifier/01.webp",
+     "w": 800,
+     "h": 671,
+     "alt": "Three ntfy notifications titled \"Agent Update\", each reporting a finished Claude Code task."
+    }
+   ],
+   "words": 216,
    "links": [
     "https://github.com/Collaboration95/agent-done-skill",
     "https://ntfy.sh/"

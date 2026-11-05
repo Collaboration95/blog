@@ -257,6 +257,7 @@ a.print:focus-visible{outline-offset:6px}
   .s-left.z-half{float:left;width:400px;margin:8px 24px 14px -130px}
   .s-center{width:720px;margin:20px -30px 22px}
   .z-half.o-tall{width:280px}
+  .s-center.z-half.o-tall{margin:28px auto 22px}
   .strip{font-size:21px}
   .hookarrow.ph{display:none}.hookarrow.dt{display:block}
   .sub{font-size:44px}

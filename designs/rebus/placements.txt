@@ -12,11 +12,10 @@
 # A fragment that is not verbatim stops the build. Images with no marker are placed by the rule in build.mjs.
 
 @ commons-agent-logs
-from Sunday's hackathon[[3]].
-two coding agents cost[[5]].
-The build itself[[1]] took
-so the room[[2]] had four
-about 300 million tokens[[4]] went
+two coding agents cost[[1]].
+Picking the new idea[[3]] took
+so the room[[4]] had four
+The biggest bill now is the server[[2]].
 roughly $182[[=]].
 came to $2.79[[=]] for the day
 costs about $8[[=]] on AWS
@@ -32,22 +31,32 @@ from 26 minutes[[=]] to 9.77 seconds[[=]] on the same
 / 4 6 8 14 16 20 22 24
 
 @ commons-claude-switch
-Claude Code SG at Grab[[1]].
-my pets run on Claude[[4]],
-it walks onto the projector[[2]].
-The Codex setup[[3]] I was running
+Claude Code SG at Grab[[2]].
+my pets run on Claude[[1]],
+the presenters for their demos[[3]].
 
 @ commons-peoples-choice
 Codex writes it[[1]], tests it
 
 @ commons-best-use-of-tech
-Best Use of Tech[[3]] at the
-At 10:01 the organisers[[2]] went
-I built The Commons[[1]], a room
+Best Use of Tech[[1]] at the
+At 10:01 the organisers[[5]] went
+I built The Commons[[2]], a room
 
 @ friday-hacks-301
 Friday Hacks #301[[1]] )
 
 @@ the-commons
-picture commons-best-use-of-tech 1
+picture commons-best-use-of-tech 2
 excerpt 62
+
+@ prompt-fu
+Built Prompt-Fu[[1]] for AI GrandPrix
+at Carousell Sg[[5]].
+Describe a snack[[3]] and Codex
+Describe a place[[2]] and it becomes
+your phone[[4]] becomes the controller.
+
+@ deepseek-off-peak
+DeepSeek V4.1 Flash[[2]] has brought
+with a live countdown[[1]] to the next switch.

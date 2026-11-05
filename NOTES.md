@@ -9,6 +9,7 @@
 
 ## Decisions, 5 Nov 2026
 
+- **Images follow the live LinkedIn posts.** Each post shows the pictures its LinkedIn post shows, in the same order (the "sync … from LinkedIn" captures in the posts repo). Where a capture matches a full-size original in the same folder, the original is published instead of the small capture. Dates and LinkedIn links now come from each post's Notes line, so none are approximate.
 - **Cut and Paste front page:** each card shows only the post's opening line (or the line after it, when the first line is already the headline), set larger and ending in a pink `…`. It replaced the torn-paper excerpt. Pictures are scaled to fit within a square (never cropped), and the stack beside a picture takes one to three scraps, whichever comes closest to the picture card's height.
 
 ## Decisions, 4 Nov 2026
